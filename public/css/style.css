@@ -1,0 +1,22 @@
+.card{
+    box-shadow: #adadad7c 1px 3px ;
+    border-radius:6px;
+    border-top:10px solid hsl(36, 95%, 47%);
+}
+.card-body{
+    
+    border-radius: 6px;
+}
+
+.round{
+    height: 30vh;
+    width: 30vh;
+    border-radius:50%;
+}
+.data-taget{
+    color: darkgray;
+}
+.navbarl{
+    background-color: #1e90ff;
+    color: aliceblue;
+}
