@@ -41,6 +41,7 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
+<!-- ================================-->
 <div class="container">
 <div class="row">
     @foreach($etap as $etapliss)
@@ -48,11 +49,9 @@
 <div class="card mb-3 mt-4">
 <div class="crd-head  text-center"><img  src="{{asset('image/est.png')}}" class="card-img-top  round" /></div>
   <div class="card-body">
-  <h5 class="card-title">{{ $etapliss->nom}}</h5>
-    <p class="card-text"><small class="text-muted"></small> Localisation  : {{ $etapliss->local}}</p>
-    <p class="card-text"><small class="text-muted"></small>Nombre de feliére  : {{ $etapliss->num_feliere}}</p>
-
- <a href="http://127.0.0.1:8000/info/{{$etapliss->etapl_id}}"><p class="card-text">Learn more</p></a>
+  <h5 class="card-title">{{ $etapliss->nom_etablessement}}</h5>
+    <p class="card-text"><small class="text-muted"></small> Localisation  : {{ $etapliss->local_etablessement}}</p>
+ <a href="http://127.0.0.1:8000/info/{{$etapliss->id_etabless}}"><p class="card-text">Learn more</p></a>
   </div>
 </div>
 </div><!-- fin col-->

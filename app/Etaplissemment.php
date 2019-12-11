@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Etaplissemment extends Model
 {
     public $table ="etaplissemments";
-    protected $fillable = ['nom','local','num_feliere'];
+    protected $fillable = ['id_etablessement','nom_etablessement','local_etablessement'];
     
 }

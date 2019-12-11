@@ -5,10 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>test </title>
+    <title>Application de gestion des filiere</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-  
+
+<script src="{{ asset('js/jquery.js')}}"></script>
+ 
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+     <script src="{{ asset('js/bootstrap.js') }}"></script>
 </head>
 <body>
 <nav  class="navbar navbar-expand-sm navbar-dark navbarl sticky-top">
@@ -20,16 +24,8 @@
     <div class="collapse navbar-collapse" id="collapsibleNavId">
         <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
         </li>
-      <li class="nav-item dropdown active">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        </div>
-      </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Link</a>
-            </li>
+      
+            
             @guest
             <li class="nav-item active">
                 <a class="nav-link" href="{{ url('/login')}}">Login</a>
@@ -38,7 +34,7 @@
                 <a class="nav-link" href="{{ url('/register')}}">register</a>
             </li>-->
             @else
-            <li class="nav-item active">
+            <li style="floal:right;" class="nav-item active">
             <a class="nav-link" href="#" >{{Auth::user()->name}}</a>
 
             </li>
@@ -55,8 +51,13 @@
 
 @yield("content")
 
-
-<script src="{{ asset('js/jquery.js')}}"></script>
-    <script src="{{ asset('js/bootstrap.js') }}"></script>
+<footer>
+        <div class="footer2">
+                    
+        </div>
+        <div class="footer1">
+<p>desined by ... </p>
+        </div>
+</footer>
 </body>
 </html>
