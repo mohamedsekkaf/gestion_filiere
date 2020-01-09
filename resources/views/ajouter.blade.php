@@ -218,7 +218,7 @@
                   <tr><td><br></td></tr>
                   <tr>
                      <td> </td>
-                     <td><input class="btn-primary" type="submit" value="Insert" name="btn"></td>
+                     <td><input class="btn-primary" type="submit" value="Insert" name=""></td>
                   </tr>
                </table>
         </div>

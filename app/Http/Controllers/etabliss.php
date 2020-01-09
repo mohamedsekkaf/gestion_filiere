@@ -27,9 +27,16 @@ public function showinfo(){
 //==========================================================
 public function info($id)
 {
-   $tes= DB::select("select * from etaplissemments where etapl_id = ?",[$id]);
-   $fil =  DB::select("select * from felieres where fel_id = ?",[$tes[0]->fil_id]);
-   return  view('filiere', compact('fil'));
+   $tes= DB::select("select * from etaplissemments where id_etablessement = ?",[$id]);
+   $fil =  DB::select("select * from felieres where id_etabless= ?",[$tes[0]->id_etablessement]);
+   return  view('filiere', compact('fil','tes'));
+}
+//==========================================================
+public function modul($id)
+{
+   $mode = DB::select("select * from felieres where id_filiere= ?",[$id]);
+   $module =  DB::select("select * from modules where id_fil = ?",[$mode[0]->id_filiere]);
+   return  view('module', compact('module','mode'));
 }
 //==========================================================
 

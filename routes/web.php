@@ -20,6 +20,7 @@ Route::get('/', "etabliss@showetabliss");
 Route::get('/ajouter', "etabliss@showinfo");
 Route::post('/insertetab', "etabliss@insertetap");
 
+
 Route::group(['middleware' => ['web']], function () {
     Auth::routes();
     Route::get('/home', 'HomeController@index');
@@ -27,6 +28,8 @@ Route::group(['middleware' => ['web']], function () {
 
 Route::get('/welcom', 'HomeController@index')->middleware('web');
 Route::get("/info/{id}", 'etabliss@info')->middleware('web');
+Route::get("/modul/{id}", 'etabliss@modul')->middleware('web');
+
 
 Route::get("/logout", function(){
     Auth::logout();

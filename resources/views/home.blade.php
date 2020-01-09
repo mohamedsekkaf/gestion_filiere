@@ -51,7 +51,7 @@
   <div class="card-body">
   <h5 class="card-title">{{ $etapliss->nom_etablessement}}</h5>
     <p class="card-text"><small class="text-muted"></small> Localisation  : {{ $etapliss->local_etablessement}}</p>
- <a href="http://127.0.0.1:8000/info/{{$etapliss->id_etabless}}"><p class="card-text">Learn more</p></a>
+ <a href="http://127.0.0.1:8000/info/{{$etapliss->id_etablessement}}"><p class="card-text">Learn more {{$etapliss->id_etablessement}} </p></a>
   </div>
 </div>
 </div><!-- fin col-->

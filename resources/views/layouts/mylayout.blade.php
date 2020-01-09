@@ -30,9 +30,9 @@
             <li class="nav-item active">
                 <a class="nav-link" href="{{ url('/login')}}">Login</a>
             </li>
-            <!--<li class="nav-item active">
+            <li class="nav-item active">
                 <a class="nav-link" href="{{ url('/register')}}">register</a>
-            </li>-->
+            </li>
             @else
             <li style="floal:right;" class="nav-item active">
             <a class="nav-link" href="#" >{{Auth::user()->name}}</a>
