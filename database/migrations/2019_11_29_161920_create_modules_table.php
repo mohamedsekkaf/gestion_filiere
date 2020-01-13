@@ -17,7 +17,7 @@ class CreateModulesTable extends Migration
             $table->bigIncrements('id_module');
             $table->string("nom_module");
             $table->bigInteger("num_element");
-            $table->BigInteger("id_fil");
+            $table->string("nom_fil");
             $table->timestamps();
         });
     }

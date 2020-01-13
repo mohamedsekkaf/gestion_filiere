@@ -22,7 +22,7 @@
         <span class="navbar-toggler-icon data-taget"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavId">
-        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+        <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
         </li>
       
             
@@ -34,8 +34,11 @@
                 <a class="nav-link" href="{{ url('/register')}}">register</a>
             </li>
             @else
-            <li style="floal:right;" class="nav-item active">
-            <a class="nav-link" href="#" >{{Auth::user()->name}}</a>
+            <li class="nav-item active">
+             <img src="{{asset('image/slider1.jpg')}}" class=" img-user round " data-fleep="tooltip" data-placement="bottom" data-original-title="{{Auth::user()->name}}">
+            </li>
+            <li class="nav-item active">
+            <a class="nav-link" href="http://127.0.0.1:8000/ajouter" >{{Auth::user()->name}}</a>
 
             </li>
             <li class="nav-item active">
@@ -59,5 +62,12 @@
 <p>desined by ... </p>
         </div>
 </footer>
+
+<script>
+$(function (){
+   $('[data-fleep = "tooltip"]').tooltip()
+   })
+   </script>
+
 </body>
 </html>

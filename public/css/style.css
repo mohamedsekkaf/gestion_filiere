@@ -60,17 +60,6 @@
         transform: rotate(360deg);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
 footer{
     width: auto;
     height: 40vh;
@@ -87,4 +76,27 @@ footer{
     height: 10vh;
     border: 2px solid rgba(64, 64, 65, 0.548);
     text-align: center;
+}
+.img-user {
+    width: 40px;
+    height:40px;
+}
+.img-user:hover{
+    animation: go 1s;
+    transform: scale(1.0);
+
+    transition: 970ms;
+}
+@keyframes go{
+    0%{
+        transform: rotate(0deg) translateY(12px);;
+     
+    }
+    50%{
+        transform: rotate(-60deg) translateY(-12px);;
+
+    }
+    100%{
+        transform: rotate(360deg);
+    }
 }

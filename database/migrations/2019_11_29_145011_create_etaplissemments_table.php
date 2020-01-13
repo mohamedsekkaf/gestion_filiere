@@ -13,10 +13,11 @@ class CreateEtaplissemmentsTable extends Migration
      */
     public function up()
     {
-        Schema::create('etaplissemments', function (Blueprint $table) {
+        Schema::create('etaplissemments',function (Blueprint $table) {
             $table->bigIncrements('id_etablessement');
             $table->string('nom_etablessement');
             $table->string('local_etablessement');
+            $table->string('image');
             $table->timestamps();
         });
     }

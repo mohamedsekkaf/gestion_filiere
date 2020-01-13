@@ -18,7 +18,6 @@ class CreateDeplomesTable extends Migration
             $table->string('nom_deplome');
             $table->string('type_deplome');
             $table->string('duree_deplome');
-            $table->string('nometablessent');
             $table->bigInteger('id_etap');
             $table->timestamps();
         });

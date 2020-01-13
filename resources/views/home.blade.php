@@ -45,13 +45,17 @@
 <div class="container">
 <div class="row">
     @foreach($etap as $etapliss)
+    @csrf
 <div class="col-md-6">
 <div class="card mb-3 mt-4">
-<div class="crd-head  text-center"><img  src="{{asset('image/est.png')}}" class="card-img-top  round" /></div>
+
+<div class="crd-head  text-center"><img  src="{{asset('images/')}}/{{$etapliss->image}} " class="card-img-top  round" /></div>
   <div class="card-body">
-  <h5 class="card-title">{{ $etapliss->nom_etablessement}}</h5>
+  <h5 class="card-title">Nom de L'etablessement : {{ $etapliss->nom_etablessement}}</h5>
     <p class="card-text"><small class="text-muted"></small> Localisation  : {{ $etapliss->local_etablessement}}</p>
- <a href="http://127.0.0.1:8000/info/{{$etapliss->id_etablessement}}"><p class="card-text">Learn more {{$etapliss->id_etablessement}} </p></a>
+ <a href="http://127.0.0.1:8000/info/{{$etapliss->id_etablessement}}"><p class="card-text"> Afficher les Filieres </p></a>
+ <br>
+ <a href="http://127.0.0.1:8000/showdeplome/{{$etapliss->id_etablessement}}"><p class="card-text">Afficher les deplomes</p></a>
   </div>
 </div>
 </div><!-- fin col-->

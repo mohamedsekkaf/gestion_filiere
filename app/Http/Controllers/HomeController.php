@@ -16,7 +16,7 @@ class HomeController extends Controller
         $this->middleware('auth');
     }
 
-    /**
+    /**z
      * Show the application dashboard.
      *
      * @return \Illuminate\Contracts\Support\Renderable

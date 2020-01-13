@@ -16,7 +16,7 @@ class CreateElementsTable extends Migration
         Schema::create('elements', function (Blueprint $table) {
             $table->bigIncrements('id_element');
             $table->string('nom_element');
-            $table->bigInteger('id_mod');
+            $table->string('nom_mod');
             $table->timestamps();
         });
     }
