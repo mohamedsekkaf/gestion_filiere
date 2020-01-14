@@ -14,7 +14,7 @@
        </div>
        </div><!--fin class hread -->
 </div><!-- fi container -->
-
+<br>
 <div class="container">
               <div class="head d-flex justify-content-center">
        <div class="row" style="display: block!important;">
@@ -27,6 +27,20 @@
        </div>
        </div><!--fin class hread -->
 </div><!-- fi container -->
+<br>
+<div class="container">
+              <div class="head d-flex justify-content-center">
+       <div class="row" style="display: block!important;">
+       <a href="{{asset('/delete/delete-etablessement')}}"><img class="circle" src="{{ asset('image/school.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer Etablissement" data-toggle="modal" data-target="" /></a>
+       <a href="{{asset('/delete/delete-filiere')}}"> <img class="circle" src="{{ asset('image/school.png') }}" data-toggle="modal" data-target=""  data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Filiere"/></a>
+       <a href="{{asset('/delete/delete-module')}}"><img class="circle" src="{{ asset('image/module.png') }}" data-toggle="modal" data-target=""   data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Modele"/></a>
+      <a href="{{asset('/delete/delete-element')}}"><img class="circle" src="{{ asset('image/cour.png') }}" data-toggle="modal" data-target=""  data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Element"/></a> 
+       <a href="{{asset('/delete/delete-deplome')}}"><img class="circle" src="{{ asset('image/diploma1.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Deplome" data-toggle="modal" data-target=""/></a> 
+
+       </div>
+       </div><!--fin class hread -->
+</div><!-- fi container -->
+
 
 <!--00000============================================================0000000-->
 

@@ -55,12 +55,31 @@ Route::post("/update-filiere", 'etabliss@updatefiliere')->middleware('web');
 Route::get("/update-module", 'etabliss@showNommod')->middleware('web');
 Route::post("/update-module", 'etabliss@updatemodule')->middleware('web');
 
-Route::post("/update-module", 'etabliss@showNomelem')->middleware('web');
-Route::post("/update-module", 'etabliss@updatemodule')->middleware('web');
+Route::get("/update-element", 'etabliss@showNomelem')->middleware('web');
+Route::post("/update-element", 'etabliss@updateelement')->middleware('web');
+
+Route::get("/update-deplome", 'etabliss@showNomdep')->middleware('web');
+Route::post("/update-deplome", 'etabliss@updatedeplome')->middleware('web');
+
+//////////////////////////////////////////////////////////////////////////////
+
+Route::get("/delete/delete-etablessement", 'etabliss@deleteshowNometab')->middleware('web');
+Route::post("/delete/delete-etablessement", 'etabliss@deleteetab')->middleware('web');
+
+Route::get("/delete/delete-filiere", 'etabliss@deleteshowNomfil')->middleware('web');
+Route::post("/delete/delete-filiere", 'etabliss@deletefiliere')->middleware('web');
 
 
-Route::post("/update-module", 'etabliss@showNomdep')->middleware('web');
-Route::post("/update-module", 'etabliss@updatemodule')->middleware('web');
+Route::get("/delete/delete-module", 'etabliss@deleteshowNommod')->middleware('web');
+Route::post("/delete/delete-module", 'etabliss@deletemodule')->middleware('web');
+
+Route::get("/delete/delete-element", 'etabliss@deleteshowNomelem')->middleware('web');
+Route::post("/delete/delete-element", 'etabliss@deleteelement')->middleware('web');
+
+
+Route::get("/delete/delete-deplome", 'etabliss@deleteshowNomdep')->middleware('web');
+Route::post("/delete/delete-deplome", 'etabliss@deletedeplome')->middleware('web');
+
 
 
 

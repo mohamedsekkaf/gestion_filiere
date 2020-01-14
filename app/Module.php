@@ -7,5 +7,5 @@ use Illuminate\Database\Eloquent\Model;
 class Module extends Model
 {
     public $table ="modules";
-    protected $fillable = ['id_module','nom_module','num_element','nom_fil'];
+    protected $fillable = ['id_module','nom_module','num_element','nom_fil','created_at','updated_at'];
 }

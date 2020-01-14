@@ -93,7 +93,7 @@ public function insertetabmod(Request $request){
     $nom_module = $request->input('nom_module');
    $num_element = $request->input('num_element');
    $nom_fil = $request->input('nom_fil');
-   $data=array('nom_module'=>$nom_module,'num_element'=>$num_element,'nom_fil'=>$nom_fil);
+   $data=array('nom_module'=>$nom_module,'num_element'=>$num_element,'nom_fil'=>$nom_fil,'created_at'=>Date("y/m/d"));
    DB::table('modules')->insert($data);
    $message="les données a ete inserer";
    echo "<script type='text/javascript'>alert('$message');</script>";
@@ -103,7 +103,7 @@ public function insertetabmod(Request $request){
 public function insertetabelem(Request $request){
     $nom_element = $request->input('nom_element');
    $nom_mod = $request->input('nom_mod');
-   $data=array('nom_element'=>$nom_element,'nom_mod'=>$nom_mod);
+   $data=array('nom_element'=>$nom_element,'nom_mod'=>$nom_mod,'created_at'=>Date("y/m/d"));
    DB::table('elements')->insert($data);
    $message="les données a ete inserer";
    echo "<script type='text/javascript'>alert('$message');</script>";
@@ -115,7 +115,7 @@ public function insertetabelem(Request $request){
      $type_deplome = $request->input('type_deplome');
      $duree_deplome = $request->input('duree_deplome');
      $id_etap = $request->input('id_etap');
-     $data=array('nom_deplome'=>$nom_deplome,'type_deplome'=>$type_deplome,'duree_deplome'=>$duree_deplome,'id_etap'=>$id_etap);
+     $data=array('nom_deplome'=>$nom_deplome,'type_deplome'=>$type_deplome,'duree_deplome'=>$duree_deplome,'id_etap'=>$id_etap,'created_at'=>Date("y/m/d"));
      DB::table('deplomes')->insert($data);
      $message="les données a ete inserer";
      echo "<script type='text/javascript'>alert('$message');</script>";
@@ -153,30 +153,133 @@ public function updateetab(Request $request){
        ->where('id_etablessement', $id)
        ->update(array('nom_etablessement' => $nom_etablessement,'local_etablessement'=>$local_etablessement,'updated_at'=>Date("y/m/d")));
 return redirect('update-etablessement');
-   
 } 
 //========================================================== update filiere
  public function updatefiliere(Request $request){
    $id = $request->input('id_filiere');
-   echo "<script type='text/javascript'>alert('$id');</script>";
+   $nom = $request->input('nom');
     $nom_filiere = $request->input('nom_filiere');
    $nummodel = $request->input('nummodel');
    DB::table('felieres')
        ->where('id_filiere', $id)
        ->update(array('nom_filiere' => $nom_filiere,'nummodel'=>$nummodel,'updated_at'=> Date("y/m/d",time()))); 
+       DB::table('modules')
+       ->where('nom_fil', $nom)
+       ->update(array('nom_fil'=> $nom_filiere));
+       
        return redirect('update-filiere');
 }  
-
+//========================================================== update module
 public function updatemodule(Request $request){
    $id = $request->input('id_module');
-   echo "<script type='text/javascript'>alert('$id');</script>";
+   $nom = $request->input('nom');
     $nom_module = $request->input('nom_module');
    $num_element = $request->input('num_element');
    DB::table('modules')
        ->where('id_module', $id)
        ->update(array('nom_module' => $nom_module,'num_element'=>$num_element,'updated_at'=> Date("y/m/d",time()))); 
+       DB::table('elements')
+       ->where('nom_mod', $nom)
+       ->update(array('nom_mod'=> $nom_module));
        return redirect('update-module');
 } 
+//========================================================== update element
+public function updateelement(Request $request){
+   $id = $request->input('id_element');
+    $nom_element = $request->input('nom_element');
+   $nom_mod = $request->input('nom_mod');
+   DB::table('elements')
+       ->where('id_element', $id)
+       ->update(array('nom_element' => $nom_element,'nom_mod'=>$nom_mod,'updated_at'=> Date("y/m/d",time()))); 
+       return redirect('update-element');
+} 
+ //========================================================== update deplome
+ public function updatedeplome(Request $request){
+   $id = $request->input('id_deplome');
+    $nom_deplome = $request->input('nom_deplome');
+   $type_deplome = $request->input('type_deplome');
+   $duree_deplome = $request->input('duree_deplome');
+   DB::table('deplomes')
+       ->where('id_deplome', $id)
+       ->update(array('nom_deplome' => $nom_deplome,'type_deplome'=>$type_deplome,'duree_deplome'=>$duree_deplome,'updated_at'=> Date("y/m/d",time()))); 
+      /*  DB::table('deplomes')
+       ->where('id_deplome', $id)
+       ->delete(); */
+       return redirect('update-deplome');
+} 
+
+ //==========================================================
+ public function deleteshowNometab(){
+   $etap = Etaplissemment::all();
+    return view('/delete/delete-etablessement',compact('etap'));
+ }
+  //==========================================================
+ public function  deleteshowNomfil(){
+   $file = Feliere::all();
+    return view('/delete/delete-filiere',compact('file'));
+ }
+  //==========================================================
+ public function  deleteshowNommod(){
+   $mod = Module::all();
+    return view('/delete/delete-module',compact('mod'));
+ }
+  //==========================================================
+ public function   deleteshowNomelem(){
+   $elem = Element::all();
+    return view('/delete/delete-element',compact('elem'));
+ }
+  //==========================================================
+ public function   deleteshowNomdep(){
+   $dep = Deplome::all();
+    return view('/delete/delete-deplome',compact('dep'));
+ }
+ //==========================================================
+ public function  deleteetab(Request $request){
+   $id = $request->input('id');
+   DB::table('etaplissemments')
+       ->where('id_etablessement', $id)
+       ->delete();
+       DB::table('deplomes')
+       ->where('id_etap', $id)
+       ->delete();
+       DB::table('felieres')
+       ->where('id_etabless', $id)
+       ->delete();
+return redirect('delete/delete-etablessement');
+} 
+ //==========================================================
+public function  deletefiliere(Request $request){
+   $id = $request->input('id_filiere');
+   DB::table('felieres')
+       ->where('id_filiere', $id)
+       ->delete();
+return redirect('delete/delete-filiere');
+} 
+ //==========================================================
+public function  deletemodule(Request $request){
+   $id = $request->input('id_module');
+   DB::table('modules')
+       ->where('id_module', $id)
+       ->delete();
+return redirect('delete/delete-module');
+} 
+ //==========================================================
+public function deleteelement(Request $request){
+   $id = $request->input('id_element');
+   DB::table('elements')
+       ->where('id_element', $id)
+       ->delete();
+return redirect('delete/delete-element');
+} 
+ //==========================================================
+public function deletedeplome(Request $request){
+   $id = $request->input('id_deplome');
+   DB::table('deplomes')
+       ->where('id_deplome', $id)
+       ->delete();
+return redirect('delete/delete-deplome');
+} 
+ //==========================================================
 
 
 

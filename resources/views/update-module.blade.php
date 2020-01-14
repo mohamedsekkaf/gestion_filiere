@@ -9,31 +9,39 @@
   <form action="{{ url('/update-module') }}" method="POST" enctype="multipart/form-data">
         @method('POST')
          @csrf
-          <select name="id_module" >
+          
+             <table>
+             <tr>
+             <td style="width:20vh">Selectionner Module</td>
+             <td>
+             <select  style="width:60vh" class=" form-control" name="id_module" >
            <option value="9">default </option>
                @foreach($mod as $m)
               <option value="{{$m->id_module}}">{{ $m->nom_module}}</option>
               @endforeach
              </select>
-             <table>
+             </td>
+             <td>
+             <select style="width:60%" class=" form-control" name="nom" >
+           <option value="9">default </option>
+               @foreach($mod as $m)
+              <option value="{{$m->nom_module}}">{{ $m->nom_module}}</option>
+              @endforeach
+             </select></td>
+             </tr>
                   <tr>
-                     <td>Nom de modele </td>
-                     <td><input name="nom_module" type="text"></td>
+                     <td style="width:20%">Nom de modele </td>
+                     <td><input style="width:60%" class=" form-control" name="nom_module" type="text"></td>
                   </tr>
                   <tr><td><br></td></tr>
                   <tr>
-                     <td> Nombre d'element  </td>
-                     <td><input name="num_element" type="text"></td>
-                  </tr>
-                  <tr><td><br></td></tr>
-                  <tr>
-                  <td> Non de filiere </td>
-                     
+                     <td style="width:20%">  Nombre d'element  </td>
+                     <td><input style="width:60%" class=" form-control" name="num_element" type="text"></td>
                   </tr>
                   <tr><td><br></td></tr>
                   <tr>
                      <td> </td>
-                     <td><input class="btn-primary" type="submit" value="Insert" name="btn"></td>
+                     <td><input class="btn-primary" class=" form-control" type="submit" value="Insert" name="btn"></td>
                   </tr>
                </table>
 </form>
