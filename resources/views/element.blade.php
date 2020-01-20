@@ -10,6 +10,8 @@
 <div class="card mb-3 mt-4">
   <div class="card-body">
   <h5 class="card-title">Nom de l'element : {{ $elem->nom_element}}</h5>
+  
+  <h5 class="card-title">L'horaire de l'element : {{ $elem->horaire_element}}</h5>
 
   </div>
 </div>

@@ -6,7 +6,7 @@
 <div class="card mb-3 mt-4">
   <div class="card-body">
   <h5 class="card-title">Modefier  </h5>
-  <form action="{{ url('/update-deplome') }}" method="POST" enctype="multipart/form-data">
+  <form action="{{ url('/update/update-deplome') }}" method="POST" enctype="multipart/form-data">
         @method('POST')
          @csrf
           

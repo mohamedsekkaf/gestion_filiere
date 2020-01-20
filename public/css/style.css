@@ -100,3 +100,34 @@ footer{
         transform: rotate(360deg);
     }
 }
+.btn{
+    width: 20vh;
+    height: 5vh;
+    border-radius: 10px;
+}
+.heade{
+    background-color: aqua;
+}
+.center{
+    text-align: center;
+    margin-left: 18%;
+}
+.close-test:hover{
+    animation: goo 1s;
+    transform: scale(1.0);
+
+    transition: 970ms;
+}
+@keyframes goo{
+    0%{
+        transform: rotate(0deg) ;;
+     
+    }
+    50%{
+        transform: rotate(-60deg) ;;
+
+    }
+    100%{
+        transform: rotate(360deg);
+    }
+}

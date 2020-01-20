@@ -6,25 +6,30 @@
 <div class="card mb-3 mt-4">
   <div class="card-body">
   <h5 class="card-title">Modefier Element</h5>
-  <form action="{{ url('/update-element') }}" method="POST" enctype="multipart/form-data">
+  <form action="{{ url('/update/update-element') }}" method="POST" enctype="multipart/form-data">
         @method('POST')
          @csrf
-          <select name="id_element" class="form-control">
+             <table>
+             <tr>
+             <td style="width:20%">Selectionner Element</td>
+             <td>
+             <select style="width:100%" name="id_element" class="form-control">
            <option value="0">default </option>
                @foreach($elem as $e)
               <option value=" {{ $e->id_element }}">{{ $e->nom_element }}</option>
               @endforeach
              </select>
-             <br><br>
-             <table>
+             </td>
+             </tr>
+             <tr><td><br></td></tr>
                   <tr>
                      <td style="width:20%">Nom de l'element </td>
-                     <td style="width:80%"><input class="form-control" name="nom_element" type="text"></td>
+                     <td style="width:100%"><input class="form-control" name="nom_element" type="text"></td>
                   </tr>
                   <tr><td><br></td></tr>
                   <tr>
-                  <td style="width:20%"> Non de Module </td>
-                     <td style="width:80%"><input class="form-control" name="nom_mod" type="text"></td>
+                     <td style="width:20%">L'horaire de l'element </td>
+                     <td style="width:100%"><input class="form-control" name="horaire_element" type="text"></td>
                   </tr>
                   <tr><td><br></td></tr>
                   <tr>

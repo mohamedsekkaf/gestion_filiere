@@ -17,6 +17,8 @@ class CreateElementsTable extends Migration
             $table->bigIncrements('id_element');
             $table->string('nom_element');
             $table->string('nom_mod');
+            $table->bigInteger('id_etabless');
+            $table->string('horaire_element');
             $table->timestamps();
         });
     }

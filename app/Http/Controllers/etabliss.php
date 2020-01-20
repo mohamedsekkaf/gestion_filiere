@@ -66,7 +66,7 @@ if ($request->has('images')) {
  // Define upload path
   $destinationPath = public_path('/images/'); // upload path
 // Upload Orginal Image           
-  $profileImage =time() . '.' . $files->getClientOriginalExtension();
+  $profileImage =$nom_etablessement. '.' . $files->getClientOriginalExtension();
   $request->file('images')->move($destinationPath, $profileImage);
 
 
@@ -83,8 +83,7 @@ $nummodel = $request->input('nummodel');
 $id_etabless = $request->input('id_etabless');
 $data=array('nom_filiere'=>$nom_filiere,'nummodel'=>$nummodel,'id_etabless'=>$id_etabless,'created_at'=>Date("y/m/d"));
 DB::table('felieres')->insert($data);
-$message="les données a ete inserer";
-echo "<script type='text/javascript'>alert('$message');</script>";
+echo "<script>Swal.fire('Les donnés ont été enregistrées !')</script>";
 return redirect('ajouter');
 
 }
@@ -93,7 +92,8 @@ public function insertetabmod(Request $request){
     $nom_module = $request->input('nom_module');
    $num_element = $request->input('num_element');
    $nom_fil = $request->input('nom_fil');
-   $data=array('nom_module'=>$nom_module,'num_element'=>$num_element,'nom_fil'=>$nom_fil,'created_at'=>Date("y/m/d"));
+   $id_etabless = $request->input('id_etabless');
+   $data=array('nom_module'=>$nom_module,'num_element'=>$num_element,'nom_fil'=>$nom_fil,'id_etabless'=>$id_etabless,'created_at'=>Date("y/m/d"));
    DB::table('modules')->insert($data);
    $message="les données a ete inserer";
    echo "<script type='text/javascript'>alert('$message');</script>";
@@ -103,7 +103,9 @@ public function insertetabmod(Request $request){
 public function insertetabelem(Request $request){
     $nom_element = $request->input('nom_element');
    $nom_mod = $request->input('nom_mod');
-   $data=array('nom_element'=>$nom_element,'nom_mod'=>$nom_mod,'created_at'=>Date("y/m/d"));
+   $id_etabless = $request->input('id_etabless');
+   $horaire_element = $request->input('horaire_element');
+   $data=array('nom_element'=>$nom_element,'nom_mod'=>$nom_mod,'id_etabless'=>$id_etabless,'horaire_element'=>$horaire_element,'created_at'=>Date("y/m/d"));
    DB::table('elements')->insert($data);
    $message="les données a ete inserer";
    echo "<script type='text/javascript'>alert('$message');</script>";
@@ -125,23 +127,23 @@ public function insertetabelem(Request $request){
 
 public function showNometab(){
    $etap = Etaplissemment::all();
-   return view('update-etablessement',compact('etap'));
+   return view('update/update-etablessement',compact('etap'));
 } 
 public function showNomfil(){
    $file = Feliere::all();
-   return view('update-filiere',compact('file'));
+   return view('update/update-filiere',compact('file'));
 } 
 public function showNommod(){
    $mod = Module::all();
-   return view('update-module',compact('mod'));
+   return view('update/update-module',compact('mod'));
 } 
 public function showNomelem(){
    $elem = Element::all();
-   return view('update-element',compact('elem'));
+   return view('update/update-element',compact('elem'));
 } 
 public function showNomdep(){
    $dep = Deplome::all();
-   return view('update-deplome',compact('dep'));
+   return view('update/update-deplome',compact('dep'));
 } 
 //========================================================== update etabblessement
 public function updateetab(Request $request){
@@ -152,7 +154,7 @@ public function updateetab(Request $request){
    DB::table('etaplissemments')
        ->where('id_etablessement', $id)
        ->update(array('nom_etablessement' => $nom_etablessement,'local_etablessement'=>$local_etablessement,'updated_at'=>Date("y/m/d")));
-return redirect('update-etablessement');
+return redirect('update/update-etablessement');
 } 
 //========================================================== update filiere
  public function updatefiliere(Request $request){
@@ -167,7 +169,7 @@ return redirect('update-etablessement');
        ->where('nom_fil', $nom)
        ->update(array('nom_fil'=> $nom_filiere));
        
-       return redirect('update-filiere');
+       return redirect('update/update-filiere');
 }  
 //========================================================== update module
 public function updatemodule(Request $request){
@@ -181,17 +183,17 @@ public function updatemodule(Request $request){
        DB::table('elements')
        ->where('nom_mod', $nom)
        ->update(array('nom_mod'=> $nom_module));
-       return redirect('update-module');
+       return redirect('update/update-module');
 } 
 //========================================================== update element
 public function updateelement(Request $request){
    $id = $request->input('id_element');
     $nom_element = $request->input('nom_element');
-   $nom_mod = $request->input('nom_mod');
+    $horaire_element = $request->input('horaire_element');
    DB::table('elements')
        ->where('id_element', $id)
-       ->update(array('nom_element' => $nom_element,'nom_mod'=>$nom_mod,'updated_at'=> Date("y/m/d",time()))); 
-       return redirect('update-element');
+       ->update(array('nom_element' => $nom_element,'horaire_element'=>$horaire_element,'updated_at'=> Date("y/m/d",time()))); 
+       return redirect('update/update-element');
 } 
  //========================================================== update deplome
  public function updatedeplome(Request $request){
@@ -205,7 +207,7 @@ public function updateelement(Request $request){
       /*  DB::table('deplomes')
        ->where('id_deplome', $id)
        ->delete(); */
-       return redirect('update-deplome');
+       return redirect('update/update-deplome');
 } 
 
  //==========================================================
@@ -243,6 +245,12 @@ public function updateelement(Request $request){
        ->where('id_etap', $id)
        ->delete();
        DB::table('felieres')
+       ->where('id_etabless', $id)
+       ->delete();
+       DB::table('modules')
+       ->where('id_etabless', $id)
+       ->delete();
+       DB::table('elements')
        ->where('id_etabless', $id)
        ->delete();
 return redirect('delete/delete-etablessement');
