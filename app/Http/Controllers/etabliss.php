@@ -61,7 +61,7 @@ public function element($nom)
 public function semestre($nom)
 {
    $mode = DB::select("select * from felieres where nom_filiere= ?",[$nom]);
-   $sem =  DB::select("select * from semestres where nom_fil = ?",[$mode[0]->nom_filiere]);
+   $sem =  DB::select("select * from semstrs where nom_fil = ?",[$mode[0]->nom_filiere]);
    return  view('semestre', compact('sem'));
 }
 
