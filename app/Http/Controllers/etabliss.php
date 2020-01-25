@@ -32,7 +32,8 @@ public function showinfo(){
     $etab = Etaplissemment::all();
     $file = Feliere::all();
     $mod = Module::all();
-    return  view('ajouter',compact('etab','file','mod'));
+    $semestre = semestre::all();
+    return  view('ajouter',compact('etab','file','mod','semestre'));
 }
 //========================================================== selection filiere
 public function info($id)

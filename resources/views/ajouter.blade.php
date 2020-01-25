@@ -12,6 +12,7 @@
        <div class="row" style="display: block!important;">
        <a href="#"><img class="circle" src="{{ asset('image/school.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Etablissement" data-toggle="modal" data-target="#etablissement" /></a>
        <a href="#"> <img class="circle" src="{{ asset('image/filiere.png') }}" data-toggle="modal" data-target="#filiere"  data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Filiere"/></a>
+       <a href="#"> <img class="circle" src="{{ asset('image/filiere.png') }}" data-toggle="modal" data-target="#semestre"  data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter semestre"/></a>
        <a href="#"><img class="circle" src="{{ asset('image/module.png') }}" data-toggle="modal" data-target="#modele"   data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Modele"/></a>
        <img class="circle" src="{{ asset('image/cour.png') }}" data-toggle="modal" data-target="#element"    data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Element"/>
        <img class="circle" src="{{ asset('image/diploma1.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Diplôme" data-toggle="modal" data-target="#deplome" />
@@ -173,6 +174,68 @@
 <!-- 000000==========================================================00000--->
 
 
+<!--00000============================================================0000000-->
+<div class="container">
+  <!-- The Modal -->
+  <div class="modal fade" id="semestre">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      <form action="{{ url('/insertetabmod') }}" method="POST">
+        @method('POST')
+         @csrf
+        <!-- Modal Header -->
+        <div class="modal-header heade">
+          <h4 class="modal-title center">Ajouter un Semestre</h4>
+          <button type="button" class="close close-test" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+               <table>
+                  <tr>
+                     <td> </td>
+                     <td><input class="form-control" name="nom_s" type="text" required></td>
+                  </tr>
+                  <tr><td><br></td></tr>
+                  <tr>
+                  <td> Non de filiere </td>
+                     <td>
+                        <select class="form-control" name="nom_fil" id="" required>
+                           <option value="">default </option>
+                           @foreach($file as $model)
+                           <option value="{{ $model->nom_filiere }}">{{ $model->nom_filiere }}</option>
+                           @endforeach
+                        </select>
+                     </td>
+                  </tr>
+                  <tr><td><br></td></tr>
+                  <tr>
+                           <td> Nom de l'Etablissement </td>
+                           <td style="text-align:center;">
+                              <select class="form-control" name="id_etabless" id="" required>
+                                 <option value="">default </option>
+                                 @foreach($etab as $fil)
+                                 <option value="{{ $fil->id_etablessement }}">{{ $fil->nom_etablessement }}</option>
+                                 @endforeach
+                              </select>
+                           </td>
+                           </tr>
+                  <tr><td><br></td></tr>
+                  <tr>
+                     <td> </td>
+                     <td><input  class="btn-primary btn" type="submit" value="Insert" name="btn"></td>
+                  </tr>
+               </table>
+        </div>
+        </form>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 000000==========================================================00000--->
 <!--00000============================================================0000000-->
 <div class="container">
   <!-- The Modal -->
