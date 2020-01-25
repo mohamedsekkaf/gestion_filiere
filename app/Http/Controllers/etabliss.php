@@ -67,7 +67,7 @@ if ($request->has('images')) {
   $profileImage =$nom_etablessement. '.' . $files->getClientOriginalExtension();
   $request->file('images')->move($destinationPath, $profileImage);
   
-$data=array('nom_etablessement'=>$nom_etablessement,'local_etablessement'=>$local_etablessement,'image' => $profileImage,'created_at'=>Date("y-m-d") );
+$data=array('nom_etablessement'=>$nom_etablessement,'local_etablessement'=>$local_etablessement,'image' => $profileImage);
 DB::table('etaplissemments')->insert($data);
 return redirect('ajouter');
 /* echo '<h1 align="center">'. 'saved'.'</h1>'; */
