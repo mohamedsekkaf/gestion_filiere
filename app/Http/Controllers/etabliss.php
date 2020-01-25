@@ -102,7 +102,7 @@ public function insertetabsemestre(Request $request){
   $nom_fil = $request->input('nom_fil');
   $id_etabless = $request->input('id_etabless');
   $data=array('nom_s'=>$nom_s,'nom_fil'=>$nom_fil,'id_etabless'=>$id_etabless);
-  DB::table('semestres')->insert($data);
+  DB::table('semstrs')->insert($data);
   //echo "<script>Swal.fire('Les donnés ont été enregistrées !')</script>";
   return redirect('ajouter');
   
