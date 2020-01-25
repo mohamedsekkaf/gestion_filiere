@@ -88,7 +88,7 @@
                   </tr>
                   <tr><td><br></td></tr>
                   <tr>
-                     <td><label for="">File Select</label></td>
+                     <td><label for="">Selectioner image</label></td>
                        <td><input type="file" class="form-control" name="images" required></td>
                   </tr>
                   <tr>
