@@ -96,6 +96,17 @@ DB::table('felieres')->insert($data);
 return redirect('ajouter');
 
 }
+//========================================================== ajouter filiere
+public function insertetabsemestre(Request $request){
+   $nom_s = $request->input('nom_s');
+  $nom_fil = $request->input('nom_fil');
+  $id_etabless = $request->input('id_etabless');
+  $data=array('nom_s'=>$nom_s,'nom_fil'=>$nom_fil,'id_etabless'=>$id_etabless);
+  DB::table('semestres')->insert($data);
+  //echo "<script>Swal.fire('Les donnés ont été enregistrées !')</script>";
+  return redirect('ajouter');
+  
+  }
 //========================================================== ajouter module
 public function insertetabmod(Request $request){
     $nom_module = $request->input('nom_module');

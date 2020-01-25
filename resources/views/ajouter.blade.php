@@ -180,7 +180,7 @@
   <div class="modal fade" id="semestre">
     <div class="modal-dialog">
       <div class="modal-content">
-      <form action="{{ url('/insertetabmod') }}" method="POST">
+      <form action="{{ url('/insertetabsemestre') }}" method="POST">
         @method('POST')
          @csrf
         <!-- Modal Header -->
