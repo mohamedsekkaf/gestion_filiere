@@ -1,6 +1,4 @@
-@extends('layouts/mylayout')
-
-@section('content')
+<?php $__env->startSection('content'); ?>
 <div class="container">
 <div class="row">
 <div class="col-12">
@@ -10,11 +8,11 @@
 <div class="container">
               <div class="head d-flex justify-content-center">
        <div class="row" style="display: block!important;">
-       <a href="#"><img class="circle" src="{{ asset('image/school.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Etablissement" data-toggle="modal" data-target="#etablissement" /></a>
-       <a href="#"> <img class="circle" src="{{ asset('image/filiere.png') }}" data-toggle="modal" data-target="#filiere"  data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Filiere"/></a>
-       <a href="#"><img class="circle" src="{{ asset('image/module.png') }}" data-toggle="modal" data-target="#modele"   data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Modele"/></a>
-       <img class="circle" src="{{ asset('image/cour.png') }}" data-toggle="modal" data-target="#element"    data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Element"/>
-       <img class="circle" src="{{ asset('image/diploma1.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Diplôme" data-toggle="modal" data-target="#deplome" />
+       <a href="#"><img class="circle" src="<?php echo e(asset('image/school.png')); ?>" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Etablissement" data-toggle="modal" data-target="#etablissement" /></a>
+       <a href="#"> <img class="circle" src="<?php echo e(asset('image/filiere.png')); ?>" data-toggle="modal" data-target="#filiere"  data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Filiere"/></a>
+       <a href="#"><img class="circle" src="<?php echo e(asset('image/module.png')); ?>" data-toggle="modal" data-target="#modele"   data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Modele"/></a>
+       <img class="circle" src="<?php echo e(asset('image/cour.png')); ?>" data-toggle="modal" data-target="#element"    data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Element"/>
+       <img class="circle" src="<?php echo e(asset('image/diploma1.png')); ?>" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Diplôme" data-toggle="modal" data-target="#deplome" />
 
        </div>
        </div><!--fin class hread -->
@@ -29,11 +27,11 @@
 <div class="container">
               <div class="head d-flex justify-content-center">
        <div class="row" style="display: block!important;">
-       <a href="{{asset('/update/update-etablessement')}}"><img class="circle" src="{{ asset('image/school.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Etablissement" data-toggle="modal" data-target="" /></a>
-       <a href="{{asset('/update/update-filiere')}}"> <img class="circle" src="{{ asset('image/filiere.png') }}" data-toggle="modal" data-target=""  data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Filiere"/></a>
-       <a href="{{asset('/update/update-module')}}"><img class="circle" src="{{ asset('image/module.png') }}" data-toggle="modal" data-target=""   data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Modele"/></a>
-      <a href="{{asset('/update/update-element')}}"><img class="circle" src="{{ asset('image/cour.png') }}" data-toggle="modal" data-target=""    data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Element"/></a> 
-       <a href="{{asset('/update/update-deplome')}}"><img class="circle" src="{{ asset('image/diploma1.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Diplôme" data-toggle="modal" data-target=""/></a> 
+       <a href="<?php echo e(asset('/update/update-etablessement')); ?>"><img class="circle" src="<?php echo e(asset('image/school.png')); ?>" data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Etablissement" data-toggle="modal" data-target="" /></a>
+       <a href="<?php echo e(asset('/update/update-filiere')); ?>"> <img class="circle" src="<?php echo e(asset('image/filiere.png')); ?>" data-toggle="modal" data-target=""  data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Filiere"/></a>
+       <a href="<?php echo e(asset('/update/update-module')); ?>"><img class="circle" src="<?php echo e(asset('image/module.png')); ?>" data-toggle="modal" data-target=""   data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Modele"/></a>
+      <a href="<?php echo e(asset('/update/update-element')); ?>"><img class="circle" src="<?php echo e(asset('image/cour.png')); ?>" data-toggle="modal" data-target=""    data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Element"/></a> 
+       <a href="<?php echo e(asset('/update/update-deplome')); ?>"><img class="circle" src="<?php echo e(asset('image/diploma1.png')); ?>" data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Diplôme" data-toggle="modal" data-target=""/></a> 
 
        </div>
        </div><!--fin class hread -->
@@ -48,11 +46,11 @@
 <div class="container">
               <div class="head d-flex justify-content-center">
        <div class="row" style="display: block!important;">
-       <a href="{{asset('/delete/delete-etablessement')}}"><img class="circle" src="{{ asset('image/school.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer Etablissement" data-toggle="modal" data-target="" /></a>
-       <a href="{{asset('/delete/delete-filiere')}}"> <img class="circle" src="{{ asset('image/filiere.png') }}" data-toggle="modal" data-target=""  data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Filiere"/></a>
-       <a href="{{asset('/delete/delete-module')}}"><img class="circle" src="{{ asset('image/module.png') }}" data-toggle="modal" data-target=""   data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Modele"/></a>
-      <a href="{{asset('/delete/delete-element')}}"><img class="circle" src="{{ asset('image/cour.png') }}" data-toggle="modal" data-target=""  data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Element"/></a> 
-       <a href="{{asset('/delete/delete-deplome')}}"><img class="circle" src="{{ asset('image/diploma1.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Diplôme" data-toggle="modal" data-target=""/></a> 
+       <a href="<?php echo e(asset('/delete/delete-etablessement')); ?>"><img class="circle" src="<?php echo e(asset('image/school.png')); ?>" data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer Etablissement" data-toggle="modal" data-target="" /></a>
+       <a href="<?php echo e(asset('/delete/delete-filiere')); ?>"> <img class="circle" src="<?php echo e(asset('image/filiere.png')); ?>" data-toggle="modal" data-target=""  data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Filiere"/></a>
+       <a href="<?php echo e(asset('/delete/delete-module')); ?>"><img class="circle" src="<?php echo e(asset('image/module.png')); ?>" data-toggle="modal" data-target=""   data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Modele"/></a>
+      <a href="<?php echo e(asset('/delete/delete-element')); ?>"><img class="circle" src="<?php echo e(asset('image/cour.png')); ?>" data-toggle="modal" data-target=""  data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Element"/></a> 
+       <a href="<?php echo e(asset('/delete/delete-deplome')); ?>"><img class="circle" src="<?php echo e(asset('image/diploma1.png')); ?>" data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Diplôme" data-toggle="modal" data-target=""/></a> 
 
        </div>
        </div><!--fin class hread -->
@@ -73,9 +71,9 @@
         </div>
         <!-- Modal body -->
         <div class="modal-body">
-        <form action="{{ url('/ajouter') }}"  method="POST" enctype="multipart/form-data">
-        @method('POST')
-         @csrf
+        <form action="<?php echo e(url('/ajouter')); ?>"  method="POST" enctype="multipart/form-data">
+        <?php echo method_field('POST'); ?>
+         <?php echo csrf_field(); ?>
                <table>
                   <tr>
                      <td>Nom de l'Etablissement </td>
@@ -119,9 +117,9 @@
   <div class="modal fade" id="filiere">
     <div class="modal-dialog">
       <div class="modal-content">
-      <form action="{{ url('/insertetabfil') }}" method="POST">
-        @method('POST')
-         @csrf
+      <form action="<?php echo e(url('/insertetabfil')); ?>" method="POST">
+        <?php echo method_field('POST'); ?>
+         <?php echo csrf_field(); ?>
         <!-- Modal Header -->
         <div class="modal-header heade">
           <h4 class="modal-title center">Ajouter un Filiere</h4>
@@ -145,9 +143,9 @@
                            <td style="text-align:center;">
                               <select class="form-control" name="id_etabless" id="" required>
                                  <option value="">default </option>
-                                 @foreach($etab as $fil)
-                                 <option value="{{ $fil->id_etablessement }}">{{ $fil->nom_etablessement }}</option>
-                                 @endforeach
+                                 <?php $__currentLoopData = $etab; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fil): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                 <option value="<?php echo e($fil->id_etablessement); ?>"><?php echo e($fil->nom_etablessement); ?></option>
+                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </select>
                               <!--<select name="" id="">
                                  <option value="">default</option>
@@ -179,9 +177,9 @@
   <div class="modal fade" id="modele">
     <div class="modal-dialog">
       <div class="modal-content">
-      <form action="{{ url('/insertetabmod') }}" method="POST">
-        @method('POST')
-         @csrf
+      <form action="<?php echo e(url('/insertetabmod')); ?>" method="POST">
+        <?php echo method_field('POST'); ?>
+         <?php echo csrf_field(); ?>
         <!-- Modal Header -->
         <div class="modal-header heade">
           <h4 class="modal-title center">Ajouter un modele</h4>
@@ -205,9 +203,9 @@
                      <td>
                         <select class="form-control" name="nom_fil" id="" required>
                            <option value="">default </option>
-                           @foreach($file as $model)
-                           <option value="{{ $model->nom_filiere }}">{{ $model->nom_filiere }}</option>
-                           @endforeach
+                           <?php $__currentLoopData = $file; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $model): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                           <option value="<?php echo e($model->nom_filiere); ?>"><?php echo e($model->nom_filiere); ?></option>
+                           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                      </td>
                   </tr>
@@ -217,9 +215,9 @@
                            <td style="text-align:center;">
                               <select class="form-control" name="id_etabless" id="" required>
                                  <option value="">default </option>
-                                 @foreach($etab as $fil)
-                                 <option value="{{ $fil->id_etablessement }}">{{ $fil->nom_etablessement }}</option>
-                                 @endforeach
+                                 <?php $__currentLoopData = $etab; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fil): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                 <option value="<?php echo e($fil->id_etablessement); ?>"><?php echo e($fil->nom_etablessement); ?></option>
+                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </select>
                            </td>
                            </tr>
@@ -247,9 +245,9 @@
   <div class="modal fade" id="element">
     <div class="modal-dialog">
       <div class="modal-content">
-      <form action="{{ url('/insertetabelem') }}" method="POST">
-        @method('POST')
-         @csrf
+      <form action="<?php echo e(url('/insertetabelem')); ?>" method="POST">
+        <?php echo method_field('POST'); ?>
+         <?php echo csrf_field(); ?>
         <!-- Modal Header -->
         <div class="modal-header heade">
           <h4 class="modal-title center">Ajouter un Element</h4>
@@ -273,9 +271,9 @@
                      <td>
                         <select class="form-control" name="nom_mod" id="" required>
                            <option value="">default </option>
-                           @foreach($mod as $modele)
-                           <option value="{{ $modele->nom_module }}">{{ $modele->nom_module }}</option>
-                           @endforeach
+                           <?php $__currentLoopData = $mod; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $modele): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                           <option value="<?php echo e($modele->nom_module); ?>"><?php echo e($modele->nom_module); ?></option>
+                           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                      </td>
                   </tr>
@@ -287,9 +285,9 @@
                            <td style="text-align:center;">
                               <select class="form-control" name="id_etabless" id="" required>
                                  <option value="">default </option>
-                                 @foreach($etab as $fil)
-                                 <option value="{{ $fil->id_etablessement }}">{{ $fil->nom_etablessement }}</option>
-                                 @endforeach
+                                 <?php $__currentLoopData = $etab; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fil): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                 <option value="<?php echo e($fil->id_etablessement); ?>"><?php echo e($fil->nom_etablessement); ?></option>
+                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </select>
                            </td>
                            </tr>
@@ -320,7 +318,7 @@
     <div class="modal-dialog">
       <div class="modal-content">
       <form action="/insertetabdeplome" method="POST">
-      @csrf
+      <?php echo csrf_field(); ?>
         <!-- Modal Header -->
         <div class="modal-header heade">
           <h4 class="modal-title center">Ajouter un Deplome</h4>
@@ -364,9 +362,9 @@
                      <td>
                      <select class="form-control" name="id_etap" id="" required>
                            <option value="">default</option>
-                           @foreach($etab as $dep)
-                          <option name="id_etap" value="{{$dep->id_etablessement}}">{{ $dep->nom_etablessement }}</option>
-                           @endforeach
+                           <?php $__currentLoopData = $etab; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dep): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                          <option name="id_etap" value="<?php echo e($dep->id_etablessement); ?>"><?php echo e($dep->nom_etablessement); ?></option>
+                           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                      </td>
                   </tr>
@@ -397,4 +395,6 @@ $(function (){
    })
 
    </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('layouts/mylayout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/ajouter.blade.php ENDPATH**/ ?>

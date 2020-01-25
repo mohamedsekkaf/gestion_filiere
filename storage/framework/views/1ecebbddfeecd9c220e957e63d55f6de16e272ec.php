@@ -1,14 +1,13 @@
-@extends("layouts/mylayout")
-@section("content")
+<?php $__env->startSection("content"); ?>
 <div class="container">
 <div class="row">
 <div class="col-md-12">
 <div class="card mb-3 mt-4">
   <div class="card-body">
   <h3 class="card-title tt">Modefier Module </h3>
-  <form action="{{ url('/update/update-module') }}" method="POST" enctype="multipart/form-data">
-        @method('POST')
-         @csrf
+  <form action="<?php echo e(url('/update/update-module')); ?>" method="POST" enctype="multipart/form-data">
+        <?php echo method_field('POST'); ?>
+         <?php echo csrf_field(); ?>
           
              <table>
              <tr>
@@ -16,9 +15,9 @@
              <td>
              <select style="width:100%" class=" form-control" name="nom" required>
            <option value="">default </option>
-               @foreach($mod as $m)
-              <option value="{{$m->nom_module}}">{{ $m->nom_module}}</option>
-              @endforeach
+               <?php $__currentLoopData = $mod; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $m): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <option value="<?php echo e($m->nom_module); ?>"><?php echo e($m->nom_module); ?></option>
+              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
              </select></td>
              </tr>
              <tr><td><br></td></tr>
@@ -43,4 +42,5 @@
 </div><!-- fin col-->
 </div><!-- fin row-->
 </div><!-- fin container-->
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make("layouts/mylayout", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/update/update-module.blade.php ENDPATH**/ ?>

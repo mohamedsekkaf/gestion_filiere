@@ -1,5 +1,4 @@
-@extends("layouts/mylayout")
-@section("content")
+<?php $__env->startSection("content"); ?>
 <div class="container">
 <div class="row">
 <div class="col-12">
@@ -7,18 +6,18 @@
   <div class="card-body">
   <h3 class="card-title tt">Modefier Filiere </h3>
   <br>
-  <form action="{{ url('/update/update-filiere') }}" method="POST" enctype="multipart/form-data">
-        @method('POST')
-         @csrf
+  <form action="<?php echo e(url('/update/update-filiere')); ?>" method="POST" enctype="multipart/form-data">
+        <?php echo method_field('POST'); ?>
+         <?php echo csrf_field(); ?>
              <table>
              <tr>
              <td style="width:14%;">selectionner Filiere</td>
              <td style="width:70%">
              <select  name="nom" class=" form-control" required>
              <option value="">default </option>
-               @foreach($file as $e)
-              <option value=" {{ $e->nom_filiere }}">{{ $e->nom_filiere }}</option>
-              @endforeach
+               <?php $__currentLoopData = $file; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $e): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+              <option value=" <?php echo e($e->nom_filiere); ?>"><?php echo e($e->nom_filiere); ?></option>
+              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
              </select>
              </td>
              </tr>
@@ -45,4 +44,5 @@
 </div><!-- fin row-->
 </div><!-- fin container-->
 
-@endsection
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make("layouts/mylayout", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/update/update-filiere.blade.php ENDPATH**/ ?>

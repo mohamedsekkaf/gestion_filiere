@@ -5,7 +5,7 @@
 <div class="col-md-12">
 <div class="card mb-3 mt-4">
   <div class="card-body">
-  <h5 class="card-title">Modefier Element</h5>
+  <h3 class="card-title tt">Supprimer Element</h3>
   <form action="{{ url('/delete/delete-element') }}" method="POST" enctype="multipart/form-data">
         @method('POST')
          @csrf
@@ -13,8 +13,8 @@
           <tr>
           <td  style="width:20%" >selectionner Filiere</td>
           <td>
-          <select name="id_element" class="form-control">
-           <option value="0">default </option>
+          <select style="width:60%" name="id_element" class="form-control" required>
+           <option value="">default </option>
                @foreach($elem as $e)
               <option value=" {{ $e->id_element }}">{{ $e->nom_element }}</option>
               @endforeach
@@ -23,7 +23,7 @@
             <tr><td><br></td></tr>
             <tr>
              <td>
-                    <input class="btn-primary" type="submit" value="Supprimer" name="btn" class="form-control">
+                    <input class="btn-primary btn" type="submit" value="Supprimer" name="btn" class="form-control">
              </td>
              </tr>
            </tr>

@@ -5,7 +5,7 @@
 <div class="col-md-12">
 <div class="card mb-3 mt-4">
   <div class="card-body">
-  <h5 class="card-title">Modefier Etablessemment </h5>
+  <h3 class="card-title tt">Supprimer Etablessemment </h3>
   <form action="{{ url('/delete/delete-etablessement') }}" method="POST" enctype="multipart/form-data">
         @method('POST')
          @csrf
@@ -13,8 +13,8 @@
           <tr>
           <td  style="width:20%" >selectionner Filiere</td>
           <td>
-          <select name="id" >
-           <option value="0">default </option>
+          <select name="id" class="form-control" required>
+           <option value="">default </option>
                @foreach($etap as $et)
               <option value="{{$et->id_etablessement}}">{{ $et->nom_etablessement }}</option>
               @endforeach

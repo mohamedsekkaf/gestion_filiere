@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
@@ -28,7 +27,6 @@ public function showdeplome($id){
    $dep =  DB::select("select * from deplomes where id_etap= ?",[$tes[0]->id_etablessement]);
    return  view('deplome',compact('dep'));
 }
-
 //==========================================================
 public function showinfo(){
     $etab = Etaplissemment::all();
@@ -68,12 +66,12 @@ if ($request->has('images')) {
 // Upload Orginal Image           
   $profileImage =$nom_etablessement. '.' . $files->getClientOriginalExtension();
   $request->file('images')->move($destinationPath, $profileImage);
-
-
+  
 $data=array('nom_etablessement'=>$nom_etablessement,'local_etablessement'=>$local_etablessement,'image' => $profileImage,'created_at'=>Date("y/m/d") );
 DB::table('etaplissemments')->insert($data);
 return redirect('ajouter');
 /* echo '<h1 align="center">'. 'saved'.'</h1>'; */
+
    }
 }
 //========================================================== ajouter filiere
@@ -158,12 +156,12 @@ return redirect('update/update-etablessement');
 } 
 //========================================================== update filiere
  public function updatefiliere(Request $request){
-   $id = $request->input('id_filiere');
-   $nom = $request->input('nom');
+    $nom = $request->input('nom');
+  /*   echo "<script type='text/javascript'>alert('$nom');</script>"; */
     $nom_filiere = $request->input('nom_filiere');
    $nummodel = $request->input('nummodel');
    DB::table('felieres')
-       ->where('id_filiere', $id)
+       ->where('nom_filiere', $nom)
        ->update(array('nom_filiere' => $nom_filiere,'nummodel'=>$nummodel,'updated_at'=> Date("y/m/d",time()))); 
        DB::table('modules')
        ->where('nom_fil', $nom)
@@ -173,12 +171,11 @@ return redirect('update/update-etablessement');
 }  
 //========================================================== update module
 public function updatemodule(Request $request){
-   $id = $request->input('id_module');
    $nom = $request->input('nom');
     $nom_module = $request->input('nom_module');
    $num_element = $request->input('num_element');
    DB::table('modules')
-       ->where('id_module', $id)
+       ->where('nom_module', $nom)
        ->update(array('nom_module' => $nom_module,'num_element'=>$num_element,'updated_at'=> Date("y/m/d",time()))); 
        DB::table('elements')
        ->where('nom_mod', $nom)
@@ -235,7 +232,7 @@ public function updateelement(Request $request){
    $dep = Deplome::all();
     return view('/delete/delete-deplome',compact('dep'));
  }
- //==========================================================
+ //========================================================== delete etablessement
  public function  deleteetab(Request $request){
    $id = $request->input('id');
    DB::table('etaplissemments')
@@ -255,7 +252,7 @@ public function updateelement(Request $request){
        ->delete();
 return redirect('delete/delete-etablessement');
 } 
- //==========================================================
+ //========================================================== de
 public function  deletefiliere(Request $request){
    $id = $request->input('id_filiere');
    DB::table('felieres')
