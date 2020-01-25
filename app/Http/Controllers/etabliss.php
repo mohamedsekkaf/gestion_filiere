@@ -103,7 +103,7 @@ public function insertetabelem(Request $request){
    $nom_mod = $request->input('nom_mod');
    $id_etabless = $request->input('id_etabless');
    $horaire_element = $request->input('horaire_element');
-   $data=array('nom_element'=>$nom_element,'nom_mod'=>$nom_mod,'id_etabless'=>$id_etabless,'horaire_element'=>$horaire_element,'created_at'=>Date("y/m/d"));
+   $data=array('nom_element'=>$nom_element,'nom_mod'=>$nom_mod,'id_etabless'=>$id_etabless,'horaire_element'=>$horaire_element,'created_at'=>Date("y-m-d"));
    DB::table('elements')->insert($data);
    $message="les données a ete inserer";
    echo "<script type='text/javascript'>alert('$message');</script>";
