@@ -13,7 +13,7 @@
 
     <p class="card-text"><small class="text-muted"></small> nombre de module  : {{ $feliere->nummodel}}</p>
 
- <a href="http://127.0.0.1:8000/modul/{{$feliere->nom_filiere}}"><p class="card-text">Afficher les Module</p></a>
+ <a href="http://gestion-fil-estsb.herokuapp.com/http://127.0.0.1:8000/modul/{{$feliere->nom_filiere}}"><p class="card-text">Afficher les Module</p></a>
   </div>
 </div>
 </div><!-- fin col-->
