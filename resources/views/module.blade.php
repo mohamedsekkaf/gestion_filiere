@@ -12,7 +12,7 @@
 
     <p class="card-text"><small class="text-muted"></small> nombre d'element   : {{ $mod->num_element}}</p>
 
- <a href="http://127.0.0.1:8000/element/{{$mod->nom_module}}"><p class="card-text"> Afficher les Element</p></a>
+ <a href="http://gestion-fil-estsb.herokuapp.com/element/{{$mod->nom_module}}"><p class="card-text"> Afficher les Element</p></a>
   </div>
 </div>
 </div><!-- fin col-->

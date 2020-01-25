@@ -33,10 +33,10 @@
             </li>
             @else
             <li class="nav-item active">
-             <a href="http://127.0.0.1:8000/ajouter"><img src="{{asset('image/user.png')}}" class=" img-user round " data-fleep="tooltip" data-placement="bottom" data-original-title="{{Auth::user()->name}}"></a>
+             <a href="http://gestion-fil-estsb.herokuapp.com/ajouter"><img src="{{asset('image/user.png')}}" class=" img-user round " data-fleep="tooltip" data-placement="bottom" data-original-title="{{Auth::user()->name}}"></a>
             </li>
             <li class="nav-item active">
-            <a class="nav-link" href="http://127.0.0.1:8000/ajouter" >{{Auth::user()->name}}</a>
+            <a class="nav-link" href="http://gestion-fil-estsb.herokuapp.com/ajouter" >{{Auth::user()->name}}</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="{{ url('/logout')}}">logout</a>
