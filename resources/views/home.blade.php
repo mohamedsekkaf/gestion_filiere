@@ -50,9 +50,9 @@ $a=0;
   <div class="card-body">
   <h5 class="card-title">Nom de L'Etablessement : {{ $etapliss->nom_etablessement}}</h5>
     <p class="card-text"><small class="text-muted"></small> Localisation  : {{ $etapliss->local_etablessement}}</p>
- <a href="http://gestion-fil-estsb.herokuapp.com/http://127.0.0.1:8000/info/{{$etapliss->id_etablessement}}"><p class="hover"> Afficher les Filieres </p></a>
+ <a href="http://gestion-fil-estsb.herokuapp.com/info/{{$etapliss->id_etablessement}}"><p class="hover"> Afficher les Filieres </p></a>
  <br>
- <a href="http://gestion-fil-estsb.herokuapp.com/http://127.0.0.1:8000/showdeplome/{{$etapliss->id_etablessement}}"><p class="card-text">Afficher les deplomes</p></a>
+ <a href="http://gestion-fil-estsb.herokuapp.com/showdeplome/{{$etapliss->id_etablessement}}"><p class="card-text">Afficher les deplomes</p></a>
   </div>
 </div>
 </div><!-- fin col-->
