@@ -14,6 +14,7 @@ use App\Feliere;
 use App\Module;
 use App\Deplome;
 use App\Element;
+use App\semestre;
 class etabliss extends Controller
 {
 //==========
