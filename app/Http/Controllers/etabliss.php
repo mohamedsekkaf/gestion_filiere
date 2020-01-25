@@ -96,12 +96,12 @@ DB::table('felieres')->insert($data);
 return redirect('ajouter');
 
 }
-//========================================================== ajouter filiere
+//========================================================== ajouter semester
 public function insertetabsemestre(Request $request){
    $nom_s = $request->input('nom_s');
   $nom_fil = $request->input('nom_fil');
-  $id_etabless = $request->input('id_etabless');
-  $data=array('nom_s'=>$nom_s,'nom_fil'=>$nom_fil,'id_etabless'=>$id_etabless);
+  $nom_etabless = $request->input('id_etabless');
+  $data=array('nom_s'=>$nom_s,'nom_fil'=>$nom_fil,'nom_etabless'=>$nom_etabless);
   DB::table('semstrs')->insert($data);
   //echo "<script>Swal.fire('Les donnés ont été enregistrées !')</script>";
   return redirect('ajouter');
