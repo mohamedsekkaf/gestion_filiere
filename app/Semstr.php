@@ -4,9 +4,9 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class semestre extends Model
+class Semstr extends Model
 {
-    public $table ="semestres";
+    public $table ="semstrs";
     protected $fillable = ['id','nom_s','nom_fil','nom_etabless','created_at','updated_at'];
     
 }

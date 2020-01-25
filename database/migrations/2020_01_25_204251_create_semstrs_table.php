@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSemestresTable extends Migration
+class CreateSemstrsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSemestresTable extends Migration
      */
     public function up()
     {
-        Schema::create('semestres', function (Blueprint $table) {
+        Schema::create('semstrs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nom_s');
             $table->string('nom_fil');
@@ -29,6 +29,6 @@ class CreateSemestresTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('semestres');
+        Schema::dropIfExists('semstrs');
     }
 }
