@@ -214,7 +214,7 @@
                               <select class="form-control" name="id_etabless" id="" required>
                                  <option value="">default </option>
                                  @foreach($etab as $fil)
-                                 <option value="{{ $fil->id_etablessement }}">{{ $fil->nom_etablessement }}</option>
+                                 <option value="{{ $fil->nom_etablessement }}">{{ $fil->nom_etablessement }}</option>
                                  @endforeach
                               </select>
                            </td>
