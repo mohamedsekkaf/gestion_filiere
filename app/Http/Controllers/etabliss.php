@@ -32,7 +32,7 @@ public function showinfo(){
     $etab = Etaplissemment::all();
     $file = Feliere::all();
     $mod = Module::all();
-    return  view('ajouter',compact('etab','file','mod','dep'));
+    return  view('ajouter',compact('etab','file','mod'));
 }
 //========================================================== selection filiere
 public function info($id)
