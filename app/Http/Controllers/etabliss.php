@@ -79,7 +79,7 @@ public function insertetabfil(Request $request){
  $nom_filiere = $request->input('nom_filiere');
 $nummodel = $request->input('nummodel');
 $id_etabless = $request->input('id_etabless');
-$data=array('nom_filiere'=>$nom_filiere,'nummodel'=>$nummodel,'id_etabless'=>$id_etabless,'created_at'=>Date("y-m-d"));
+$data=array('nom_filiere'=>$nom_filiere,'nummodel'=>$nummodel,'id_etabless'=>$id_etabless);
 DB::table('felieres')->insert($data);
 echo "<script>Swal.fire('Les donnés ont été enregistrées !')</script>";
 return redirect('ajouter');
