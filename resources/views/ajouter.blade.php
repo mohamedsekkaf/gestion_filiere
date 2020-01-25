@@ -192,7 +192,7 @@
         <div class="modal-body">
                <table>
                   <tr>
-                     <td> </td>
+                     <td>Nom semestre </td>
                      <td><input class="form-control" name="nom_s" type="text" required></td>
                   </tr>
                   <tr><td><br></td></tr>

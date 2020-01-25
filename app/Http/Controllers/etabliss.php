@@ -57,6 +57,15 @@ public function element($nom)
    $element =  DB::select("select * from elements where nom_mod = ?",[$elem[0]->nom_module]);
    return  view('element', compact('element'));
 }
+//==========================================================  selection semestre
+public function semestre($nom)
+{
+   $mode = DB::select("select * from felieres where nom_filiere= ?",[$nom]);
+   $sem =  DB::select("select * from semestres where nom_fil = ?",[$mode[0]->nom_filiere]);
+   return  view('semestre', compact('sem'));
+}
+
+
 //========================================================== ajouter etablessement
 public function insertetab(Request $request){
  $nom_etablessement = $request->input('nom_etablessement');

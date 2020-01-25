@@ -24,11 +24,13 @@ Route::post('/insertetabfil', "etabliss@insertetabfil");
 Route::post('/insertetabmod', "etabliss@insertetabmod");
 Route::post('/insertetabelem', "etabliss@insertetabelem");
 Route::post('/insertetabdeplome', "etabliss@insertetabdeplome");
+Route::post('/insertetabsemestre', 'etabliss@insertetabsemestre')->middleware('web');
 });
 Route::get('/welcom', 'HomeController@index')->middleware('web');
 Route::get("/info/{id}", 'etabliss@info')->middleware('web');
 Route::get("/modul/{nom}", 'etabliss@modul')->middleware('web');
 Route::get("/element/{nom}", 'etabliss@element')->middleware('web');
+Route::get("/semestre/{nom}", 'etabliss@semestre')->middleware('web');
 Route::get("/logout", function(){
     Auth::logout();
     return redirect("/");
@@ -54,3 +56,7 @@ Route::get("/delete/delete-element", 'etabliss@deleteshowNomelem')->middleware('
 Route::post("/delete/delete-element", 'etabliss@deleteelement')->middleware('web');
 Route::get("/delete/delete-deplome", 'etabliss@deleteshowNomdep')->middleware('web');
 Route::post("/delete/delete-deplome", 'etabliss@deletedeplome')->middleware('web');
+
+Route::get("/semestre", 'etabliss@')->middleware('web');
+
+
