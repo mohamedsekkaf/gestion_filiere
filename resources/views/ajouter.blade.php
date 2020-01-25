@@ -137,7 +137,7 @@
                   <tr><td><br></td></tr>
                   <tr>
                            <td> Nombre de Module  </td>
-                           <td><input class="form-control"  name="nummodel" type="text" required></td>
+                           <td><input class="form-control"  name="nummodel" type="number" required></td>
                   </tr>
                   <tr><td><br></td></tr>
                   <tr>
