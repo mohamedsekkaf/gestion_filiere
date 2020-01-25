@@ -14,7 +14,7 @@ use App\Feliere;
 use App\Module;
 use App\Deplome;
 use App\Element;
-use App\semestre;
+use App\semstr;
 class etabliss extends Controller
 {
 //==========
@@ -33,7 +33,7 @@ public function showinfo(){
     $etab = Etaplissemment::all();
     $file = Feliere::all();
     $mod = Module::all();
-    $semestre = semestre::all();
+    $semestre = semstr::all();
     return  view('ajouter',compact('etab','file','mod','semestre'));
 }
 //========================================================== selection filiere
