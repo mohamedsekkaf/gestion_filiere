@@ -54,8 +54,8 @@
   <h3 class="card-title tt"> {{ $etapliss->nom_etablessement}}</h3>
     <p class="card-text tt"><small class="text-muted"></small> Localisation  : {{ $etapliss->local_etablessement}}</p>
 
- <a style="display:inline-block;" href="http://127.0.0.1:8000/info/{{$etapliss->id_etablessement}}"><p class="hover"> Afficher les Filieres </p></a>
- <a href="http://127.0.0.1:8000/showdeplome/{{$etapliss->id_etablessement}}"><p class="card-text">Afficher les deplomes</p></a>
+ <a style="display:inline-block;" href="http://gestion-fil-estsb.herokuapp.com/info/{{$etapliss->id_etablessement}}"><p class="hover"> Afficher les Filieres </p></a>
+ <a href="http://gestion-fil-estsb.herokuapp.com/showdeplome/{{$etapliss->id_etablessement}}"><p class="card-text">Afficher les deplomes</p></a>
   </div>
 </div>
 </div><!-- fin col-->
