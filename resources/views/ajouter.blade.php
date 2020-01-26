@@ -204,7 +204,7 @@
                         <select class="form-control" name="nom_fil" id="" required>
                            <option value="">default </option>
                            @foreach($file as $model)
-                           <option value="{{ $model->nom_filiere }}">{{$model->nom_etabless}}->&nbsp; {{ $model->nom_filiere }}</option>
+                           <option value="{{ $model->nom_filiere }}"> {{ $model->nom_filiere }}->&nbsp;{{$model->nom_etabless}}</option>
                            @endforeach
                         </select>
                      </td>
@@ -271,7 +271,7 @@
                   <select class="form-control" name="nom_se" id="" required>
                            <option value="">default </option>
                            @foreach($semestre as $model)
-                           <option value="{{ $model->nom_s }}">{{$model->nom_etabless}}->&nbsp; {{ $model->nom_s }}</option>
+                           <option value="{{ $model->nom_s }}">{{ $model->nom_s }}->&nbsp; {{$model->nom_etabless}}</option>
                            @endforeach
                         </select>
                         </td>
@@ -284,7 +284,7 @@
                         <select class="form-control" name="nom_fil" id="" required>
                            <option value="">default </option>
                            @foreach($file as $model)
-                           <option value="{{ $model->nom_filiere }}">{{$model->nom_etabless}}->&nbsp; {{ $model->nom_filiere }}</option>
+                           <option value="{{ $model->nom_filiere }}">{{ $model->nom_filiere }}->&nbsp; {{$model->nom_etabless}}</option>
                            @endforeach
                         </select>
                      </td>
@@ -352,7 +352,7 @@
                         <select class="form-control" name="nom_mod" id="" required>
                            <option value="">default </option>
                            @foreach($mod as $modele)
-                           <option value="{{ $modele->nom_module }}">{{$modele->nom_etabless}}->&nbsp;{{ $modele->nom_module }}</option>
+                           <option value="{{ $modele->nom_module }}">{{ $modele->nom_module }}->&nbsp; {{$modele->nom_etabless}}</option>
                            @endforeach
                         </select>
                      </td>

@@ -16,7 +16,7 @@
           <select style="width:60%" name="nom_s" class="form-control" required>
            <option value="">default </option>
                @foreach($semestre as $e)
-              <option value=" {{ $e->nom_s }}">{{ $e->nom_s }}</option>
+              <option value=" {{ $e->nom_s }}">{{ $e->nom_s }}->&nbsp;{{$e->nom_etabless}}</option>
               @endforeach
              </select>
              </td>

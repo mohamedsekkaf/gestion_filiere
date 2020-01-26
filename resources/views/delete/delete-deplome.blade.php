@@ -16,7 +16,7 @@
              <select style="width:60%" name="id_deplome" class="form-control">
            <option value="0">default </option>
                @foreach($dep as $d)
-              <option value="{{$d->id_deplome}}">{{ $d->nom_deplome }}</option>
+              <option value="{{$d->id_deplome}}">{{ $d->nom_deplome }}->&nbsp;{{$d->nom_etap}}</option>
               @endforeach
              </select>
              </td>

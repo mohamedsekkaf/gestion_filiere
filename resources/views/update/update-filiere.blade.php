@@ -17,7 +17,7 @@
              <select  name="nom" class=" form-control" required>
              <option value="">default </option>
                @foreach($file as $e)
-              <option value=" {{ $e->nom_filiere }}">{{ $e->nom_filiere }}</option>
+              <option value=" {{ $e->nom_filiere }}">{{ $e->nom_filiere }}->&nbsp;{{$e->nom_etap}}</option>
               @endforeach
              </select>
              </td>

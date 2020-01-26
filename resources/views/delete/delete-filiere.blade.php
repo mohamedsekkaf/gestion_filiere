@@ -16,7 +16,7 @@
                         <select style="width:80%" name="id_filiere" class=" form-control">
                     <option value="0">default </option>
                         @foreach($file as $e)
-                        <option value=" {{ $e->id_filiere }}">{{ $e->nom_filiere }}</option>
+                        <option value=" {{ $e->id_filiere }}">{{ $e->nom_filiere }}->&nbsp;{{$e->nom_etabless}}</option>
                         @endforeach
                         </select>
                         </td>

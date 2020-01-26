@@ -17,7 +17,7 @@
              <select  style="width:60vh" class=" form-control" name="id_module" >
            <option value="9">default </option>
                @foreach($mod as $m)
-              <option value="{{$m->id_module}}">{{ $m->nom_module}}</option>
+              <option value="{{$m->id_module}}">{{ $m->nom_module}}->&nbsp;{{$m->nom_etabless}}</option>
               @endforeach
              </select>
              </td>
