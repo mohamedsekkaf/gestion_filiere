@@ -16,7 +16,7 @@
              <select style="width:100%" name="id_element" class="form-control" required>
            <option value="">default </option>
                @foreach($elem as $e)
-              <option value=" {{ $e->id_element }}">{{$s->nom_etabless}}&nbsp; {{ $e->nom_element }}</option>
+              <option value=" {{ $e->id_element }}">{{$e->nom_etabless}}&nbsp; {{ $e->nom_element }}</option>
               @endforeach
              </select>
              </td>
