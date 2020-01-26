@@ -293,7 +293,7 @@
                   <tr>
                            <td> Nom de l'Etablissement </td>
                            <td style="text-align:center;">
-                              <select class="form-control" name="id_etabless" id="" required>
+                              <select class="form-control" name="nom_etabless" id="" required>
                                  <option value="">default </option>
                                  @foreach($etab as $fil)
                                  <option value="{{ $fil->id_etablessement }}">{{ $fil->nom_etablessement }}</option>
