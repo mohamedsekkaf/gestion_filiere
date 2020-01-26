@@ -204,7 +204,7 @@
                         <select class="form-control" name="nom_fil" id="" required>
                            <option value="">default </option>
                            @foreach($file as $model)
-                           <option value="{{ $model->nom_filiere }}">{{ $model->nom_filiere }}</option>
+                           <option value="{{ $model->nom_filiere }}">{{$model->nom_etabless}}->&nbsp; {{ $model->nom_filiere }}</option>
                            @endforeach
                         </select>
                      </td>
@@ -216,7 +216,7 @@
                               <select class="form-control" name="id_etabless" id="" required>
                                  <option value="">default </option>
                                  @foreach($etab as $fil)
-                                 <option value="{{ $fil->nom_etablessement }}">{{ $fil->nom_etablessement }}</option>
+                                 <option value="{{ $fil->nom_etablessement }}"> {{ $fil->nom_etablessement }}</option>
                                  @endforeach
                               </select>
                            </td>
@@ -271,7 +271,7 @@
                   <select class="form-control" name="nom_se" id="" required>
                            <option value="">default </option>
                            @foreach($semestre as $model)
-                           <option value="{{ $model->nom_s }}">{{ $model->nom_s }}</option>
+                           <option value="{{ $model->nom_s }}">{{$model->nom_etabless}}->&nbsp; {{ $model->nom_s }}</option>
                            @endforeach
                         </select>
                         </td>
@@ -284,7 +284,7 @@
                         <select class="form-control" name="nom_fil" id="" required>
                            <option value="">default </option>
                            @foreach($file as $model)
-                           <option value="{{ $model->nom_filiere }}">{{ $model->nom_filiere }}</option>
+                           <option value="{{ $model->nom_filiere }}">{{$model->nom_etabless}}->&nbsp; {{ $model->nom_filiere }}</option>
                            @endforeach
                         </select>
                      </td>
@@ -352,7 +352,7 @@
                         <select class="form-control" name="nom_mod" id="" required>
                            <option value="">default </option>
                            @foreach($mod as $modele)
-                           <option value="{{ $modele->nom_module }}">{{ $modele->nom_module }}</option>
+                           <option value="{{ $modele->nom_module }}">{{$modele->nom_etabless}}->&nbsp;{{ $modele->nom_module }}</option>
                            @endforeach
                         </select>
                      </td>
