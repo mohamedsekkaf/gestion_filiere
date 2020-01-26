@@ -27,7 +27,6 @@ Route::post('/insertetabelem', "etabliss@insertetabelem")->middleware('auth');
 Route::post('/insertetabdeplome', "etabliss@insertetabdeplome")->middleware('auth');
 Route::post('/insertetabsemestre', 'etabliss@insertetabsemestre')->middleware('auth');
 
-
 Route::get("/update/update-etablessement", 'etabliss@showNometab')->middleware('auth');
 Route::post("/update/update-etablessement", 'etabliss@updateetab')->middleware('auth');
 Route::get("/update/update-filiere", 'etabliss@showNomfil')->middleware('auth');
@@ -54,14 +53,12 @@ Route::post("/delete/delete-deplome", 'etabliss@deletedeplome')->middleware('aut
 Route::get("/delete/delete-semestre", 'etabliss@deleteshowNomsem')->middleware('auth');
 Route::post("/delete/delete-semestre", 'etabliss@deletesemestre')->middleware('auth');
 });
-
 Route::get('/welcom', 'HomeController@index')->middleware('web');
 Route::get("/info/{id}", 'etabliss@info')->middleware('web');
 Route::get("/modul/{nom}", 'etabliss@modul')->middleware('web');
 Route::get("/element/{nom}", 'etabliss@element')->middleware('web');
 Route::get('/showdeplome/{id}', "etabliss@showdeplome")->middleware('web');
 Route::get("/semestre/{nom}", 'etabliss@semestre')->middleware('web');
-
 Route::get("/logout", function(){
     Auth::logout();
     return redirect("/");
