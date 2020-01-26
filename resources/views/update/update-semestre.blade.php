@@ -16,7 +16,7 @@
                     <select class="form-control" name="nom_sold" id="" required>
                            <option value="">default </option>
                            @foreach($semestre as $s)
-                           <option value="{{ $s->nom_s }}">{{ $s->nom_s }}{{$s->nom_etabless}}</option>
+                           <option value="{{ $s->nom_s }}">{{ $s->nom_s }} &nbsp;&nbsp;{{$s->nom_etabless}}</option>
                            @endforeach
                         </select>
                     </td>
