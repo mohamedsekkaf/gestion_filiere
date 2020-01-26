@@ -14,10 +14,10 @@
                <tr>
                <td>Selectionner Nom de l'etablessement</td>
                <td>
-               <select class="form-control" name="id" required>
+               <select class="form-control" name="nom" required>
            <option value="">default </option>
                @foreach($etap as $et)
-              <option value="{{$et->id_etablessement}}">{{ $et->nom_etablessement }}</option>
+              <option value="{{$et->nom_etablessement}}">{{ $et->nom_etablessement }}</option>
               @endforeach
              </select>
              </td>

@@ -146,10 +146,10 @@
                   <tr>
                            <td> Nom de l'Etablissement </td>
                            <td style="text-align:center;">
-                              <select class="form-control" name="id_etabless" id="" required>
+                              <select class="form-control" name="nom_etabless" id="" required>
                                  <option value="">default </option>
                                  @foreach($etab as $fil)
-                                 <option value="{{ $fil->id_etablessement }}">{{ $fil->nom_etablessement }}</option>
+                                 <option value="{{ $fil->nom_etablessement }}">{{ $fil->nom_etablessement }}</option>
                                  @endforeach
                               </select>
                               <!--<select name="" id="">
@@ -363,10 +363,10 @@
                   <tr>
                            <td> Nom de l'Etablissement </td>
                            <td style="text-align:center;">
-                              <select class="form-control" name="id_etabless" id="" required>
+                              <select class="form-control" name="nom_etabless" id="" required>
                                  <option value="">default </option>
                                  @foreach($etab as $fil)
-                                 <option value="{{ $fil->id_etablessement }}">{{ $fil->nom_etablessement }}</option>
+                                 <option value="{{ $fil->nom_etablessement }}">{{ $fil->nom_etablessement }}</option>
                                  @endforeach
                               </select>
                            </td>
@@ -440,10 +440,10 @@
                   <tr>
                      <td>Nom de l'Etablissement </td>
                      <td>
-                     <select class="form-control" name="id_etap" id="" required>
+                     <select class="form-control" name="nom_etap" id="" required>
                            <option value="">default</option>
                            @foreach($etab as $dep)
-                          <option name="id_etap" value="{{$dep->id_etablessement}}">{{ $dep->nom_etablessement }}</option>
+                          <option name="id_etap" value="{{$dep->nom_etablessement}}">{{ $dep->nom_etablessement }}</option>
                            @endforeach
                         </select>
                      </td>

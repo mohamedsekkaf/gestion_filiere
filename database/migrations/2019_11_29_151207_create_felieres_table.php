@@ -17,7 +17,7 @@ class CreateFelieresTable extends Migration
             $table->bigIncrements('id_filiere');
             $table->string('nom_filiere');
             $table->bigInteger('nummodel');
-            $table->bigInteger('id_etabless');
+            $table->string('nom_etabless');
             $table->timestamps();
         });
     }

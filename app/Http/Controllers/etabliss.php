@@ -89,9 +89,9 @@ return redirect('ajouter');
 public function insertetabfil(Request $request){
  $nom_filiere = $request->input('nom_filiere');
 $nummodel = $request->input('nummodel');
-$id_etabless = $request->input('id_etabless');
+$nom_etabless = $request->input('nom_etabless');
 $nom_se = $request->input('nom_se');
-$data=array('nom_filiere'=>$nom_filiere,'nummodel'=>$nummodel,'id_etabless'=>$id_etabless);
+$data=array('nom_filiere'=>$nom_filiere,'nummodel'=>$nummodel,'nom_etabless'=>$nom_etabless);
 DB::table('felieres')->insert($data);
 //echo "<script>Swal.fire('Les donnés ont été enregistrées !')</script>";
 return redirect('ajouter');
@@ -114,9 +114,9 @@ public function insertetabmod(Request $request){
     $nom_module = $request->input('nom_module');
    $num_element = $request->input('num_element');
    $nom_fil = $request->input('nom_fil');
-   $id_etabless = $request->input('id_etabless');
+   $nom_etabless = $request->input('nom_etabless');
    $nom_se = $request->input('nom_se');
-   $data=array('nom_module'=>$nom_module,'num_element'=>$num_element,'nom_fil'=>$nom_fil,'id_etabless'=>$id_etabless,'nom_se'=>$nom_se);
+   $data=array('nom_module'=>$nom_module,'num_element'=>$num_element,'nom_fil'=>$nom_fil,'nom_etabless'=>$nom_etabless,'nom_se'=>$nom_se);
    DB::table('modules')->insert($data);
    $message="les données a ete inserer";
   // echo "<script type='text/javascript'>alert('$message');</script>";
@@ -126,11 +126,11 @@ public function insertetabmod(Request $request){
 public function insertetabelem(Request $request){
     $nom_element = $request->input('nom_element');
    $nom_mod = $request->input('nom_mod');
-   $id_etabless = $request->input('id_etabless');
+   $nom_etabless = $request->input('nom_etabless');
    $horaire_element = $request->input('horaire_element');
-   $data=array('nom_element'=>$nom_element,'nom_mod'=>$nom_mod,'id_etabless'=>$id_etabless,'horaire_element'=>$horaire_element );
+   $data=array('nom_element'=>$nom_element,'nom_mod'=>$nom_mod,'nom_etabless'=>$nom_etabless,'horaire_element'=>$horaire_element );
    DB::table('elements')->insert($data);
-   $message="les données a ete inserer";
+   /* $message="les données a ete inserer"; */
   // echo "<script type='text/javascript'>alert('$message');</script>";
    return redirect('ajouter');
    }
@@ -139,8 +139,8 @@ public function insertetabelem(Request $request){
       $nom_deplome = $request->input('nom_deplome');
      $type_deplome = $request->input('type_deplome');
      $duree_deplome = $request->input('duree_deplome');
-     $id_etap = $request->input('id_etap');
-     $data=array('nom_deplome'=>$nom_deplome,'type_deplome'=>$type_deplome,'duree_deplome'=>$duree_deplome,'id_etap'=>$id_etap );
+     $nom_etap = $request->input('nom_etap');
+     $data=array('nom_deplome'=>$nom_deplome,'type_deplome'=>$type_deplome,'duree_deplome'=>$duree_deplome,'nom_etap'=>$nom_etap );
      DB::table('deplomes')->insert($data);
      $message="les données a ete inserer";
      echo "<script type='text/javascript'>alert('$message');</script>";
@@ -176,13 +176,28 @@ public function showNomsem(){
 } 
 //========================================================== update etabblessement
 public function updateetab(Request $request){
-   $id = $request->input('id');
+   $nom = $request->input('nom');
   /*  echo "<script type='text/javascript'>alert('$id');</script>"; */
      $nom_etablessement = $request->input('nom_etablessement');
    $local_etablessement = $request->input('local_etablessement');
    DB::table('etaplissemments')
-       ->where('id_etablessement', $id)
+       ->where('nom_etablessement', $nom)
        ->update(array('nom_etablessement' => $nom_etablessement,'local_etablessement'=>$local_etablessement));
+       DB::table('filieres')
+       ->where('nom_etabless', $nom)
+       ->update(array('nom_etabless' => $nom_etablessement));
+       DB::table('semstrs')
+       ->where('nom_etabless', $nom)
+       ->update(array('nom_etabless' => $nom_etablessement));
+       DB::table('modules')
+       ->where('nom_etabless', $nom)
+       ->update(array('nom_etabless' => $nom_etablessement));
+       DB::table('elements')
+       ->where('nom_etabless', $nom)
+       ->update(array('nom_etabless' => $nom_etablessement));
+       DB::table('deplomes')
+       ->where('nom_etap', $nom)
+       ->update(array('nom_etap' => $nom_etablessement));
 return redirect('update/update-etablessement');
 } 
 //========================================================== update filiere
@@ -242,10 +257,10 @@ public function updatesemestre(Request $request){
    $nom = $request->input('nom_sold');
     $nom_snew = $request->input('nom_snew');
    $nom_fil = $request->input('nom_fil');
-   $id_etabless = $request->input('id_etabless');
+   $nom_etabless = $request->input('nom_etabless');
    DB::table('semstrs')
        ->where('nom_s', $nom)
-       ->update(array('nom_s' => $nom_snew,'nom_file'=>$nom_fil,'nom_etabless'=>$id_etabless )); 
+       ->update(array('nom_s' => $nom_snew,'nom_file'=>$nom_fil,'nom_etabless'=>$nom_etabless )); 
        DB::table('modules')
        ->where('nom_se', $nom)
        ->update(array('nom_se' => $nom_snew)); 
@@ -284,21 +299,24 @@ public function updatesemestre(Request $request){
     }
  //========================================================== delete etablessement
  public function  deleteetab(Request $request){
-   $id = $request->input('id');
+   $nom = $request->input('nom');
    DB::table('etaplissemments')
-       ->where('id_etablessement', $id)
+       ->where('nom_etablessement', $nom)
        ->delete();
        DB::table('deplomes')
-       ->where('id_etap', $id)
+       ->where('nom_etap', $nom)
        ->delete();
        DB::table('felieres')
-       ->where('id_etabless', $id)
+       ->where('nom_etabless', $nom)
        ->delete();
        DB::table('modules')
-       ->where('id_etabless', $id)
+       ->where('nom_etabless', $nom)
        ->delete();
        DB::table('elements')
-       ->where('id_etabless', $id)
+       ->where('nom_etabless', $nom)
+       ->delete();
+       DB::table('semstrs')
+       ->where('nom_etabless', $nom)
        ->delete();
 return redirect('delete/delete-etablessement');
 } 
