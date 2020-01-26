@@ -45,6 +45,8 @@ Route::get("/update/update-element", 'etabliss@showNomelem')->middleware('web');
 Route::post("/update/update-element", 'etabliss@updateelement')->middleware('web');
 Route::get("/update/update-deplome", 'etabliss@showNomdep')->middleware('web');
 Route::post("/update/update-deplome", 'etabliss@updatedeplome')->middleware('web');
+Route::get("/update/update-semestre", 'etabliss@showNomsem')->middleware('web');
+Route::post("/update/update-semestre", 'etabliss@updatesemestre')->middleware('web');
 //////////////////////////////////////////////////////////////////////////////
 Route::get("/delete/delete-etablessement", 'etabliss@deleteshowNometab')->middleware('web');
 Route::post("/delete/delete-etablessement", 'etabliss@deleteetab')->middleware('web');
@@ -56,7 +58,8 @@ Route::get("/delete/delete-element", 'etabliss@deleteshowNomelem')->middleware('
 Route::post("/delete/delete-element", 'etabliss@deleteelement')->middleware('web');
 Route::get("/delete/delete-deplome", 'etabliss@deleteshowNomdep')->middleware('web');
 Route::post("/delete/delete-deplome", 'etabliss@deletedeplome')->middleware('web');
+Route::get("/delete/delete-semestre", 'etabliss@deleteshowNomsem')->middleware('web');
+Route::post("/delete/delete-semestre", 'etabliss@deletesemestre')->middleware('web');
 
-Route::get("/semestre", 'etabliss@')->middleware('web');
 
 

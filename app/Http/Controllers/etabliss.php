@@ -46,8 +46,8 @@ public function info($id)
 //========================================================== selection module
 public function modul($nom)
 {
-   $mode = DB::select("select * from felieres where nom_filiere= ?",[$nom]);
-   $module =  DB::select("select * from modules where nom_fil = ?",[$mode[0]->nom_filiere]);
+   $mode = DB::select("select * from semstrs where nom_s = ?",[$nom]);
+   $module =  DB::select("select * from modules where nom_se = ?",[$mode[0]->nom_s]);
    return  view('module', compact('module'));
 }
 //========================================================== selection element
@@ -60,8 +60,8 @@ public function element($nom)
 //==========================================================  selection semestre
 public function semestre($nom)
 {
-   $mode = DB::select("select * from felieres where nom_filiere= ?",[$nom]);
-   $sem =  DB::select("select * from semstrs where nom_fil = ?",[$mode[0]->nom_filiere]);
+   $s = DB::select("select * from felieres where nom_filiere = ? ",[$nom]);
+   $sem =  DB::select("select * from semstrs where nom_file = ?",[$s[0]->nom_filiere]);
    return  view('semestre', compact('sem'));
 }
 
@@ -90,6 +90,7 @@ public function insertetabfil(Request $request){
  $nom_filiere = $request->input('nom_filiere');
 $nummodel = $request->input('nummodel');
 $id_etabless = $request->input('id_etabless');
+$nom_se = $request->input('nom_se');
 $data=array('nom_filiere'=>$nom_filiere,'nummodel'=>$nummodel,'id_etabless'=>$id_etabless);
 DB::table('felieres')->insert($data);
 //echo "<script>Swal.fire('Les donnés ont été enregistrées !')</script>";
@@ -99,9 +100,10 @@ return redirect('ajouter');
 //========================================================== ajouter semester
 public function insertetabsemestre(Request $request){
    $nom_s = $request->input('nom_s');
-  $nom_fil = $request->input('nom_fil');
+  $nom_file = $request->input('nom_fil');
   $nom_etabless = $request->input('id_etabless');
-  $data=array('nom_s'=>$nom_s,'nom_fil'=>$nom_fil,'nom_etabless'=>$nom_etabless);
+
+  $data=array('nom_s'=>$nom_s." ".$nom_file,'nom_file'=>$nom_file,'nom_etabless'=>$nom_etabless);
   DB::table('semstrs')->insert($data);
   //echo "<script>Swal.fire('Les donnés ont été enregistrées !')</script>";
   return redirect('ajouter');
@@ -113,7 +115,8 @@ public function insertetabmod(Request $request){
    $num_element = $request->input('num_element');
    $nom_fil = $request->input('nom_fil');
    $id_etabless = $request->input('id_etabless');
-   $data=array('nom_module'=>$nom_module,'num_element'=>$num_element,'nom_fil'=>$nom_fil,'id_etabless'=>$id_etabless );
+   $nom_se = $request->input('nom_se');
+   $data=array('nom_module'=>$nom_module,'num_element'=>$num_element,'nom_fil'=>$nom_fil,'id_etabless'=>$id_etabless,'nom_se'=>$nom_se);
    DB::table('modules')->insert($data);
    $message="les données a ete inserer";
   // echo "<script type='text/javascript'>alert('$message');</script>";
@@ -164,6 +167,12 @@ public function showNomelem(){
 public function showNomdep(){
    $dep = Deplome::all();
    return view('update/update-deplome',compact('dep'));
+} 
+public function showNomsem(){
+   $etap = Etaplissemment::all();
+   $file = Feliere::all();
+   $semestre = semstr::all();
+   return view('update/update-semestre',compact('file','etap','semestre'));
 } 
 //========================================================== update etabblessement
 public function updateetab(Request $request){
@@ -228,6 +237,20 @@ public function updateelement(Request $request){
        ->delete(); */
        return redirect('update/update-deplome');
 } 
+//========================================================== update deplome
+public function updatesemestre(Request $request){
+   $nom = $request->input('nom_sold');
+    $nom_snew = $request->input('nom_snew');
+   $nom_fil = $request->input('nom_fil');
+   $id_etabless = $request->input('id_etabless');
+   DB::table('semstrs')
+       ->where('nom_s', $nom)
+       ->update(array('nom_s' => $nom_snew,'nom_file'=>$nom_fil,'nom_etabless'=>$id_etabless )); 
+       DB::table('modules')
+       ->where('nom_se', $nom)
+       ->update(array('nom_se' => $nom_snew)); 
+       return redirect('update/update-semestre');
+} 
 
  //==========================================================
  public function deleteshowNometab(){
@@ -254,6 +277,11 @@ public function updateelement(Request $request){
    $dep = Deplome::all();
     return view('/delete/delete-deplome',compact('dep'));
  }
+//==========================================================
+   public function   deleteshowNomsem(){
+      $semestre = Semstr::all();
+       return view('/delete/delete-semestre',compact('semestre'));
+    }
  //========================================================== delete etablessement
  public function  deleteetab(Request $request){
    $id = $request->input('id');
@@ -305,6 +333,14 @@ public function deletedeplome(Request $request){
        ->where('id_deplome', $id)
        ->delete();
 return redirect('delete/delete-deplome');
+} 
+ //==========================================================
+ public function deletesemestre(Request $request){
+   $nom = $request->input('nom_s');
+   DB::table('semstrs')
+       ->where('nom_s', $nom)
+       ->delete();
+return redirect('delete/delete-semestre');
 } 
  //==========================================================
 

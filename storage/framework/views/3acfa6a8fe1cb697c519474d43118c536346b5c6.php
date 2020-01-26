@@ -6,9 +6,10 @@
 <div class="col-md-6">
 <div class="card mb-3 mt-4">
   <div class="card-body">
-  <h5 class="card-title">Nom de deplome : <?php echo e($deplome->nom_deplome); ?></h5>
+  <h3 class="card-title tt"> Deplome</h3>
+  <h5 class="card-title tt"> <?php echo e($deplome->nom_deplome); ?></h5>
 
-    <p class="card-text"><small class="text-muted"></small> Duree de Deplome  : <?php echo e($deplome->duree_deplome); ?></p>
+    <p class="card-text tt"><small class="text-muted"></small> Duree de Deplome  : <?php echo e($deplome->duree_deplome); ?></p>
   </div>
 </div>
 </div><!-- fin col-->

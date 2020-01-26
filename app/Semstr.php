@@ -7,6 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 class Semstr extends Model
 {
     public $table ="semstrs";
-    protected $fillable = ['id','nom_s','nom_fil','nom_etabless','created_at','updated_at'];
+    protected $fillable = ['id','nom_s','nom_file','nom_etabless','created_at','updated_at'];
     
 }

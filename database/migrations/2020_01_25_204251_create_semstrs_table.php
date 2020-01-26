@@ -16,7 +16,7 @@ class CreateSemstrsTable extends Migration
         Schema::create('semstrs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('nom_s');
-            $table->string('nom_fil');
+            $table->string('nom_file');
             $table->string('nom_etabless');
             $table->timestamps();
         });

@@ -12,7 +12,7 @@
        <div class="row" style="display: block!important;">
        <a href="#"><img class="circle" src="{{ asset('image/school.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Etablissement" data-toggle="modal" data-target="#etablissement" /></a>
        <a href="#"> <img class="circle" src="{{ asset('image/filiere.png') }}" data-toggle="modal" data-target="#filiere"  data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Filiere"/></a>
-       <a href="#"> <img class="circle" src="{{ asset('image/filiere.png') }}" data-toggle="modal" data-target="#semestre"  data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter semestre"/></a>
+       <a href="#"> <img class="circle" src="{{ asset('image/semestre.png') }}" data-toggle="modal" data-target="#semestre"  data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter semestre"/></a>
        <a href="#"><img class="circle" src="{{ asset('image/module.png') }}" data-toggle="modal" data-target="#modele"   data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Modele"/></a>
        <img class="circle" src="{{ asset('image/cour.png') }}" data-toggle="modal" data-target="#element"    data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Element"/>
        <img class="circle" src="{{ asset('image/diploma1.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Diplôme" data-toggle="modal" data-target="#deplome" />
@@ -32,6 +32,7 @@
        <div class="row" style="display: block!important;">
        <a href="{{asset('/update/update-etablessement')}}"><img class="circle" src="{{ asset('image/school.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Etablissement" data-toggle="modal" data-target="" /></a>
        <a href="{{asset('/update/update-filiere')}}"> <img class="circle" src="{{ asset('image/filiere.png') }}" data-toggle="modal" data-target=""  data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Filiere"/></a>
+       <a href="{{asset('/update/update-semestre')}}"> <img class="circle" src="{{ asset('image/semestre.png') }}" data-toggle="modal"   data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier semestre"/></a>
        <a href="{{asset('/update/update-module')}}"><img class="circle" src="{{ asset('image/module.png') }}" data-toggle="modal" data-target=""   data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Modele"/></a>
       <a href="{{asset('/update/update-element')}}"><img class="circle" src="{{ asset('image/cour.png') }}" data-toggle="modal" data-target=""    data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Element"/></a> 
        <a href="{{asset('/update/update-deplome')}}"><img class="circle" src="{{ asset('image/diploma1.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Diplôme" data-toggle="modal" data-target=""/></a> 
@@ -51,6 +52,7 @@
        <div class="row" style="display: block!important;">
        <a href="{{asset('/delete/delete-etablessement')}}"><img class="circle" src="{{ asset('image/school.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer Etablissement" data-toggle="modal" data-target="" /></a>
        <a href="{{asset('/delete/delete-filiere')}}"> <img class="circle" src="{{ asset('image/filiere.png') }}" data-toggle="modal" data-target=""  data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Filiere"/></a>
+       <a href="{{asset('/delete/delete-semestre')}}"> <img class="circle" src="{{ asset('image/semestre.png') }}" data-toggle="modal"   data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer semestre"/></a>
        <a href="{{asset('/delete/delete-module')}}"><img class="circle" src="{{ asset('image/module.png') }}" data-toggle="modal" data-target=""   data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Modele"/></a>
       <a href="{{asset('/delete/delete-element')}}"><img class="circle" src="{{ asset('image/cour.png') }}" data-toggle="modal" data-target=""  data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Element"/></a> 
        <a href="{{asset('/delete/delete-deplome')}}"><img class="circle" src="{{ asset('image/diploma1.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Diplôme" data-toggle="modal" data-target=""/></a> 
@@ -262,6 +264,19 @@
                      <td> Nombre d'element  </td>
                      <td><input class="form-control" name="num_element" type="text" required></td>
                   </tr>
+                  <tr><td><br></td></tr>
+                  <tr>
+                  <td>Nom de semestre</td>
+                  <td>
+                  <select class="form-control" name="nom_se" id="" required>
+                           <option value="">default </option>
+                           @foreach($semestre as $model)
+                           <option value="{{ $model->nom_s }}">{{ $model->nom_s }}</option>
+                           @endforeach
+                        </select>
+                        </td>
+                  </tr>
+                  
                   <tr><td><br></td></tr>
                   <tr>
                   <td> Non de filiere </td>

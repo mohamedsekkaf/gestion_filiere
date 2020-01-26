@@ -6,9 +6,10 @@
 <div class="col-md-6">
 <div class="card mb-3 mt-4">
   <div class="card-body">
-  <h5 class="card-title">Nom de module : <?php echo e($mod->nom_module); ?></h5>
+  <h3 class="card-title tt">Module </h3>
+  <h5 class="card-title tt"><?php echo e($mod->nom_module); ?></h5>
 
-    <p class="card-text"><small class="text-muted"></small> nombre d'element   : <?php echo e($mod->num_element); ?></p>
+    <p class="card-text tt"><small class="text-muted"></small> nombre d'element   : <?php echo e($mod->num_element); ?></p>
 
  <a href="http://127.0.0.1:8000/element/<?php echo e($mod->nom_module); ?>"><p class="card-text"> Afficher les Element</p></a>
   </div>

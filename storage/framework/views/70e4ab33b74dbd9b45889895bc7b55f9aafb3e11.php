@@ -10,6 +10,7 @@
        <div class="row" style="display: block!important;">
        <a href="#"><img class="circle" src="<?php echo e(asset('image/school.png')); ?>" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Etablissement" data-toggle="modal" data-target="#etablissement" /></a>
        <a href="#"> <img class="circle" src="<?php echo e(asset('image/filiere.png')); ?>" data-toggle="modal" data-target="#filiere"  data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Filiere"/></a>
+       <a href="#"> <img class="circle" src="<?php echo e(asset('image/semestre.png')); ?>" data-toggle="modal" data-target="#semestre"  data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter semestre"/></a>
        <a href="#"><img class="circle" src="<?php echo e(asset('image/module.png')); ?>" data-toggle="modal" data-target="#modele"   data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Modele"/></a>
        <img class="circle" src="<?php echo e(asset('image/cour.png')); ?>" data-toggle="modal" data-target="#element"    data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Element"/>
        <img class="circle" src="<?php echo e(asset('image/diploma1.png')); ?>" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Diplôme" data-toggle="modal" data-target="#deplome" />
@@ -29,6 +30,7 @@
        <div class="row" style="display: block!important;">
        <a href="<?php echo e(asset('/update/update-etablessement')); ?>"><img class="circle" src="<?php echo e(asset('image/school.png')); ?>" data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Etablissement" data-toggle="modal" data-target="" /></a>
        <a href="<?php echo e(asset('/update/update-filiere')); ?>"> <img class="circle" src="<?php echo e(asset('image/filiere.png')); ?>" data-toggle="modal" data-target=""  data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Filiere"/></a>
+       <a href="<?php echo e(asset('/update/update-semestre')); ?>"> <img class="circle" src="<?php echo e(asset('image/semestre.png')); ?>" data-toggle="modal"   data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier semestre"/></a>
        <a href="<?php echo e(asset('/update/update-module')); ?>"><img class="circle" src="<?php echo e(asset('image/module.png')); ?>" data-toggle="modal" data-target=""   data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Modele"/></a>
       <a href="<?php echo e(asset('/update/update-element')); ?>"><img class="circle" src="<?php echo e(asset('image/cour.png')); ?>" data-toggle="modal" data-target=""    data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Element"/></a> 
        <a href="<?php echo e(asset('/update/update-deplome')); ?>"><img class="circle" src="<?php echo e(asset('image/diploma1.png')); ?>" data-fleep="tooltip" data-placement="bottom" data-original-title="Modefier Diplôme" data-toggle="modal" data-target=""/></a> 
@@ -48,6 +50,7 @@
        <div class="row" style="display: block!important;">
        <a href="<?php echo e(asset('/delete/delete-etablessement')); ?>"><img class="circle" src="<?php echo e(asset('image/school.png')); ?>" data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer Etablissement" data-toggle="modal" data-target="" /></a>
        <a href="<?php echo e(asset('/delete/delete-filiere')); ?>"> <img class="circle" src="<?php echo e(asset('image/filiere.png')); ?>" data-toggle="modal" data-target=""  data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Filiere"/></a>
+       <a href="<?php echo e(asset('/delete/delete-semestre')); ?>"> <img class="circle" src="<?php echo e(asset('image/semestre.png')); ?>" data-toggle="modal"   data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer semestre"/></a>
        <a href="<?php echo e(asset('/delete/delete-module')); ?>"><img class="circle" src="<?php echo e(asset('image/module.png')); ?>" data-toggle="modal" data-target=""   data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Modele"/></a>
       <a href="<?php echo e(asset('/delete/delete-element')); ?>"><img class="circle" src="<?php echo e(asset('image/cour.png')); ?>" data-toggle="modal" data-target=""  data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Element"/></a> 
        <a href="<?php echo e(asset('/delete/delete-deplome')); ?>"><img class="circle" src="<?php echo e(asset('image/diploma1.png')); ?>" data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Diplôme" data-toggle="modal" data-target=""/></a> 
@@ -86,7 +89,7 @@
                   </tr>
                   <tr><td><br></td></tr>
                   <tr>
-                     <td><label for="">File Select</label></td>
+                     <td><label for="">Selectioner image</label></td>
                        <td><input type="file" class="form-control" name="images" required></td>
                   </tr>
                   <tr>
@@ -135,7 +138,7 @@
                   <tr><td><br></td></tr>
                   <tr>
                            <td> Nombre de Module  </td>
-                           <td><input class="form-control"  name="nummodel" type="text" required></td>
+                           <td><input class="form-control"  name="nummodel" type="number" required></td>
                   </tr>
                   <tr><td><br></td></tr>
                   <tr>
@@ -174,6 +177,68 @@
 <!--00000============================================================0000000-->
 <div class="container">
   <!-- The Modal -->
+  <div class="modal fade" id="semestre">
+    <div class="modal-dialog">
+      <div class="modal-content">
+      <form action="<?php echo e(url('/insertetabsemestre')); ?>" method="POST">
+        <?php echo method_field('POST'); ?>
+         <?php echo csrf_field(); ?>
+        <!-- Modal Header -->
+        <div class="modal-header heade">
+          <h4 class="modal-title center">Ajouter un Semestre</h4>
+          <button type="button" class="close close-test" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+               <table>
+                  <tr>
+                     <td>Nom semestre </td>
+                     <td><input class="form-control" name="nom_s" type="text" required></td>
+                  </tr>
+                  <tr><td><br></td></tr>
+                  <tr>
+                  <td> Non de filiere </td>
+                     <td>
+                        <select class="form-control" name="nom_fil" id="" required>
+                           <option value="">default </option>
+                           <?php $__currentLoopData = $file; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $model): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                           <option value="<?php echo e($model->nom_filiere); ?>"><?php echo e($model->nom_filiere); ?></option>
+                           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </select>
+                     </td>
+                  </tr>
+                  <tr><td><br></td></tr>
+                  <tr>
+                           <td> Nom de l'Etablissement </td>
+                           <td style="text-align:center;">
+                              <select class="form-control" name="id_etabless" id="" required>
+                                 <option value="">default </option>
+                                 <?php $__currentLoopData = $etab; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fil): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                                 <option value="<?php echo e($fil->nom_etablessement); ?>"><?php echo e($fil->nom_etablessement); ?></option>
+                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                              </select>
+                           </td>
+                           </tr>
+                  <tr><td><br></td></tr>
+                  <tr>
+                     <td> </td>
+                     <td><input  class="btn-primary btn" type="submit" value="Insert" name="btn"></td>
+                  </tr>
+               </table>
+        </div>
+        </form>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 000000==========================================================00000--->
+<!--00000============================================================0000000-->
+<div class="container">
+  <!-- The Modal -->
   <div class="modal fade" id="modele">
     <div class="modal-dialog">
       <div class="modal-content">
@@ -197,6 +262,19 @@
                      <td> Nombre d'element  </td>
                      <td><input class="form-control" name="num_element" type="text" required></td>
                   </tr>
+                  <tr><td><br></td></tr>
+                  <tr>
+                  <td>Nom de semestre</td>
+                  <td>
+                  <select class="form-control" name="nom_se" id="" required>
+                           <option value="">default </option>
+                           <?php $__currentLoopData = $semestre; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $model): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                           <option value="<?php echo e($model->nom_s); ?>"><?php echo e($model->nom_s); ?></option>
+                           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                        </select>
+                        </td>
+                  </tr>
+                  
                   <tr><td><br></td></tr>
                   <tr>
                   <td> Non de filiere </td>

@@ -106,13 +106,16 @@ footer{
     width: 20vh;
     height: 5vh;
     border-radius: 10px;
+    
 }
 .heade{
     background-color: aqua;
+    
 }
 .center{
     text-align: center;
     margin-left: 18%;
+    
 }
 .close-test:hover{
     animation: goo 1s;
@@ -148,6 +151,7 @@ text-decoration:none;
   background-size: 30%, 30%;
   border-radius: 20%;
   background-color:rgb(172, 252, 255) ;
+
   
 
 }
