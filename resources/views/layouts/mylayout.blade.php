@@ -49,7 +49,7 @@
 
 @yield("content")
 
-<footer>
+<footer class="footer">
         <div class="footer2">
                     
         </div>

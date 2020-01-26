@@ -51,15 +51,16 @@
   <h3 class="card-title tt"> <?php echo e($etapliss->nom_etablessement); ?></h3>
     <p class="card-text tt"><small class="text-muted"></small> Localisation  : <?php echo e($etapliss->local_etablessement); ?></p>
 
- <a style="display:inline-block;" href="http://127.0.0.1:8000/info/<?php echo e($etapliss->id_etablessement); ?>"><p class="hover"> Afficher les Filieres </p></a>
- <a href="http://127.0.0.1:8000/showdeplome/<?php echo e($etapliss->id_etablessement); ?>"><p class="card-text">Afficher les deplomes</p></a>
+ <a style="display:inline-block;" href="http://gestion-fil-estsb.herokuapp.com/info/<?php echo e($etapliss->id_etablessement); ?>"><p class="hover"> Afficher les Filieres </p></a>
+ <a href="http://gestion-fil-estsb.herokuapp.com/showdeplome/<?php echo e($etapliss->id_etablessement); ?>"><p class="card-text">Afficher les deplomes</p></a>
   </div>
 </div>
 </div><!-- fin col-->
+
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </div><!-- fin row-->
 </div><!-- fin container-->
- 
+<br><br><br><br>
 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make("layouts/mylayout", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/home.blade.php ENDPATH**/ ?>

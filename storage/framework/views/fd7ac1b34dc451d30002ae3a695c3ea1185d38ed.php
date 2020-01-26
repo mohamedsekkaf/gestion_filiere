@@ -33,10 +33,10 @@
             </li>
             <?php else: ?>
             <li class="nav-item active">
-             <a href="http://127.0.0.1:8000/ajouter"><img src="<?php echo e(asset('image/user.png')); ?>" class=" img-user round " data-fleep="tooltip" data-placement="bottom" data-original-title="<?php echo e(Auth::user()->name); ?>"></a>
+             <a href="http://gestion-fil-estsb.herokuapp.com/ajouter"><img src="<?php echo e(asset('image/user.png')); ?>" class=" img-user round " data-fleep="tooltip" data-placement="bottom" data-original-title="<?php echo e(Auth::user()->name); ?>"></a>
             </li>
             <li class="nav-item active">
-            <a class="nav-link" href="http://127.0.0.1:8000/ajouter" ><?php echo e(Auth::user()->name); ?></a>
+            <a class="nav-link" href="http://gestion-fil-estsb.herokuapp.com/ajouter" ><?php echo e(Auth::user()->name); ?></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link" href="<?php echo e(url('/logout')); ?>">logout</a>
@@ -49,7 +49,7 @@
 
 <?php echo $__env->yieldContent("content"); ?>
 
-<footer>
+<footer class="footer">
         <div class="footer2">
                     
         </div>

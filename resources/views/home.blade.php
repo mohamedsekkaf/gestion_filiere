@@ -59,9 +59,10 @@
   </div>
 </div>
 </div><!-- fin col-->
+
 @endforeach
 </div><!-- fin row-->
 </div><!-- fin container-->
- 
+<br><br><br><br>
 
 @endsection

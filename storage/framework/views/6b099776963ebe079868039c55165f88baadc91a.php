@@ -87,6 +87,8 @@ endif; ?>
         </div>
     </div>
 </div>
+<br><br><br><br>
+<br><br><br><br>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts/mylayout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/auth/login.blade.php ENDPATH**/ ?>

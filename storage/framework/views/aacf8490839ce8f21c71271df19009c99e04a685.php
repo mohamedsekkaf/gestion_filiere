@@ -1,4 +1,5 @@
 <?php $__env->startSection('content'); ?>
+<br><br>
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -96,6 +97,8 @@ endif; ?>
         </div>
     </div>
 </div>
+<br><br><br><br>
+<br><br><br><br>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('layouts/mylayout', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/auth/register.blade.php ENDPATH**/ ?>
