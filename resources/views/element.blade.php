@@ -1,4 +1,4 @@
-\
+
 @extends("layouts/mylayout")
 
 @section("content")
