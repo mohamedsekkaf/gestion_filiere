@@ -39,7 +39,7 @@ public function showinfo(){
 //========================================================== selection filiere
 public function info($id)
 {
-   $tes= DB::select("select * from etaplissemments where id_etablessement = ?",[$id]);
+   $tes= DB::select("select * from etaplissemments where nom_etablessement = ?",[$id]);
    $fil =  DB::select("select * from felieres where id_etabless= ?",[$tes[0]->id_etablessement]);
    return  view('filiere', compact('fil'));
 }
