@@ -13,10 +13,10 @@
           <tr>
           <td  style="width:20%" >selectionner Filiere</td>
           <td>
-             <select style="width:60%" name="id_deplome" class="form-control">
+             <select style="width:60%" name="nom_deplome" class="form-control">
            <option value="0">default </option>
                @foreach($dep as $d)
-              <option value="{{$d->id_deplome}}">{{ $d->nom_deplome }}->&nbsp;{{$d->nom_etap}}</option>
+              <option value="{{$d->nom_deplome}}">{{ $d->nom_deplome }}->&nbsp;{{$d->nom_etap}}</option>
               @endforeach
              </select>
              </td>

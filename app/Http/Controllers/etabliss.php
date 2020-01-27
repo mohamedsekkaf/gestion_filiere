@@ -346,9 +346,9 @@ return redirect('delete/delete-element');
 } 
  //==========================================================
 public function deletedeplome(Request $request){
-   $id = $request->input('id_deplome');
+   $id = $request->input('nom_deplome');
    DB::table('deplomes')
-       ->where('id_deplome', $id)
+       ->where('nom_deplome', $id)
        ->delete();
 return redirect('delete/delete-deplome');
 } 
