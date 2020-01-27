@@ -25,7 +25,7 @@ public function showetabliss(){
 //========================================================== selection deplome
 public function showdeplome($id){
    $tes= DB::select("select * from etaplissemments where id_etablessement = ?",[$id]);
-   $dep =  DB::select("select * from deplomes where id_etap= ?",[$tes[0]->id_etablessement]);
+   $dep =  DB::select("select * from deplomes where nom_etap= ?",[$tes[0]->nom_etablessement]);
    return  view('deplome',compact('dep'));
 }
 //==========================================================
