@@ -16,7 +16,7 @@ class CreateFelieresTable extends Migration
         Schema::create('felieres', function (Blueprint $table) {
             $table->bigIncrements('id_filiere');
             $table->string('nom_filiere');
-            $table->bigInteger('nummodel');
+            $table->string('nummodel');
             $table->string('nom_etabless');
             $table->timestamps();
         });

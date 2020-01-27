@@ -305,7 +305,7 @@ public function updatesemestre(Request $request){
        ->delete();
        DB::table('deplomes')
        ->where('nom_etap', $nom)
-       ->delete();
+       ->delete(); 
        DB::table('felieres')
        ->where('nom_etabless', $nom)
        ->delete();
