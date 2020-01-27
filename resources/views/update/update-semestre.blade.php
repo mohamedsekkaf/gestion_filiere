@@ -33,7 +33,7 @@
                         <select class="form-control" name="nom_fil" id="" required>
                            <option value="">default </option>
                            @foreach($file as $model)
-                           <option value="{{ $model->nom_filiere }}">{{ $model->nom_filiere }}</option>
+                           <option value="{{ $model->nom_filiere }}">{{ $model->nom_filiere }}->&nbsp;{{$model->nom_etabless}}</option>
                            @endforeach
                         </select>
                      </td>
