@@ -212,7 +212,9 @@ return redirect('update/update-etablessement');
        DB::table('modules')
        ->where('nom_fil', $nom)
        ->update(array('nom_fil'=> $nom_filiere));
-       
+       DB::table('semstrs')
+       ->where('nom_file', $nom)
+       ->update(array('nom_file'=>$nom_filiere ));
        return redirect('update/update-filiere');
 }  
 //========================================================== update module
@@ -252,7 +254,7 @@ public function updateelement(Request $request){
        ->delete(); */
        return redirect('update/update-deplome');
 } 
-//========================================================== update deplome
+//========================================================== update semestre
 public function updatesemestre(Request $request){
    $nom = $request->input('nom_sold');
     $nom_snew = $request->input('nom_snew');
