@@ -5,7 +5,7 @@
 <div class="col-md-12">
 <div class="card mb-3 mt-4">
   <div class="card-body">
-  <h3 class="card-title tt">Supprimer Element</h3>
+  <h3 class="card-title tt">Supprimer Semestre</h3>
   <form action="{{ url('/delete/delete-semestre') }}" method="POST" enctype="multipart/form-data">
         @method('POST')
          @csrf
