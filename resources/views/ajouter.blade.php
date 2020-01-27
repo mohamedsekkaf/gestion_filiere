@@ -443,7 +443,7 @@
                      <select class="form-control" name="nom_etap" id="" required>
                            <option value="">default</option>
                            @foreach($etab as $dep)
-                          <option name="id_etap" value="{{$dep->nom_etablessement}}">{{ $dep->nom_etablessement }}</option>
+                          <option  value="{{$dep->id_etablessement}}">{{ $dep->nom_etablessement }}</option>
                            @endforeach
                         </select>
                      </td>
