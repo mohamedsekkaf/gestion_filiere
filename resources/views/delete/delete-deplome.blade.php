@@ -22,9 +22,10 @@
              </td>
              </tr>
              <tr>
-             <td>
-             <input class="btn-primary btn" type="submit" value="Supprimer" name="btn">
-             </td>
+                <td></td>
+                <td>
+                  <input class="btn-primary btn" type="submit" value="Supprimer" name="btn">
+                </td>
              </tr>
              </table>
 </form>

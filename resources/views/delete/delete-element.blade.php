@@ -22,6 +22,7 @@
              </td>
             <tr><td><br></td></tr>
             <tr>
+            <td></td>
              <td>
                     <input class="btn-primary btn" type="submit" value="Supprimer" name="btn" class="form-control">
              </td>

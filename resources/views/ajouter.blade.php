@@ -271,7 +271,7 @@
                   <select class="form-control" name="nom_se" id="" required>
                            <option value="">default </option>
                            @foreach($semestre as $model)
-                           <option value="{{ $model->nom_s }}">{{ $model->nom_s }}->&nbsp; {{$model->nom_etabless}}</option>
+                           <option value="{{ $model->nom_s }}">S{{ $model->nom_s }}->&nbsp; {{$model->nom_etabless}}</option>
                            @endforeach
                         </select>
                         </td>

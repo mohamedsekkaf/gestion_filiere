@@ -12,7 +12,7 @@
   <h3 class="card-title tt">Element</h3>
   <h5 class="card-title tt">{{ $elem->nom_element}}</h5>
   
-  <h5 class="card-title tt">L'horaire de l'element : {{ $elem->horaire_element}}</h5>
+  <h5 class="card-title tt">L'horaire : {{ $elem->horaire_element}}</h5>
 
   </div>
 </div>
