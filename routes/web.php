@@ -9,8 +9,8 @@
 | contains the 'web' middleware group. Now create something great!
 |
 */
-Auth::routes();
-/*  Auth::routes(['register' => false]); */
+
+Auth::routes(['register' => false]);
 
 Route::get('/', function () {
     return view('home');
