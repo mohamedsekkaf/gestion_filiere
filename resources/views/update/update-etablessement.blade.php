@@ -34,6 +34,11 @@
                   </tr>
                   <tr><td><br></td></tr>
                   <tr>
+                     <td><label for="">Selectioner image</label></td>
+                       <td><input type="file" class="form-control" name="images" required></td>
+                  </tr>
+                  <tr><td><br></td></tr>
+                  <tr>
                      <td> </td>
                      <td><input class="btn-primary btn" type="submit" value="Update" name="btn"></td>
                   </tr>

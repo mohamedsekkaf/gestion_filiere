@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
-use Validator;
 use Redirect;
 use View;
 use File;
@@ -64,7 +65,6 @@ public function semestre($nom)
    $sem =  DB::select("select * from semstrs where nom_file = ?",[$s[0]->nom_filiere]);
    return  view('semestre', compact('sem'));
 }
-
 
 //========================================================== ajouter etablessement
 public function insertetab(Request $request){
@@ -180,9 +180,18 @@ public function updateetab(Request $request){
   /*  echo "<script type='text/javascript'>alert('$id');</script>"; */
      $nom_etablessement = $request->input('nom_etablessement');
    $local_etablessement = $request->input('local_etablessement');
+   if ($request->has('images')) {
+      $files = $request->file('images');
+    // Define upload path
+     $destinationPath = public_path('/images/'); // upload path
+   // Upload Orginal Image           
+     $profileImage =$nom_etablessement. '.' . $files->getClientOriginalExtension();
+     $request->file('images')->move($destinationPath, $profileImage);
+
+
    DB::table('etaplissemments')
        ->where('nom_etablessement', $nom)
-       ->update(array('nom_etablessement' => $nom_etablessement,'local_etablessement'=>$local_etablessement));
+       ->update(array('nom_etablessement' => $nom_etablessement,'local_etablessement'=>$local_etablessement,'image' => $profileImage));
        DB::table('filieres')
        ->where('nom_etabless', $nom)
        ->update(array('nom_etabless' => $nom_etablessement));
