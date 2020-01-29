@@ -208,7 +208,7 @@ public function updateetab(Request $request){
        ->where('nom_etap', $nom)
        ->update(array('nom_etap' => $nom_etablessement));
 return redirect('update/update-etablessement');
-} 
+} }
 //========================================================== update filiere
  public function updatefiliere(Request $request){
     $nom = $request->input('nom');
