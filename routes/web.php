@@ -18,7 +18,7 @@ Route::get('/', 'etabliss@showetabliss');
 
 
 Route::group(['middleware' => ['web']], function () {
-  
+    Auth::routes(['register' => false]);
 Route::get('/ajouter', 'etabliss@showinfo')->middleware('auth');
 Route::post('/ajouter', 'etabliss@insertetab')->middleware('auth');
 Route::post('/insertetabfil', 'etabliss@insertetabfil')->middleware('auth');
