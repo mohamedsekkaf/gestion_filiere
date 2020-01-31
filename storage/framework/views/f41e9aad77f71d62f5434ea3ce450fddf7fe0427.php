@@ -12,7 +12,7 @@ body{
             <form action="<?php echo e(url('/ajouter/ajouter-module')); ?>"  method="POST" enctype="multipart/form-data" >
               <?php echo method_field('POST'); ?>
                <?php echo csrf_field(); ?>
-                <h3>Ajouter Filiere</h3>
+                <h3>Ajouter Module</h3>
                <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
@@ -63,7 +63,7 @@ body{
                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                </div>
             </form>
-            
+            </div>     
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make("layouts/mylayout", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/ajouter/ajouter-module.blade.php ENDPATH**/ ?>

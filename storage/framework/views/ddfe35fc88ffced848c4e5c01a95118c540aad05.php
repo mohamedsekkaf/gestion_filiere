@@ -12,17 +12,17 @@ body{
             <form action="<?php echo e(url('/ajouter/ajouter-filiere')); ?>"  method="POST" enctype="multipart/form-data" >
               <?php echo method_field('POST'); ?>
                <?php echo csrf_field(); ?>
-                <h3>Ajouter Établissement</h3>
+                <h3>Ajouter Filiere</h3>
                <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <input type="text"   class="form-control" name="nom_filiere" type="text"  value="<?php echo e(old('')); ?>" placeholder="Nom de filiere" id="nom"  />
+                            <input type="text"   class="form-control" name="nom_filiere" type="text"  value="<?php echo e(old('nom_filiere')); ?>" placeholder="Nom de filiere" id="nom"  />
                         </div>
                         <div class="form-group">
-                            <input type="text"  class="form-control"  name="nummodel" type="number" value="<?php echo e(old('')); ?>" placeholder="Nombre de module" id="local"/>
+                            <input type="text"  class="form-control"  name="nummodel" type="number" value="<?php echo e(old('nummodel')); ?>" placeholder="Nombre de module" id="local"/>
                         </div>
                         <div class="form-group">
-                        <select class="form-control" name="nom_etabless" id="">
+                        <select class="form-control" name="nom_etabless" value="<?php echo e(old('nom_etabless')); ?>"id="">
                                  <option value="">default </option>
                                  <?php $__currentLoopData = $etab; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fil): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                  <option value="<?php echo e($fil->nom_etablessement); ?>"><?php echo e($fil->nom_etablessement); ?></option>
@@ -44,7 +44,7 @@ body{
                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                </div>
             </form>
-            
+            </div>   
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make("layouts/mylayout", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/ajouter/ajouter-filiere.blade.php ENDPATH**/ ?>

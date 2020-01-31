@@ -127,9 +127,9 @@ return redirect('ajouter/ajouter-etablessement');
 //========================================================== ajouter filiere
 public function insertetabfil(Request $request){
    $request->validate([
-      "nom_filiere" => "required|unique",
-      "nummodel"    => "required|unique",
-      "nom_etabless"=> "required|unique",
+      "nom_filiere" => "required|unique:felieres",
+      "nummodel"    => "required",
+      "nom_etabless"=> "required",
    ]);
  $nom_filiere = $request->input('nom_filiere');
 $nummodel = $request->input('nummodel');
@@ -151,10 +151,8 @@ public function insertetabsemestre(Request $request){
    $nom_s = $request->input('nom_s');
   $nom_file = $request->input('nom_file');
   $nom_etabless = $request->input('nom_etabless');
-
   $data=array('nom_s'=>$nom_s." ".$nom_file,'nom_file'=>$nom_file,'nom_etabless'=>$nom_etabless);
   DB::table('semstrs')->insert($data);
-  //echo "<script>Swal.fire('Les donnés ont été enregistrées !')</script>";
   return redirect('ajouter/ajouter-semestre');
   
   }
