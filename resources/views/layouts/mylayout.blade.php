@@ -12,7 +12,8 @@
     <script src="{{ asset('js/popper.min.js') }}"></script>
      <script src="{{ asset('js/bootstrap.js') }}"></script>
      <link rel="stylesheet" href="{{asset('assets/flat-icon/flaticon.css')}}">
-    <link rel="stylesheet" href="{{asset('temp/temp/styles.css')}}">    
+    <link rel="stylesheet" href="{{asset('temp/temp/styles.css')}}"> 
+    
 </head>
 <body>
 <nav  class="navbar navbar-expand-sm navbar-dark navbarl sticky-top">
@@ -26,20 +27,20 @@
         </li>
             @guest
             <li class="nav-item active">
-                <a class="nav-link" href="{{ url('/login')}}">Login</a>
+                <a style="" class="nav-link lore tt" href="{{ url('/login')}}">Login</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="{{ url('/register')}}">register</a>
+                <a class="nav-link  lore tt" href="{{ url('/register')}}">register</a>
             </li>
             @else
             <li class="nav-item active">
-             <a href="http://gestion-fil-estsb.herokuapp.com/ajouter"><img src="{{asset('image/user.png')}}" class=" img-user round " data-fleep="tooltip" data-placement="bottom" data-original-title="{{Auth::user()->name}}"></a>
+<!--              <a href="http://gestion-fil-estsb.herokuapp.com/ajouter"><img src="{{asset('image/user.png')}}" class=" img-user round" data-fleep="tooltip" data-placement="bottom" data-original-title="{{Auth::user()->name}}"></a>
+ -->            </li>
+            <li class="nav-item active">
+            <a class="nav-link lore tt" href="http://gestion-fil-estsb.herokuapp.com/ajouter" >{{Auth::user()->name}}</a>
             </li>
             <li class="nav-item active">
-            <a class="nav-link" href="http://gestion-fil-estsb.herokuapp.com/ajouter" >{{Auth::user()->name}}</a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="{{ url('/logout')}}">logout</a>
+                <a class="nav-link lore tt" href="{{ url('/logout')}}">logout</a>
             </li>
             @endguest
         </ul>

@@ -15,11 +15,11 @@ body{
                 <h3>Ajouter Semestre</h3>
                <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="text"   class="form-control" name="nom_s" value="<?php echo e(old('nom_s')); ?>" placeholder="Nom de Semestre" id=""  />
                         </div>
                         
-                        <div class="form-group">
+                        <div class="form-group tt">
                         <select class="form-control" name="nom_file" value="<?php echo e(old('nom_file')); ?>" id="" >
                            <option value="">default </option>
                            <?php $__currentLoopData = $file; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $model): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -27,7 +27,7 @@ body{
                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                         <td style="text-align:center;">
                               <select class="form-control" name="nom_etabless" value="<?php echo e(old('nom_etabless')); ?>" id="" >
                                  <option value="">default </option>
@@ -36,7 +36,7 @@ body{
                                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Ajouter" />
                         </div>
                     </div>
@@ -51,7 +51,7 @@ body{
                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                </div>
             </form>
-            
+            </div>     
 </div>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make("layouts/mylayout", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/ajouter/ajouter-semestre.blade.php ENDPATH**/ ?>

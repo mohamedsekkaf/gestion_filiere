@@ -210,8 +210,8 @@ button:focus{
   }
 
 .button:hover{
-    background-color: #FFFFFF;
-    color: #00aafe;
+    background-color: rgb(255, 255, 255);
+    color: #00a9fee5;
     -webkit-box-shadow: 2.5px 4.33px 10px 0px rgba(0, 0, 0, 0.13);
             box-shadow: 2.5px 4.33px 10px 0px rgba(0, 0, 0, 0.13);
 

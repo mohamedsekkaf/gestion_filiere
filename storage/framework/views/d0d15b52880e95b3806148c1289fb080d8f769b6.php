@@ -15,13 +15,13 @@ body{
                 <h3>Ajouter Deplome</h3>
                <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="text"  type="text"  class="form-control"  name="nom_deplome" value="<?php echo e(old('nom_etablessement')); ?>" placeholder="Nom de deplome" id="nom"  />
                         </div>
                         <div class="form-group">
                             <input type="text"  type="text"  class="form-control"  name="type_deplome" value="<?php echo e(old('local_etablessement')); ?>" placeholder="type" id="local"/>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <label for="">Durée</label>
                         <select class="form-control" name="duree_deplome" id="" required>
                            <option value="2 ans">2 ans </option>
@@ -35,7 +35,7 @@ body{
                            <option value="10 ans">10 ans </option>
                         </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                            <label for=""> Etalessement</label>
                         <select class="form-control" name="nom_etap" id="" required>
                            <option value="">default</option>
@@ -44,7 +44,7 @@ body{
                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="submit" name="btnSubmit" class="btnContact"    value="Ajouter" />
                         </div>
                     </div>

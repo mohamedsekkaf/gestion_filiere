@@ -12,7 +12,9 @@
     text-align: center;
 }
 .contact-image img{
-    border-radius: 6rem;
+   
+    background-color: white;
+    border-radius: 10rem;
     width: 11%;
     margin-top: -3%;
     transform: rotate(29deg);
@@ -161,10 +163,7 @@ footer{
     border-radius: 10px;
     
 }
-.heade{
-    background-color: aqua;
-    
-}
+
 .center{
     text-align: center;
     margin-left: 18%;
@@ -204,7 +203,25 @@ text-decoration:none;
   background-size: 30%, 30%;
   border-radius: 20%;
   background-color:rgb(172, 252, 255) ;
+}
 
-  
+.lore{
+    width: 14vh;
+    padding: 9px 40px;
+    border-radius: 30px;
+    font-size: 16px;
+    
+    border: 1px solid #fff;
+    display: inline-block;
+    background-color: transparent;
+    position: relative;
+    margin-left:5px;
+    margin-top: 10px;
+}
+.lore:hover{
+    background-color: rgb(101, 185, 233);
+    color: #049aff;
+    -webkit-box-shadow: 2.5px 4.33px 10px 0px rgba(0, 0, 0, 0.13);
+            box-shadow: 2.5px 4.33px 10px 0px rgba(0, 0, 0, 0.13);
 
 }

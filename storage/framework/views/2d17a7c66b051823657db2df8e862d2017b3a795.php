@@ -74,9 +74,16 @@
         </nav>
         <div class="header__content text-center">
           <h2 class="header__content__title">Application de gestion des filieres</h2>
-          <p class="header__content__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+          <p class="header__content__paragraph">Ecole superieur de technologie </p>
+          <?php if(auth()->guard()->guest()): ?>
           <a class="button button--margin-right button--hover" href="<?php echo e(url('/login')); ?>">Login</a>
           <a class="button button--hover" href="<?php echo e(url('/register')); ?>" >Register</a>
+          <?php else: ?>
+
+          <div class="homenav">
+            <a class="button button--hover" href="<?php echo e(url('/logout')); ?>" >logout</a>
+                </div>
+          <?php endif; ?>
         </div>
       </div>
     </header>
@@ -111,7 +118,7 @@
     <section class="contact contact--bg">
       <div class="container">
         <div class="page-section text-center">
-          <h2 class="page-section__title--white">We Always Work To Make A Difference</h2>
+          <h2 class="page-section__title--white"></h2>
           <p class="page-section__paragraph--white">If you like our works and have a project,contact us now</p>
           <a class="button button--hover" href="#">CONTACT US</a>
         </div>
@@ -122,20 +129,13 @@
       <div class="container">
         <div class="page-section">
           <div class="text-center">
-            <h2 class="page-section__title">ABOUT DART AGENCY</h2>
-            <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+           
           </div>
           <div class="row gutters-50">
             <div class="about--narrow">
-              <div class="col-md-6">
-                <img class="img-responsive" src="assets/images/about-pic.png" alt="">
-              </div>
+              
               <div class="col-md-6 about__extra-padding">
-                <h3 class="about__content-title">We Believe <br>The Simple Design</h3>
-                <p class="about__content-subTitle">Trusted comes with tons of custom widgets, color options, font control and 
-                  much more.</p>
-                  <p class="about__content-paragraph">We aim to eliminate the task of dividing your project between different agency, corporate and business template. We are a company that offers services for our clients to solve problems and planing strategies for humanity all over the world.</p>
-                  <a class="button--light" href="#">READ MORE</a>
+                
                 </div>
               </div>
             </div>
@@ -147,8 +147,8 @@
       <section class="letsGo letsGo--bg">
         <div class="container">
           <div class="page-section page-section--small text-center">
-            <h2 class="page-section__title--white page-section__title--white--less-margin">LET’S MAKE SOMETHING GREAT TOGETHER</h2>
-            <p class="page-section__paragraph page-section__paragraph--less-padding">We aim to eliminate the task of dividing your project between different agency between different agency, corporate</p>
+            <h2 class="page-section__title--white page-section__title--white--less-margin">test</h2>
+            <p class="page-section__paragraph page-section__paragraph--less-padding">test</p>
             <a class="button button--hover" href="#">LETS GO</a>
           </div>
         </div>
@@ -158,77 +158,13 @@
         <section class="project">
           <div class="page-section">
             <div class="text-center">
-              <h2 class="page-section__title">FEATURED PROJECT</h2>
-              <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
+              <h2 class="page-section__title">test</h2>
+              <p class="page-section__paragraph">test</p>
             </div>
             <div class="row gutters-50">
               <div class="col-md-4">
-                <div class="thumbnail">
-                  <a href="assets/images/featured-project-pic1.png" target="_blank">
-                    <img class="img-responsive" src="assets/images/featured-project-pic1.png" alt="">
-                    <div class="caption">
-                      <h4 class="project__title">DESIGN</h4>
-                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="thumbnail">
-                  <a href="assets/images/featured-project-pic2.png" target="_blank">
-                    <img class="img-responsive" src="assets/images/featured-project-pic2.png" alt="">
-                    <div class="caption">
-                      <h4 class="project__title">DESIGN</h4>
-                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="thumbnail">
-                  <a href="assets/images/featured-project-pic3.png" target="_blank">
-                    <img class="img-responsive" src="assets/images/featured-project-pic3.png" alt="">
-                    <div class="caption">
-                      <h4 class="project__title">DESIGN</h4>
-                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div class="row gutters-50">
-              <div class="col-md-4">
-                <div class="thumbnail">
-                  <a href="assets/images/featured-project-pic4.png" target="_blank">
-                    <img class="img-responsive" src="assets/images/featured-project-pic4.png" alt="">
-                    <div class="caption">
-                      <h4 class="project__title">DESIGN</h4>
-                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="thumbnail">
-                  <a href="assets/images/featured-project-pic5.png" target="_blank">
-                    <img class="img-responsive" src="assets/images/featured-project-pic5.png" alt="">
-                    <div class="caption">
-                      <h4 class="project__title">DESIGN</h4>
-                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div class="col-md-4">
-                <div class="thumbnail">
-                  <a href="assets/images/featured-project-pic6.png" target="_blank">
-                    <img class="img-responsive" src="assets/images/featured-project-pic6.png" alt="">
-                    <div class="caption">
-                      <h4 class="project__title">DESIGN</h4>
-                      <p class="project__paragraph">Lorem ipsum dolor sit amet </p>
-                    </div>
-                  </a>
-                </div>
+             
+              
               </div>
             </div>
           </div>

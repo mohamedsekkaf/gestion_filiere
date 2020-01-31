@@ -44,7 +44,7 @@ body{
 </style>
 <div class="container contact-form">
             <div class="contact-image">
-                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+                <img style="transform: rotate(0deg);" src="{{asset('image/rubbish.png')}}" alt="rocket_contact"/>
             </div>
             <form action="{{ url('/delete/delete-deplome') }}"  method="POST" enctype="multipart/form-data" >
               @method('POST')

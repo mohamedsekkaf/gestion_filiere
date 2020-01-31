@@ -12,7 +12,8 @@
     <script src="<?php echo e(asset('js/popper.min.js')); ?>"></script>
      <script src="<?php echo e(asset('js/bootstrap.js')); ?>"></script>
      <link rel="stylesheet" href="<?php echo e(asset('assets/flat-icon/flaticon.css')); ?>">
-    <link rel="stylesheet" href="<?php echo e(asset('temp/temp/styles.css')); ?>">    
+    <link rel="stylesheet" href="<?php echo e(asset('temp/temp/styles.css')); ?>"> 
+    
 </head>
 <body>
 <nav  class="navbar navbar-expand-sm navbar-dark navbarl sticky-top">
@@ -26,20 +27,20 @@
         </li>
             <?php if(auth()->guard()->guest()): ?>
             <li class="nav-item active">
-                <a class="nav-link" href="<?php echo e(url('/login')); ?>">Login</a>
+                <a style="" class="nav-link lore tt" href="<?php echo e(url('/login')); ?>">Login</a>
             </li>
             <li class="nav-item active">
-                <a class="nav-link" href="<?php echo e(url('/register')); ?>">register</a>
+                <a class="nav-link  lore tt" href="<?php echo e(url('/register')); ?>">register</a>
             </li>
             <?php else: ?>
             <li class="nav-item active">
-             <a href="http://gestion-fil-estsb.herokuapp.com/ajouter"><img src="<?php echo e(asset('image/user.png')); ?>" class=" img-user round " data-fleep="tooltip" data-placement="bottom" data-original-title="<?php echo e(Auth::user()->name); ?>"></a>
+<!--              <a href="http://gestion-fil-estsb.herokuapp.com/ajouter"><img src="<?php echo e(asset('image/user.png')); ?>" class=" img-user round" data-fleep="tooltip" data-placement="bottom" data-original-title="<?php echo e(Auth::user()->name); ?>"></a>
+ -->            </li>
+            <li class="nav-item active">
+            <a class="nav-link lore tt" href="http://gestion-fil-estsb.herokuapp.com/ajouter" ><?php echo e(Auth::user()->name); ?></a>
             </li>
             <li class="nav-item active">
-            <a class="nav-link" href="http://gestion-fil-estsb.herokuapp.com/ajouter" ><?php echo e(Auth::user()->name); ?></a>
-            </li>
-            <li class="nav-item active">
-                <a class="nav-link" href="<?php echo e(url('/logout')); ?>">logout</a>
+                <a class="nav-link lore tt" href="<?php echo e(url('/logout')); ?>">logout</a>
             </li>
             <?php endif; ?>
         </ul>
