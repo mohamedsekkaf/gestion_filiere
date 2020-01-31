@@ -1,5 +1,6 @@
 @extends("layouts/mylayout")
 @section("content")
+<!--
 <div class="container">
 <div class="row">
 <div class="col-md-12">
@@ -31,8 +32,8 @@
 </form>
   </div>
 </div>
-</div><!-- fin col-->
-</div><!-- fin row-->
+</div><!-- fin col
+</div><!-- fin row
 </div><!-- fin container-->
 
 
@@ -45,7 +46,7 @@ body{
             <div class="contact-image">
                 <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
             </div>
-            <form action="{{ url('/ajouter/ajouter-module') }}"  method="POST" enctype="multipart/form-data" >
+            <form action="{{ url('/delete/delete-deplome') }}"  method="POST" enctype="multipart/form-data" >
               @method('POST')
                @csrf
                 <h3>Ajouter Module</h3>
