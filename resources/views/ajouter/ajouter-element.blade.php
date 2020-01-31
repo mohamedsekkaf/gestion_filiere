@@ -16,13 +16,13 @@ body{
                 <h3>Ajouter Filiere</h3>
                <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="text"   class="form-control" name="nom_element" type="text"  value="{{ old('nom_filiere')}}" placeholder="Nom de filiere" id="nom"  />
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="text"  class="form-control"  name="horaire_element" type="number" value="{{ old('nummodel')}}" placeholder="Nombre de module" id="local"/>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <label for="">Module</label>
                         <select class="form-control" name="nom_mod" id="" required>
                            <option value="">default </option>
@@ -31,7 +31,7 @@ body{
                            @endforeach
                         </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <label for="">Eteblesement</label>
                         <select class="form-control" name="nom_etabless" id="" required>
                                  <option value="">default </option>
@@ -40,7 +40,7 @@ body{
                                  @endforeach
                               </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Ajouter" />
                         </div>
                     </div>

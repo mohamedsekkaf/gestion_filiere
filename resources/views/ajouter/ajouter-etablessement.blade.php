@@ -16,16 +16,16 @@ body{
                 <h3>Ajouter Établissement</h3>
                <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="text"  type="text"  class="form-control"  name="nom_etablessement" value="{{ old('nom_etablessement')}}" placeholder="Nom de l'etablissement" id="nom"  />
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="text"  type="text"  class="form-control"  name="local_etablessement" value="{{ old('local_etablessement')}}" placeholder="Localisation" id="local"/>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="file"  class="form-control"  value="{{ old('images')}}" placeholder="image"  name="image"/>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="submit" name="btnSubmit" class="btnContact"    value="Ajouter" />
                         </div>
                     </div>

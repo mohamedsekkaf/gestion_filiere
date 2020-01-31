@@ -31,7 +31,7 @@ body{
                            @endforeach
                         </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <label for=""> filiere </label>
                         <select class="form-control" name="nom_fil"  value="{{ old('nom_fil')}}" id="" required>
                            <option value="">default </option>
@@ -40,7 +40,7 @@ body{
                            @endforeach
                         </select>
                         </div> 
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <label for="">Eletablessement</label>
                         <select class="form-control" name="nom_etabless"  value="{{ old('nom_etabless')}}" id="" required>
                                  <option value="">default </option>
@@ -49,7 +49,7 @@ body{
                                  @endforeach
                               </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Ajouter" />
                         </div>
                     </div>

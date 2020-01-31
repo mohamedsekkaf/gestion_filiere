@@ -16,13 +16,13 @@ body{
                 <h3>Ajouter Filiere</h3>
                <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="text"   class="form-control" name="nom_filiere" type="text"  value="{{ old('nom_filiere')}}" placeholder="Nom de filiere" id="nom"  />
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="text"  class="form-control"  name="nummodel" type="number" value="{{ old('nummodel')}}" placeholder="Nombre de module" id="local"/>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                         <select class="form-control" name="nom_etabless" value="{{ old('nom_etabless')}}"id="">
                                  <option value="">default </option>
                                  @foreach($etab as $fil)
@@ -30,7 +30,7 @@ body{
                                  @endforeach
                               </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Ajouter" />
                         </div>
                     </div>

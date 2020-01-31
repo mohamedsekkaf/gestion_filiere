@@ -16,11 +16,11 @@ body{
                 <h3>Ajouter Semestre</h3>
                <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="text"   class="form-control" name="nom_s" value="{{ old('nom_s')}}" placeholder="Nom de Semestre" id=""  />
                         </div>
                         
-                        <div class="form-group">
+                        <div class="form-group tt">
                         <select class="form-control" name="nom_file" value="{{ old('nom_file')}}" id="" >
                            <option value="">default </option>
                            @foreach($file as $model)
@@ -28,7 +28,7 @@ body{
                            @endforeach
                         </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                         <td style="text-align:center;">
                               <select class="form-control" name="nom_etabless" value="{{ old('nom_etabless')}}" id="" >
                                  <option value="">default </option>
@@ -37,7 +37,7 @@ body{
                                  @endforeach
                               </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Ajouter" />
                         </div>
                     </div>
