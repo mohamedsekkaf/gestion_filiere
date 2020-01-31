@@ -144,10 +144,10 @@
                   <tr>
                            <td> Nom de l'Etablissement </td>
                            <td style="text-align:center;">
-                              <select class="form-control" name="id_etabless" id="" required>
+                              <select class="form-control" name="nom_etabless" id="" required>
                                  <option value="">default </option>
                                  <?php $__currentLoopData = $etab; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fil): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                 <option value="<?php echo e($fil->id_etablessement); ?>"><?php echo e($fil->nom_etablessement); ?></option>
+                                 <option value="<?php echo e($fil->nom_etablessement); ?>"><?php echo e($fil->nom_etablessement); ?></option>
                                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </select>
                               <!--<select name="" id="">
@@ -202,7 +202,7 @@
                         <select class="form-control" name="nom_fil" id="" required>
                            <option value="">default </option>
                            <?php $__currentLoopData = $file; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $model): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                           <option value="<?php echo e($model->nom_filiere); ?>"><?php echo e($model->nom_filiere); ?></option>
+                           <option value="<?php echo e($model->nom_filiere); ?>"> <?php echo e($model->nom_filiere); ?>->&nbsp;<?php echo e($model->nom_etabless); ?></option>
                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                      </td>
@@ -211,10 +211,10 @@
                   <tr>
                            <td> Nom de l'Etablissement </td>
                            <td style="text-align:center;">
-                              <select class="form-control" name="id_etabless" id="" required>
+                              <select class="form-control" name="nom_etabless" id="" required>
                                  <option value="">default </option>
                                  <?php $__currentLoopData = $etab; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fil): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                 <option value="<?php echo e($fil->nom_etablessement); ?>"><?php echo e($fil->nom_etablessement); ?></option>
+                                 <option value="<?php echo e($fil->nom_etablessement); ?>"> <?php echo e($fil->nom_etablessement); ?></option>
                                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </select>
                            </td>
@@ -269,7 +269,7 @@
                   <select class="form-control" name="nom_se" id="" required>
                            <option value="">default </option>
                            <?php $__currentLoopData = $semestre; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $model): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                           <option value="<?php echo e($model->nom_s); ?>"><?php echo e($model->nom_s); ?></option>
+                           <option value="<?php echo e($model->nom_s); ?>">S<?php echo e($model->nom_s); ?>->&nbsp; <?php echo e($model->nom_etabless); ?></option>
                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                         </td>
@@ -282,7 +282,7 @@
                         <select class="form-control" name="nom_fil" id="" required>
                            <option value="">default </option>
                            <?php $__currentLoopData = $file; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $model): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                           <option value="<?php echo e($model->nom_filiere); ?>"><?php echo e($model->nom_filiere); ?></option>
+                           <option value="<?php echo e($model->nom_filiere); ?>"><?php echo e($model->nom_filiere); ?>->&nbsp; <?php echo e($model->nom_etabless); ?></option>
                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                      </td>
@@ -291,10 +291,10 @@
                   <tr>
                            <td> Nom de l'Etablissement </td>
                            <td style="text-align:center;">
-                              <select class="form-control" name="id_etabless" id="" required>
+                              <select class="form-control" name="nom_etabless" id="" required>
                                  <option value="">default </option>
                                  <?php $__currentLoopData = $etab; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fil): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                 <option value="<?php echo e($fil->id_etablessement); ?>"><?php echo e($fil->nom_etablessement); ?></option>
+                                 <option value="<?php echo e($fil->nom_etablessement); ?>"><?php echo e($fil->nom_etablessement); ?></option>
                                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </select>
                            </td>
@@ -350,7 +350,7 @@
                         <select class="form-control" name="nom_mod" id="" required>
                            <option value="">default </option>
                            <?php $__currentLoopData = $mod; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $modele): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                           <option value="<?php echo e($modele->nom_module); ?>"><?php echo e($modele->nom_module); ?></option>
+                           <option value="<?php echo e($modele->nom_module); ?>"><?php echo e($modele->nom_module); ?>->&nbsp; <?php echo e($modele->nom_etabless); ?></option>
                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                      </td>
@@ -361,10 +361,10 @@
                   <tr>
                            <td> Nom de l'Etablissement </td>
                            <td style="text-align:center;">
-                              <select class="form-control" name="id_etabless" id="" required>
+                              <select class="form-control" name="nom_etabless" id="" required>
                                  <option value="">default </option>
                                  <?php $__currentLoopData = $etab; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fil): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                                 <option value="<?php echo e($fil->id_etablessement); ?>"><?php echo e($fil->nom_etablessement); ?></option>
+                                 <option value="<?php echo e($fil->nom_etablessement); ?>"><?php echo e($fil->nom_etablessement); ?></option>
                                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </select>
                            </td>
@@ -438,10 +438,10 @@
                   <tr>
                      <td>Nom de l'Etablissement </td>
                      <td>
-                     <select class="form-control" name="id_etap" id="" required>
+                     <select class="form-control" name="nom_etap" id="" required>
                            <option value="">default</option>
                            <?php $__currentLoopData = $etab; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $dep): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                          <option name="id_etap" value="<?php echo e($dep->id_etablessement); ?>"><?php echo e($dep->nom_etablessement); ?></option>
+                          <option  value="<?php echo e($dep->nom_etablessement); ?>"><?php echo e($dep->nom_etablessement); ?></option>
                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                      </td>

@@ -192,7 +192,7 @@ public function updateetab(Request $request){
    DB::table('etaplissemments')
        ->where('nom_etablessement', $nom)
        ->update(array('nom_etablessement' => $nom_etablessement,'local_etablessement'=>$local_etablessement,'image' => $profileImage));
-       DB::table('filieres')
+       DB::table('felieres')
        ->where('nom_etabless', $nom)
        ->update(array('nom_etabless' => $nom_etablessement));
        DB::table('semstrs')

@@ -13,10 +13,10 @@
                <tr>
                <td>Selectionner Nom de l'etablessement</td>
                <td>
-               <select class="form-control" name="id" required>
+               <select class="form-control" name="nom" required>
            <option value="">default </option>
                <?php $__currentLoopData = $etap; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $et): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <option value="<?php echo e($et->id_etablessement); ?>"><?php echo e($et->nom_etablessement); ?></option>
+              <option value="<?php echo e($et->nom_etablessement); ?>"><?php echo e($et->nom_etablessement); ?></option>
               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
              </select>
              </td>
@@ -30,6 +30,11 @@
                   <tr>
                      <td>Locatisation  </td>
                      <td><input class="input form-control" type="text" name="local_etablessement" placeholder="Localisation" required></td>
+                  </tr>
+                  <tr><td><br></td></tr>
+                  <tr>
+                     <td><label for="">Selectioner image</label></td>
+                       <td><input type="file" class="form-control" name="images" required></td>
                   </tr>
                   <tr><td><br></td></tr>
                   <tr>

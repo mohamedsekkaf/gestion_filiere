@@ -10,13 +10,15 @@
   <h5 class="card-title tt"> <?php echo e($feliere->nom_filiere); ?></h5>
     <p class="card-text tt"><small class="text-muted"></small> nombre de module  : <?php echo e($feliere->nummodel); ?></p>
 
- <a href="http://127.0.0.1:8000/semestre/<?php echo e($feliere->nom_filiere); ?>"><p class="card-text">Afficher les Semestre</p></a>
+ <a href="http://gestion-fil-estsb.herokuapp.com/semestre/<?php echo e($feliere->nom_filiere); ?>"><p class="card-text">Afficher les Semestre</p></a>
   </div>
 </div>
 </div><!-- fin col-->
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </div><!-- fin row-->
 </div><!-- fin container-->
+<br><br><br><br>
+<br><br><br><br>
 
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make("layouts/mylayout", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/filiere.blade.php ENDPATH**/ ?>
