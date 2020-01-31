@@ -8,15 +8,15 @@
 </div></div>
 </div>
 <div class="container">
-              <div class="head d-flex justify-content-center">
+       <div class="head d-flex justify-content-center">
        <div class="row" style="display: block!important;">
-       <a href="#"><img class="circle" src="{{ asset('image/school.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Etablissement" data-toggle="modal" data-target="#etablissement" /></a>
-       <a href="#"> <img class="circle" src="{{ asset('image/filiere.png') }}" data-toggle="modal" data-target="#filiere"  data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Filiere"/></a>
-       <a href="#"> <img class="circle" src="{{ asset('image/semestre.png') }}" data-toggle="modal" data-target="#semestre"  data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter semestre"/></a>
-       <a href="#"><img class="circle" src="{{ asset('image/module.png') }}" data-toggle="modal" data-target="#modele"   data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Modele"/></a>
-       <img class="circle" src="{{ asset('image/cour.png') }}" data-toggle="modal" data-target="#element"    data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Element"/>
-       <img class="circle" src="{{ asset('image/diploma1.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Diplôme" data-toggle="modal" data-target="#deplome" />
-
+       <a href="{{asset('/ajouter/ajouter-etablessement')}}"><img class="circle" src="{{ asset('image/school.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Etablissement" data-toggle="modal"  /></a>
+       <a href="{{asset('/ajouter/ajouter-filiere')}}"> <img class="circle" src="{{ asset('image/filiere.png') }}" data-toggle="modal"  data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Filiere"/></a>
+       <a href="{{asset('/ajouter/ajouter-semestre')}}"> <img class="circle" src="{{ asset('image/semestre.png') }}" data-toggle="modal"   data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter semestre"/></a>
+       <a href="{{asset('/ajouter/ajouter-module')}}"><img class="circle" src="{{ asset('image/module.png') }}" data-toggle="modal"   data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Modele"/></a>
+       <a href="{{asset('/ajouter/ajouter-element')}}"><img class="circle" src="{{ asset('image/cour.png') }}" data-toggle="modal"    data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Element"/></a>
+       <a href="{{asset('/ajouter/ajouter-deplome')}}"><img class="circle" src="{{ asset('image/diploma1.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Diplôme" data-toggle="modal"  /></a>
+       <!-- data-target="#deplome" -->
        </div>
        </div><!--fin class hread -->
 </div><!-- fi container -->

@@ -16,6 +16,6 @@
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
 </div><!-- fin row-->
 </div><!-- fin container-->
-
+<br><br><br><br><br><br><br><br>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make("layouts/mylayout", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/deplome.blade.php ENDPATH**/ ?>

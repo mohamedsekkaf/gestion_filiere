@@ -20,13 +20,13 @@ class etabliss extends Controller
 {
 //==========
 public function showetabliss(){
-    $etap = Etaplissemment::all();
+    $etap = Etaplissemment::paginate(2);
     return  view('home',compact('etap'));
 }
 //========================================================== selection deplome
 public function showdeplome($id){
-   $tes= DB::select("select * from etaplissemments where id_etablessement = ?",[$id]);
-   $dep =  DB::select("select * from deplomes where nom_etap= ?",[$tes[0]->id_etablessement]);
+   $tes= DB::select("select * from etaplissemments where nom_etablessement = ?",[$id]);
+   $dep =  DB::select("select * from deplomes where nom_etap= ?",[$tes[0]->nom_etablessement]);
    return  view('deplome',compact('dep'));
 }
 //==========================================================
@@ -87,36 +87,35 @@ public function Sformajoutermod(){
     $file = Feliere::all();
     $mod = Module::all();
     $semestre = semstr::all();
-   return view('ajouter/ajouter-filiere',compact('etab','file'));
+   return view('ajouter/ajouter-module',compact('etab','file','semestre'));
 }
 //===========================================
 public function Sformajouterelem(){
    $etab = Etaplissemment::all();
    $mod = Module::all();
-   return view('ajouter/ajouter-filiere',compact('etab','mod'));
+   return view('ajouter/ajouter-element',compact('etab','mod'));
 }
 //===========================================
 public function Sformajouterdep(){
    $etab = Etaplissemment::all();
-   return view('ajouter/ajouter-filiere',compact('etab'));
+   return view('ajouter/ajouter-deplome',compact('etab'));
 }
 //========================================================== ajouter etablessement
 public function insertetab(Request $request){
 $request->validate([
-   "nom_etablessement"   => "required|unique",
-   "local_etablessement" => "required|unique",
-   "images"              => "required|unique",
+   "nom_etablessement"   => "required|unique:etaplissemments",
+   "local_etablessement" => "required",
+   "image"              => "required",
 ]);
-
  $nom_etablessement = $request->input('nom_etablessement');
 $local_etablessement = $request->input('local_etablessement');
-if ($request->has('images')) {
-   $files = $request->file('images');
+if ($request->has('image')) {
+   $files = $request->file('image');
  // Define upload path
   $destinationPath = public_path('/images/'); // upload path
 // Upload Orginal Image           
   $profileImage =$nom_etablessement. '.' . $files->getClientOriginalExtension();
-  $request->file('images')->move($destinationPath, $profileImage);
+  $request->file('image')->move($destinationPath, $profileImage);
   
 $data=array('nom_etablessement'=>$nom_etablessement,'local_etablessement'=>$local_etablessement,'image' => $profileImage);
 DB::table('etaplissemments')->insert($data);
@@ -145,12 +144,12 @@ return redirect('ajouter/ajouter-filiere');
 //========================================================== ajouter semester
 public function insertetabsemestre(Request $request){
    $request->validate([
-      "nom_s"        =>"required|unique",
-      "nom_fil"      =>"required|unique",
-      "nom_etabless" =>"required|unique",
+      "nom_s"        =>"required|unique:semstrs",
+      "nom_file"      =>"required|unique:semstrs",
+      "nom_etabless" =>"required|unique:semstrs",
    ]);
    $nom_s = $request->input('nom_s');
-  $nom_file = $request->input('nom_fil');
+  $nom_file = $request->input('nom_file');
   $nom_etabless = $request->input('nom_etabless');
 
   $data=array('nom_s'=>$nom_s." ".$nom_file,'nom_file'=>$nom_file,'nom_etabless'=>$nom_etabless);
@@ -162,11 +161,11 @@ public function insertetabsemestre(Request $request){
 //========================================================== ajouter module
 public function insertetabmod(Request $request){
    $request->validate([
-      "nom_module"      =>"required|unique",
-      "num_element"      =>"required|unique",
-      "nom_fil"         =>"required|unique",
-      "nom_etabless"     =>"required|unique",
-      "nom_se"          =>"required|unique",
+      "nom_module"      =>"required|unique:modules",
+      "num_element"      =>"required",
+      "nom_fil"         =>"required",
+      "nom_etabless"     =>"required",
+      "nom_se"          =>"required",
    ]);
     $nom_module = $request->input('nom_module');
    $num_element = $request->input('num_element');
@@ -175,17 +174,16 @@ public function insertetabmod(Request $request){
    $nom_se = $request->input('nom_se');
    $data=array('nom_module'=>$nom_module,'num_element'=>$num_element,'nom_fil'=>$nom_fil,'nom_etabless'=>$nom_etabless,'nom_se'=>$nom_se);
    DB::table('modules')->insert($data);
-   $message="les données a ete inserer";
-  // echo "<script type='text/javascript'>alert('$message');</script>";
-   return redirect('ajouter');
+  
+   return redirect('ajouter/ajouter-module');
    }
 //========================================================== ajouter element 
 public function insertetabelem(Request $request){
    $request->validate([
-      "nom_element" =>"required|unique",
-      "nom_mod" =>"required|unique",
-      "nom_etabless" =>"required|unique",
-      "horaire_element" =>"required|unique",
+      "nom_element" =>"required|unique:elements",
+      "nom_mod" =>"required",
+      "nom_etabless" =>"required",
+      "horaire_element" =>"required",
    ]);
     $nom_element = $request->input('nom_element');
    $nom_mod = $request->input('nom_mod');
@@ -195,15 +193,15 @@ public function insertetabelem(Request $request){
    DB::table('elements')->insert($data);
    /* $message="les données a ete inserer"; */
   // echo "<script type='text/javascript'>alert('$message');</script>";
-   return redirect('ajouter');
+   return redirect('ajouter/ajouter-element');
    }
 //========================================================== ajouter deplome
    public function insertetabdeplome(Request $request){
       $request->validate([
-         "nom_deplome" =>"required|unique",
-         "type_deplome" =>"required|unique",
-         "duree_deplome" =>"required|unique",
-         "nom_etap" =>"required|unique",
+         "nom_deplome" =>"required|unique:deplomes",
+         "type_deplome" =>"required",
+         "duree_deplome" =>"required",
+         "nom_etap" =>"required",
       ]);
       $nom_deplome = $request->input('nom_deplome');
      $type_deplome = $request->input('type_deplome');
@@ -213,7 +211,7 @@ public function insertetabelem(Request $request){
      DB::table('deplomes')->insert($data);
      $message="les données a ete inserer";
      echo "<script type='text/javascript'>alert('$message');</script>";
-     return redirect('ajouter');
+     return redirect('ajouter/ajouter-deplome');
      }
 //========================================================== show info
 

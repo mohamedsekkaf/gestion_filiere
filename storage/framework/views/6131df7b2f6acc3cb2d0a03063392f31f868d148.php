@@ -22,10 +22,10 @@ body{
                             <input type="text"  type="text"  class="form-control"  name="local_etablessement" value="<?php echo e(old('local_etablessement')); ?>" placeholder="Localisation" id="local"/>
                         </div>
                         <div class="form-group">
-                            <input type="file"  class="form-control"  value="<?php echo e(old('images')); ?>"  name="images"/>
+                            <input type="file"  class="form-control"  value="<?php echo e(old('images')); ?>" placeholder="image"  name="image"/>
                         </div>
                         <div class="form-group">
-                            <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Ajouter" />
+                            <input type="submit" name="btnSubmit" class="btnContact"    value="Ajouter" />
                         </div>
                     </div>
                     

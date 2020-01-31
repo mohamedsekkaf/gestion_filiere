@@ -101,8 +101,9 @@
   </div>
 </div>
 </div><!-- fin col-->
-
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+<?php echo e($etap->links()); ?>
+
 </div>
 </div>
     </section>

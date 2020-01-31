@@ -10,20 +10,30 @@ body{
             <div class="contact-image">
                 <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
             </div>
-            <form action="{{ url('/ajouter/ajouter-filiere') }}"  method="POST" enctype="multipart/form-data" >
+            <form action="{{ url('/ajouter/ajouter-element') }}"  method="POST" enctype="multipart/form-data" >
               @method('POST')
                @csrf
                 <h3>Ajouter Filiere</h3>
                <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <input type="text"   class="form-control" name="nom_filiere" type="text"  value="{{ old('nom_filiere')}}" placeholder="Nom de filiere" id="nom"  />
+                            <input type="text"   class="form-control" name="nom_element" type="text"  value="{{ old('nom_filiere')}}" placeholder="Nom de filiere" id="nom"  />
                         </div>
                         <div class="form-group">
-                            <input type="text"  class="form-control"  name="nummodel" type="number" value="{{ old('nummodel')}}" placeholder="Nombre de module" id="local"/>
+                            <input type="text"  class="form-control"  name="horaire_element" type="number" value="{{ old('nummodel')}}" placeholder="Nombre de module" id="local"/>
                         </div>
                         <div class="form-group">
-                        <select class="form-control" name="nom_etabless" value="{{ old('nom_etabless')}}"id="">
+                            <label for="">Module</label>
+                        <select class="form-control" name="nom_mod" id="" required>
+                           <option value="">default </option>
+                           @foreach($mod as $modele)
+                           <option value="{{ $modele->nom_module }}">{{ $modele->nom_module }}->&nbsp; {{$modele->nom_etabless}}</option>
+                           @endforeach
+                        </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="">Eteblesement</label>
+                        <select class="form-control" name="nom_etabless" id="" required>
                                  <option value="">default </option>
                                  @foreach($etab as $fil)
                                  <option value="{{ $fil->nom_etablessement }}">{{ $fil->nom_etablessement }}</option>

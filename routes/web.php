@@ -32,13 +32,13 @@ Route::get('/ajouter/ajouter-semestre', 'etabliss@Sformajoutersem')->middleware(
 Route::post('/ajouter/ajouter-semestre', 'etabliss@insertetabsemestre')->middleware('auth');
 
 
-Route::post('/ajouter/ajouter-module', 'etabliss@Sformajoutermod')->middleware('auth');
+Route::get('/ajouter/ajouter-module', 'etabliss@Sformajoutermod')->middleware('auth');
 Route::post('/ajouter/ajouter-module', 'etabliss@insertetabmod')->middleware('auth');
 
-Route::post('/ajouter/ajouter-element', 'etabliss@Sformajouterelem')->middleware('auth');
+Route::get('/ajouter/ajouter-element', 'etabliss@Sformajouterelem')->middleware('auth');
 Route::post('/ajouter/ajouter-element', 'etabliss@insertetabelem')->middleware('auth');
 
-Route::post('/ajouter/ajouter-deplome', 'etabliss@Sformajouterdep')->middleware('auth');
+Route::get('/ajouter/ajouter-deplome', 'etabliss@Sformajouterdep')->middleware('auth');
 Route::post('/ajouter/ajouter-deplome', 'etabliss@insertetabdeplome')->middleware('auth');
 
 

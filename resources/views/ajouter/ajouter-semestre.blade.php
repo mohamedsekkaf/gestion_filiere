@@ -17,11 +17,11 @@ body{
                <div class="row">
                     <div class="col-md-12">
                         <div class="form-group">
-                            <input type="text"   class="form-control" name="nom_s" value="{{ old('')}}" placeholder="Nom de Semestre" id=""  />
+                            <input type="text"   class="form-control" name="nom_s" value="{{ old('nom_s')}}" placeholder="Nom de Semestre" id=""  />
                         </div>
                         
                         <div class="form-group">
-                        <select class="form-control" name="nom_fil" id="" >
+                        <select class="form-control" name="nom_file" value="{{ old('nom_file')}}" id="" >
                            <option value="">default </option>
                            @foreach($file as $model)
                            <option value="{{ $model->nom_filiere }}"> {{ $model->nom_filiere }}->&nbsp;{{$model->nom_etabless}}</option>
@@ -30,7 +30,7 @@ body{
                         </div>
                         <div class="form-group">
                         <td style="text-align:center;">
-                              <select class="form-control" name="nom_etabless" id="" >
+                              <select class="form-control" name="nom_etabless" value="{{ old('nom_etabless')}}" id="" >
                                  <option value="">default </option>
                                  @foreach($etab as $fil)
                                  <option value="{{ $fil->nom_etablessement }}"> {{ $fil->nom_etablessement }}</option>

@@ -104,8 +104,8 @@
   </div>
 </div>
 </div><!-- fin col-->
-
 @endforeach
+{{ $etap->links()}}
 </div>
 </div>
     </section>
