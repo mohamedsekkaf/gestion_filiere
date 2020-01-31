@@ -82,17 +82,17 @@
                <table>
                   <tr>
                      <td>Nom de l'Etablissement </td>
-                     <td><input class="form-control"  type="text" name="nom_etablessement" placeholder="Nom de l'etablissement" id="nom" required></td>
+                     <td><input class="form-control"  type="text" name="nom_etablessement" value="{{ old('nom_etablessement')}}" placeholder="Nom de l'etablissement" id="nom" ></td>
                   </tr>
                   <tr><td><br></td></tr>
                   <tr>
                      <td>Locatisation  </td>
-                     <td><input class="form-control" type="text" name="local_etablessement" placeholder="Localisation" id="local" required></td>
+                     <td><input class="form-control" type="text" name="local_etablessement" value="{{ old('local_etablessement')}}" placeholder="Localisation" id="local" required></td>
                   </tr>
                   <tr><td><br></td></tr>
                   <tr>
                      <td><label for="">Selectioner image</label></td>
-                       <td><input type="file" class="form-control" name="images" required></td>
+                       <td><input type="file" class="form-control" value="{{ old('images')}}"  name="images" required></td>
                   </tr>
                   <tr>
                   <td><br></td>
@@ -102,6 +102,13 @@
                      <td><input class="btn-primary btn" type="submit" value="Insert" name="btn"></td>
                   </tr>
                </table>
+               <div class="col-12">
+               @foreach($errors->all() as $err)
+                     <div class="alert alert-danger mt-4">
+                     {{$err}}
+                     </div>
+               @endforeach
+               </div>
         </div>
          </form>
         <!-- Modal footer -->

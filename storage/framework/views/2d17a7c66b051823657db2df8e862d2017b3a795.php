@@ -69,11 +69,11 @@
       <div class="container">
         <nav class="navbar">
           <div class="navbar-header"> 
-            <a class="navbar-brand" href="#">DART AGENCY</a>
+            <a class="navbar-brand" href="#">Université chouaib doukkali</a>
           </div>
         </nav>
         <div class="header__content text-center">
-          <h1 class="header__content__title"></h1>
+          <h2 class="header__content__title">Application de gestion des filieres</h2>
           <p class="header__content__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
           <a class="button button--margin-right button--hover" href="<?php echo e(url('/login')); ?>">Login</a>
           <a class="button button--hover" href="<?php echo e(url('/register')); ?>" >Register</a>

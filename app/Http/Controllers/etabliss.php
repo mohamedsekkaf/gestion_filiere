@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use Illuminate\Http\validator ;
 use Illuminate\Http\Request;
 use App\Http\Requests;
 use DB;
@@ -65,9 +65,49 @@ public function semestre($nom)
    $sem =  DB::select("select * from semstrs where nom_file = ?",[$s[0]->nom_filiere]);
    return  view('semestre', compact('sem'));
 }
-
+//===========================================
+public function Sformajouteretab(){
+   return view('ajouter/ajouter-etablessement');
+}
+//===========================================
+public function Sformajouterfil(){
+   $etab = Etaplissemment::all();
+   return view('ajouter/ajouter-filiere',compact('etab'));
+}
+//===========================================
+public function Sformajoutersem(){
+   $etab = Etaplissemment::all();
+   $file = Feliere::all();
+   return view('ajouter/ajouter-semestre',compact('etab','file'));
+}
+//===========================================
+public function Sformajoutermod(){
+   $etab = Etaplissemment::all();
+   $etab = Etaplissemment::all();
+    $file = Feliere::all();
+    $mod = Module::all();
+    $semestre = semstr::all();
+   return view('ajouter/ajouter-filiere',compact('etab','file'));
+}
+//===========================================
+public function Sformajouterelem(){
+   $etab = Etaplissemment::all();
+   $mod = Module::all();
+   return view('ajouter/ajouter-filiere',compact('etab','mod'));
+}
+//===========================================
+public function Sformajouterdep(){
+   $etab = Etaplissemment::all();
+   return view('ajouter/ajouter-filiere',compact('etab'));
+}
 //========================================================== ajouter etablessement
 public function insertetab(Request $request){
+$request->validate([
+   "nom_etablessement"   => "required|unique",
+   "local_etablessement" => "required|unique",
+   "images"              => "required|unique",
+]);
+
  $nom_etablessement = $request->input('nom_etablessement');
 $local_etablessement = $request->input('local_etablessement');
 if ($request->has('images')) {
@@ -80,13 +120,18 @@ if ($request->has('images')) {
   
 $data=array('nom_etablessement'=>$nom_etablessement,'local_etablessement'=>$local_etablessement,'image' => $profileImage);
 DB::table('etaplissemments')->insert($data);
-return redirect('ajouter');
+return redirect('ajouter/ajouter-etablessement');
 /* echo '<h1 align="center">'. 'saved'.'</h1>'; */
 
    }
 }
 //========================================================== ajouter filiere
 public function insertetabfil(Request $request){
+   $request->validate([
+      "nom_filiere" => "required|unique",
+      "nummodel"    => "required|unique",
+      "nom_etabless"=> "required|unique",
+   ]);
  $nom_filiere = $request->input('nom_filiere');
 $nummodel = $request->input('nummodel');
 $nom_etabless = $request->input('nom_etabless');
@@ -94,11 +139,16 @@ $nom_se = $request->input('nom_se');
 $data=array('nom_filiere'=>$nom_filiere,'nummodel'=>$nummodel,'nom_etabless'=>$nom_etabless);
 DB::table('felieres')->insert($data);
 //echo "<script>Swal.fire('Les donnés ont été enregistrées !')</script>";
-return redirect('ajouter');
+return redirect('ajouter/ajouter-filiere');
 
 }
 //========================================================== ajouter semester
 public function insertetabsemestre(Request $request){
+   $request->validate([
+      "nom_s"        =>"required|unique",
+      "nom_fil"      =>"required|unique",
+      "nom_etabless" =>"required|unique",
+   ]);
    $nom_s = $request->input('nom_s');
   $nom_file = $request->input('nom_fil');
   $nom_etabless = $request->input('nom_etabless');
@@ -106,11 +156,18 @@ public function insertetabsemestre(Request $request){
   $data=array('nom_s'=>$nom_s." ".$nom_file,'nom_file'=>$nom_file,'nom_etabless'=>$nom_etabless);
   DB::table('semstrs')->insert($data);
   //echo "<script>Swal.fire('Les donnés ont été enregistrées !')</script>";
-  return redirect('ajouter');
+  return redirect('ajouter/ajouter-semestre');
   
   }
 //========================================================== ajouter module
 public function insertetabmod(Request $request){
+   $request->validate([
+      "nom_module"      =>"required|unique",
+      "num_element"      =>"required|unique",
+      "nom_fil"         =>"required|unique",
+      "nom_etabless"     =>"required|unique",
+      "nom_se"          =>"required|unique",
+   ]);
     $nom_module = $request->input('nom_module');
    $num_element = $request->input('num_element');
    $nom_fil = $request->input('nom_fil');
@@ -124,6 +181,12 @@ public function insertetabmod(Request $request){
    }
 //========================================================== ajouter element 
 public function insertetabelem(Request $request){
+   $request->validate([
+      "nom_element" =>"required|unique",
+      "nom_mod" =>"required|unique",
+      "nom_etabless" =>"required|unique",
+      "horaire_element" =>"required|unique",
+   ]);
     $nom_element = $request->input('nom_element');
    $nom_mod = $request->input('nom_mod');
    $nom_etabless = $request->input('nom_etabless');
@@ -136,6 +199,12 @@ public function insertetabelem(Request $request){
    }
 //========================================================== ajouter deplome
    public function insertetabdeplome(Request $request){
+      $request->validate([
+         "nom_deplome" =>"required|unique",
+         "type_deplome" =>"required|unique",
+         "duree_deplome" =>"required|unique",
+         "nom_etap" =>"required|unique",
+      ]);
       $nom_deplome = $request->input('nom_deplome');
      $type_deplome = $request->input('type_deplome');
      $duree_deplome = $request->input('duree_deplome');
@@ -371,5 +440,5 @@ return redirect('delete/delete-deplome');
        ->delete();
 return redirect('delete/delete-semestre');
 } 
- //==========================================================
+ //==========================================================git commit -
 }

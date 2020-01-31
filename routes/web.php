@@ -22,12 +22,25 @@ Route::get('/', 'etabliss@showetabliss');
 Route::group(['middleware' => ['web']], function () {
 
 Route::get('/ajouter', 'etabliss@showinfo')->middleware('auth');
-Route::post('/ajouter', 'etabliss@insertetab')->middleware('auth');
-Route::post('/insertetabfil', 'etabliss@insertetabfil')->middleware('auth');
-Route::post('/insertetabmod', 'etabliss@insertetabmod')->middleware('auth');
-Route::post('/insertetabelem', 'etabliss@insertetabelem')->middleware('auth');
-Route::post('/insertetabdeplome', 'etabliss@insertetabdeplome')->middleware('auth');
-Route::post('/insertetabsemestre', 'etabliss@insertetabsemestre')->middleware('auth');
+Route::get('/ajouter/ajouter-etablessement', 'etabliss@Sformajouteretab')->middleware('auth');
+Route::post('/ajouter/ajouter-etablessement', 'etabliss@insertetab')->middleware('auth');
+
+Route::get('/ajouter/ajouter-filiere', 'etabliss@Sformajouterfil')->middleware('auth');
+Route::post('/ajouter/ajouter-filiere', 'etabliss@insertetabfil')->middleware('auth');
+
+Route::get('/ajouter/ajouter-semestre', 'etabliss@Sformajoutersem')->middleware('auth');
+Route::post('/ajouter/ajouter-semestre', 'etabliss@insertetabsemestre')->middleware('auth');
+
+
+Route::post('/ajouter/ajouter-module', 'etabliss@Sformajoutermod')->middleware('auth');
+Route::post('/ajouter/ajouter-module', 'etabliss@insertetabmod')->middleware('auth');
+
+Route::post('/ajouter/ajouter-element', 'etabliss@Sformajouterelem')->middleware('auth');
+Route::post('/ajouter/ajouter-element', 'etabliss@insertetabelem')->middleware('auth');
+
+Route::post('/ajouter/ajouter-deplome', 'etabliss@Sformajouterdep')->middleware('auth');
+Route::post('/ajouter/ajouter-deplome', 'etabliss@insertetabdeplome')->middleware('auth');
+
 
 Route::get('/update/update-etablessement', 'etabliss@showNometab')->middleware('auth');
 Route::post('/update/update-etablessement', 'etabliss@updateetab')->middleware('auth');

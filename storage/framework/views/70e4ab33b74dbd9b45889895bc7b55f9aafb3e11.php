@@ -80,17 +80,17 @@
                <table>
                   <tr>
                      <td>Nom de l'Etablissement </td>
-                     <td><input class="form-control"  type="text" name="nom_etablessement" placeholder="Nom de l'etablissement" id="nom" required></td>
+                     <td><input class="form-control"  type="text" name="nom_etablessement" value="<?php echo e(old('nom_etablessement')); ?>" placeholder="Nom de l'etablissement" id="nom" ></td>
                   </tr>
                   <tr><td><br></td></tr>
                   <tr>
                      <td>Locatisation  </td>
-                     <td><input class="form-control" type="text" name="local_etablessement" placeholder="Localisation" id="local" required></td>
+                     <td><input class="form-control" type="text" name="local_etablessement" value="<?php echo e(old('local_etablessement')); ?>" placeholder="Localisation" id="local" required></td>
                   </tr>
                   <tr><td><br></td></tr>
                   <tr>
                      <td><label for="">Selectioner image</label></td>
-                       <td><input type="file" class="form-control" name="images" required></td>
+                       <td><input type="file" class="form-control" value="<?php echo e(old('images')); ?>"  name="images" required></td>
                   </tr>
                   <tr>
                   <td><br></td>
@@ -100,6 +100,14 @@
                      <td><input class="btn-primary btn" type="submit" value="Insert" name="btn"></td>
                   </tr>
                </table>
+               <div class="col-12">
+               <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $err): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                     <div class="alert alert-danger mt-4">
+                     <?php echo e($err); ?>
+
+                     </div>
+               <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+               </div>
         </div>
          </form>
         <!-- Modal footer -->
