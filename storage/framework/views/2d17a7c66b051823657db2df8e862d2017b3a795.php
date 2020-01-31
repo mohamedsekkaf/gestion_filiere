@@ -1,5 +1,5 @@
 <?php $__env->startSection("content"); ?>
-<div id="carouselId" class="carousel slide" data-ride="carousel">
+<!-- <div id="carouselId" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselId" data-slide-to="0" class="active"></li>
         <li data-target="#carouselId" data-slide-to="1"></li>
@@ -10,22 +10,22 @@
         <div class="carousel-item active">
             <img  src= "<?php echo e(asset('image/slider1.jpg')); ?>" width="100%" height="450" alt="First slide">
             <div class="carousel-caption d-none d-md-block">
-               <!--  <h3>Title</h3>
-                <p>Description</p> -->
+               <h3>Title</h3>
+                <p>Description</p>
             </div>
         </div>
         <div class="carousel-item">
             <img src="<?php echo e(asset('image/slider2.jpg')); ?>" width="100%" height="450"  alt="Second slide">
             <div class="carousel-caption d-none d-md-block">
-                <!-- <h3>Title</h3>
-                <p>Description</p> -->
+                 <h3>Title</h3>
+                <p>Description</p> 
             </div>
         </div>
         <div class="carousel-item">
             <img src="<?php echo e(asset('image/slider3.jpg')); ?>" width="100%" height="450"  alt="Third slide">
             <div class="carousel-caption d-none d-md-block">
                 <!-- <h3>Title</h3>
-                <p>Description</p> -->
+                <p>Description</p> 
             </div>
         </div>
     </div>
@@ -38,10 +38,10 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-<!-- ================================-->
+<!-- ================================
 <div class="container">
 <div class="row">
-    <?php $__currentLoopData = $etap; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $etapliss): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+   <?php $__currentLoopData = $etap; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $etapliss): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?> 
     <?php echo csrf_field(); ?>
 <div class="col-md-6">
 <div class="card mb-3 mt-4">
@@ -51,120 +51,60 @@
   <h3 class="card-title tt"> <?php echo e($etapliss->nom_etablessement); ?></h3>
     <p class="card-text tt"><small class="text-muted"></small> Localisation  : <?php echo e($etapliss->local_etablessement); ?></p>
 
- <a style="display:inline-block;" href="http://127.0.0.1:8000/info/<?php echo e($etapliss->nom_etablessement); ?>"><p class="hover"> Afficher les Filieres </p></a>
+ <a style="display:inline-block;" href="http://gestion-fil-estsb.herokuapp.com/info/<?php echo e($etapliss->nom_etablessement); ?>"><p class="hover"> Afficher les Filieres </p></a>
+ <a href="http://gestion-fil-estsb.herokuapp.com/showdeplome/<?php echo e($etapliss->id_etablessement); ?>"><p class="card-text">Afficher les deplomes</p></a>
+  </div>
+</div>
+</div><!-- fin col
+
+<?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+</div><!-- fin row
+</div><!-- fin container
+<br><br><br><br>
+-->
+
+
+  <div class="main-wrapper">
+    <header class="header header--bg">
+      <div class="container">
+        <nav class="navbar">
+          <div class="navbar-header"> 
+            <a class="navbar-brand" href="#">DART AGENCY</a>
+          </div>
+        </nav>
+        <div class="header__content text-center">
+          <h1 class="header__content__title"></h1>
+          <p class="header__content__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
+          <a class="button button--margin-right button--hover" href="<?php echo e(url('/login')); ?>">Login</a>
+          <a class="button button--hover" href="<?php echo e(url('/register')); ?>" >Register</a>
+        </div>
+      </div>
+    </header>
+    
+    <section class="service">
+        
+    <div class="container">
+        <div class="row">
+    <?php $__currentLoopData = $etap; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $etapliss): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+    <?php echo csrf_field(); ?>
+    
+<div class="col-md-6">
+<div class="card mb-3 mt-4">
+
+<div class="crd-head  text-center"><img  src="<?php echo e(asset('images/')); ?>/<?php echo e($etapliss->image); ?> " class="card-img-top  round" /></div>
+  <div class="card-body">
+  <h3 class="card-title tt"> <?php echo e($etapliss->nom_etablessement); ?></h3>
+    <p class="card-text tt"><small class="text-muted"></small> Localisation  : <?php echo e($etapliss->local_etablessement); ?></p>
+
+ <a style="display:inline-block;" href="http://gestion-fil-estsb.herokuapp.com/info/<?php echo e($etapliss->nom_etablessement); ?>"><p class="hover"> Afficher les Filieres </p></a>
  <a href="http://gestion-fil-estsb.herokuapp.com/showdeplome/<?php echo e($etapliss->id_etablessement); ?>"><p class="card-text">Afficher les deplomes</p></a>
   </div>
 </div>
 </div><!-- fin col-->
 
 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-</div><!-- fin row-->
-</div><!-- fin container-->
-<br><br><br><br>
-
-
-
-
-
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Dart - page</title>
-  <meta name="keywords" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.">
-  <meta name="description" content="Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod.">
-  
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="assets/flat-icon/flaticon.css">
-  <link rel="stylesheet" href="temp/styles/styles.css">
-</head>
-<body>
-  <div class="main-wrapper">
-    <header class="header header--bg">
-      <div class="container">
-        <nav class="navbar">
-          <div class="navbar-header">
-            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span>
-              <span class="icon-bar"></span> 
-            </button>
-            <a class="navbar-brand" href="#">DART AGENCY</a>
-          </div>
-          <div class="collapse navbar-collapse" id="myNavbar">
-            <ul class="nav navbar-nav pull-right">
-              <li><a href="#">HOME</a></li>
-              <li><a href="#">SERVICES</a></li>
-              <li><a href="#">FEATURES</a></li> 
-              <li><a href="#">PORTFOLIO</a></li> 
-              <li><a href="#">BLOG</a></li> 
-              <li><a href="#">CONTACT</a></li> 
-            </ul>
-          </div>
-        </nav>
-        <div class="header__content text-center">
-          <h1 class="header__content__title">CREATIVE AGENCY</h1>
-          <p class="header__content__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna</p>
-          <a class="button button--margin-right button--hover" href="#">LARN MORE</a>
-          <a class="button button--hover" href="#" >PURCHASE</a>
-        </div>
-      </div>
-    </header>
-    
-    <section class="service">
-      <div class="container">
-        <div class="page-section text-center">
-          <h2 class="page-section__title">SERVICES WE OFFER</h2>
-          <p class="page-section__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. </p>
-          <div class="row gutters-40">
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <i class="material-icons">trending_up</i>
-                <h4 class="service__title">Growing Business</h4>
-                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <i class="material-icons">access_time</i>
-                <h4 class="service__title">Save Time</h4>
-                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <i class="material-icons">group</i>
-                <h4 class="service__title">Free Support</h4>
-                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
-            </div>
-          </div>
-          <div class="row gutters-40">
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <i class="material-icons">apps</i>
-                <h4 class="service__title"">Responsive Design</h4>
-                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <i class="material-icons">adjust</i>
-                <h4 class="service__title">Target Fill Up</h4>
-                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
-            </div>
-            <div class="col-md-4">
-              <div class="thumbnail">
-                <i class="material-icons">local_cafe</i>
-                <h4 class="service__title">Graphic Design</h4>
-                <p class="service__paragraph">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+</div>
+</div>
     </section>
     
     <section class="contact contact--bg">
@@ -193,7 +133,7 @@
                 <h3 class="about__content-title">We Believe <br>The Simple Design</h3>
                 <p class="about__content-subTitle">Trusted comes with tons of custom widgets, color options, font control and 
                   much more.</p>
-                  <p class="about__content-paragraph"">We aim to eliminate the task of dividing your project between different agency, corporate and business template. We are a company that offers services for our clients to solve problems and planing strategies for humanity all over the world.</p>
+                  <p class="about__content-paragraph">We aim to eliminate the task of dividing your project between different agency, corporate and business template. We are a company that offers services for our clients to solve problems and planing strategies for humanity all over the world.</p>
                   <a class="button--light" href="#">READ MORE</a>
                 </div>
               </div>
@@ -640,26 +580,8 @@
   </div>
     
     
-  
-
-  <script src="assets/jquery/jquery-3.2.1.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
-
-  <script>
-    $(document).ready(function() {
-
-      var $videoSrc = $("#video").attr("src");
-
-      $('#myModal').on('hide.bs.modal', function (e) {
-        $("#video").attr('src',$videoSrc); 
-      });
 
 
-
-    });
-  </script>
-</body>
-</html>
 
 
 

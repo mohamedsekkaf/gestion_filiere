@@ -372,16 +372,4 @@ return redirect('delete/delete-deplome');
 return redirect('delete/delete-semestre');
 } 
  //==========================================================
-
-
-
-
-
-
-
-
-
-
-
-
 }

@@ -8,11 +8,11 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-
-<script src="{{ asset('js/jquery.js')}}"></script>
- 
+    <script src="{{ asset('js/jquery.js')}}"></script>
     <script src="{{ asset('js/popper.min.js') }}"></script>
      <script src="{{ asset('js/bootstrap.js') }}"></script>
+     <link rel="stylesheet" href="{{asset('assets/flat-icon/flaticon.css')}}">
+    <link rel="stylesheet" href="{{asset('temp/temp/styles.css')}}">    
 </head>
 <body>
 <nav  class="navbar navbar-expand-sm navbar-dark navbarl sticky-top">
@@ -58,10 +58,21 @@
         </div>
 </footer>
 
+
+
 <script>
 $(function (){
    $('[data-fleep = "tooltip"]').tooltip()
    })
    </script>
+  <script>
+    $(document).ready(function() {
+      var $videoSrc = $("#video").attr("src");
+      $('#myModal').on('hide.bs.modal', function (e) {
+        $("#video").attr('src',$videoSrc); 
+      });
+    });
+  </script>
+
 </body>
 </html>
