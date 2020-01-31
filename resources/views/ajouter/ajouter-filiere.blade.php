@@ -44,6 +44,6 @@ body{
                @endforeach
                </div>
             </form>
-            
+            </div>   
 </div>
 @endsection
