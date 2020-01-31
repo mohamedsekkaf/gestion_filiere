@@ -36,7 +36,7 @@
 </div><!-- fin container-->
 
 
-
+<style>
 body{
     background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
 }
