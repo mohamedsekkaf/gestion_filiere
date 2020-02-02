@@ -117,23 +117,7 @@
         transform: rotate(360deg);
     }
 }
-footer{
-    width: auto;
-    height: 40vh;
-    border-radius: 3vh;
-    background-color: #c1c2c4c4;
-}
-.footer2{
-    width: auto;
-    height: 30vh;
-    border: 2px solid rgba(64, 64, 65, 0.548);
-}
-.footer1{
-    width: auto;
-    height: 10vh;
-    border: 2px solid rgba(64, 64, 65, 0.548);
-    text-align: center;
-}
+
 .img-user {
     width: 40px;
     height:40px;

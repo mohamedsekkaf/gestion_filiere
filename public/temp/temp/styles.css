@@ -97,7 +97,7 @@ button:focus{
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 82%, 0% 100%);
             clip-path: polygon(0 0, 100% 0, 100% 82%, 0% 100%);
     background: url("../../assets/images/header-background.png") no-repeat;
-    height: 800px;
+    height: 600px;
     position: relative;
     background-size: cover;
   }
@@ -117,7 +117,7 @@ button:focus{
 
 .header .navbar{
     padding-top: 30px;
-    margin-bottom: 200px;
+    margin-bottom: 100px;
   }
 
 @media screen and (max-width: 450px) {
