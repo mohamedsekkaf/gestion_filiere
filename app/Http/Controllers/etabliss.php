@@ -41,7 +41,7 @@ public function showinfo(){
 public function info($id)
 {
    $tes= DB::select("select * from etaplissemments where nom_etablessement = ?",[$id]);
-   $fil =  DB::select("select  from felieres where nom_etabless= ?",[$tes[0]->nom_etablessement])->paginate(2);
+   $fil =  DB::select("select * from felieres where nom_etabless= ?",[$tes[0]->nom_etablessement])->paginate(02);
    return  view('filiere', compact('fil'));
 }
 //========================================================== selection module
