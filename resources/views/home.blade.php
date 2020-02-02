@@ -111,15 +111,15 @@
 </div>
 </div><!-- fin col-->
 @endforeach
+</div><!-- fin row-->
+</div><!-- fin container-->
 {{ $etap->links()}}
-</div>
-</div>
     </section>
     
     <section class="contact contact--bg">
       <div class="container">
         <div class="page-section text-center">
-          <h2 class="page-section__title--white">Les établissement de Université chouaib doukkali</h2>
+          <h2 class="page-section__title--white">Les établissements de Université chouaib doukkali</h2>
           <p class="page-section__paragraph--white">Gérer le site</p>
           <a class="button button--hover" href="http://gestion-fil-estsb.herokuapp.com/ajouter">LETS GO</a>
         </div>
