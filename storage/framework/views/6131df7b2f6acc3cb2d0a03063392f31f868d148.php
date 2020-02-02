@@ -22,7 +22,10 @@ body{
                             <input type="text"  type="text"  class="form-control"  name="local_etablessement" value="<?php echo e(old('local_etablessement')); ?>" placeholder="Localisation" id="local"/>
                         </div>
                         <div class="form-group tt">
-                            <input type="file"  class="form-control"  value="<?php echo e(old('images')); ?>" placeholder="image"  name="image"/>
+                        
+                        
+                            <input type="file"  class="form-control upload" id="file" aria-hidden="true"  value="<?php echo e(old('image')); ?>" placeholder="image"  name="image"/>
+                            <label for="file">Choose a file</label>
                         </div>
                         <div class="form-group tt">
                             <input type="submit" name="btnSubmit" class="btnContact"    value="Ajouter" />
@@ -41,5 +44,6 @@ body{
             </form>
             </div>    
 </div>
+<br><br>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make("layouts/mylayout", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/ajouter/ajouter-etablessement.blade.php ENDPATH**/ ?>

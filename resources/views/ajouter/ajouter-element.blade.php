@@ -17,9 +17,11 @@ body{
                <div class="row">
                     <div class="col-md-12">
                         <div class="form-group tt">
+                        <label for="">Element</label>
                             <input type="text"   class="form-control" name="nom_element" type="text"  value="{{ old('nom_filiere')}}" placeholder="Nom de filiere" id="nom"  />
                         </div>
                         <div class="form-group tt">
+                        <label for="">l'horaire</label>
                             <input type="text"  class="form-control"  name="horaire_element" type="number" value="{{ old('nummodel')}}" placeholder="Nombre de module" id="local"/>
                         </div>
                         <div class="form-group tt">
@@ -56,4 +58,5 @@ body{
             </form>
             </div>       
 </div>
+<br><br>
 @endsection

@@ -23,7 +23,10 @@ body{
                             <input type="text"  type="text"  class="form-control"  name="local_etablessement" value="{{ old('local_etablessement')}}" placeholder="Localisation" id="local"/>
                         </div>
                         <div class="form-group tt">
-                            <input type="file"  class="form-control"  value="{{ old('images')}}" placeholder="image"  name="image"/>
+                        
+                        
+                            <input type="file"  class="form-control upload" id="file" aria-hidden="true"  value="{{ old('image')}}" placeholder="image"  name="image"/>
+                           <!--  <label for="file">Choose a file</label> -->
                         </div>
                         <div class="form-group tt">
                             <input type="submit" name="btnSubmit" class="btnContact"    value="Ajouter" />
@@ -41,4 +44,5 @@ body{
             </form>
             </div>    
 </div>
+<br><br>
 @endsection

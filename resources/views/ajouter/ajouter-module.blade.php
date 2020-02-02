@@ -16,13 +16,15 @@ body{
                 <h3>Ajouter Module</h3>
                <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group">
+                        <div class="form-group tt">
+                        <label for="">Module</label>
                             <input type="text"   class="form-control" name="nom_module" type="text"  value="{{ old('nom_module')}}" placeholder="Nom de Module" id="nom"  />
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
+                        <label for="">Nombre de l'element</label>
                             <input   class="form-control"  name="num_element" type="number" value="{{ old('num_element')}}" placeholder="Nombre de module" id="local"/>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <label for="">Semester</label>
                         <select class="form-control" name="nom_se"  value="{{ old('nom_se')}}"  id="" required>
                            <option value="">default </option>
@@ -65,4 +67,5 @@ body{
             </form>
             </div>     
 </div>
+<br><br>
 @endsection

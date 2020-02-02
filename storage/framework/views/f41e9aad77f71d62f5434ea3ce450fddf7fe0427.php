@@ -15,13 +15,15 @@ body{
                 <h3>Ajouter Module</h3>
                <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group">
-                            <input type="text"   class="form-control" name="nom_module" type="text"  value="<?php echo e(old('nom_module')); ?>" placeholder="Nom de Module" id="nom"  />
+                        <div class="form-group tt">
+                        <label for="">Module</label>
+                            <input type="text"   class="form-control" name="nom_module" type="text" alt="gdfxjfg"  value="<?php echo e(old('nom_module')); ?>" placeholder="Nom de Module" id="nom"  />
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
+                        <label for="">Nombre de l'element</label>
                             <input   class="form-control"  name="num_element" type="number" value="<?php echo e(old('num_element')); ?>" placeholder="Nombre de module" id="local"/>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <label for="">Semester</label>
                         <select class="form-control" name="nom_se"  value="<?php echo e(old('nom_se')); ?>"  id="" required>
                            <option value="">default </option>
@@ -65,5 +67,6 @@ body{
             </form>
             </div>     
 </div>
+<br><br>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make("layouts/mylayout", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/ajouter/ajouter-module.blade.php ENDPATH**/ ?>

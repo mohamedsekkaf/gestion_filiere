@@ -75,7 +75,7 @@ body{
             <form action="<?php echo e(url('/update/update-deplome')); ?>"  method="POST" enctype="multipart/form-data" >
               <?php echo method_field('POST'); ?>
                <?php echo csrf_field(); ?>
-                <h3>Supprimer Semestre</h3>
+                <h3>Modefier deplome</h3>
                   <div class="row">
                     <div class="col-md-12">
                   <div class="form-group tt">
@@ -113,7 +113,7 @@ body{
 
 
              <div class="form-group tt">
-                            <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Supprimer" />        
+                            <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Modefier" />        
                     </div>    
                     </div>
                 <div class="col-12">

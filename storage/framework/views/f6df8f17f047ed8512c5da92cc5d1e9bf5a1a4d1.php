@@ -15,13 +15,15 @@ body{
                 <h3>Ajouter Filiere</h3>
                <div class="row">
                     <div class="col-md-12">
-                        <div class="form-group">
+                        <div class="form-group tt">
+                        <label for="">Element</label>
                             <input type="text"   class="form-control" name="nom_element" type="text"  value="<?php echo e(old('nom_filiere')); ?>" placeholder="Nom de filiere" id="nom"  />
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
+                        <label for="">l'horaire</label>
                             <input type="text"  class="form-control"  name="horaire_element" type="number" value="<?php echo e(old('nummodel')); ?>" placeholder="Nombre de module" id="local"/>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <label for="">Module</label>
                         <select class="form-control" name="nom_mod" id="" required>
                            <option value="">default </option>
@@ -30,7 +32,7 @@ body{
                            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                         </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <label for="">Eteblesement</label>
                         <select class="form-control" name="nom_etabless" id="" required>
                                  <option value="">default </option>
@@ -39,7 +41,7 @@ body{
                                  <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                               </select>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group tt">
                             <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Ajouter" />
                         </div>
                     </div>
@@ -56,5 +58,6 @@ body{
             </form>
             </div>       
 </div>
+<br><br>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make("layouts/mylayout", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/ajouter/ajouter-element.blade.php ENDPATH**/ ?>

@@ -107,7 +107,7 @@
     <p class="card-text tt"><small class="text-muted"></small> Localisation  : {{ $etapliss->local_etablessement}}</p>
 
  <a style="display:inline-block;" href="http://gestion-fil-estsb.herokuapp.com/info/{{$etapliss->nom_etablessement}}"><p class="hover"> Afficher les Filieres </p></a>
- <a href="http://gestion-fil-estsb.herokuapp.com/showdeplome/{{$etapliss->id_etablessement}}"><p class="card-text">Afficher les deplomes</p></a>
+ <a href="http://gestion-fil-estsb.herokuapp.com/showdeplome/{{$etapliss->nom_etablessement}}"><p class="card-text">Afficher les deplomes</p></a>
   </div>
 </div>
 </div><!-- fin col-->
@@ -117,7 +117,7 @@
 </div>
     </section>
     
-    <section class="contact contact--bg">
+ <!--    <section class="contact contact--bg">
       <div class="container">
         <div class="page-section text-center">
           <h2 class="page-section__title--white"></h2>
@@ -144,9 +144,9 @@
           </div>
         </div>
 
-      </section>
+      </section> -->
       
-      <section class="letsGo letsGo--bg">
+ <!--      <section class="letsGo letsGo--bg">
         <div class="container">
           <div class="page-section page-section--small text-center">
             <h2 class="page-section__title--white page-section__title--white--less-margin">test</h2>
@@ -173,7 +173,7 @@
         </section>
       </div>
      
-    
+     -->
    
       
    
