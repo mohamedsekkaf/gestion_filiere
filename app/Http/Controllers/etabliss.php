@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Http\validator ;
 use Illuminate\Http\Request;
+/* use Illuminate\Pagination\Paginator; */
 use App\Http\Requests;
 use DB;
 use Redirect;
@@ -41,7 +42,7 @@ public function showinfo(){
 public function info($id)
 {
    $tes= DB::select("select * from etaplissemments where nom_etablessement = ?",[$id]);
-   $fil =  DB::select("select * from felieres where nom_etabless= ?",[$tes[0]->nom_etablessement])->paginate(02);
+   $fil =  DB::select("select * from felieres where nom_etabless =?",[$tes[0]->nom_etablessement]);
    return  view('filiere', compact('fil'));
 }
 //========================================================== selection module
@@ -336,10 +337,10 @@ public function updatesemestre(Request $request){
    $nom_etabless = $request->input('nom_etabless');
    DB::table('semstrs')
        ->where('nom_s', $nom)
-       ->update(array('nom_s' => $nom_snew,'nom_file'=>$nom_fil,'nom_etabless'=>$nom_etabless )); 
+       ->update(array('nom_s' => $nom_snew .' '.$nom_fil,'nom_file'=>$nom_fil,'nom_etabless'=>$nom_etabless )); 
        DB::table('modules')
        ->where('nom_se', $nom)
-       ->update(array('nom_se' => $nom_snew)); 
+       ->update(array('nom_se' => $nom_snew.' '.$nom_fil)); 
        return redirect('update/update-semestre');
 } 
 

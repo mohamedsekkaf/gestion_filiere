@@ -2,7 +2,7 @@
 <div class="container">
 <div class="row">
 <div class="col-12">
-<h3 style="text-align:center;"> Ajouter Etablessement ou Filiere ou <br> Module ou Element ou Diplôme </h3>
+<h3 style="text-align:center;"> Ajouter Etablissement ou Filiere ou <br> Module ou Element ou Diplôme </h3>
 </div></div>
 </div>
 <div class="container">
@@ -22,7 +22,7 @@
 <div class="container">
 <div class="row">
 <div class="col-12">
-<h3 style="text-align:center;"> Modifier Etablessement ou Filiere ou <br> Module ou Element ou Diplôme </h3>
+<h3 style="text-align:center;"> Modifier Etablissement ou Filiere ou <br> Module ou Element ou Diplôme </h3>
 </div></div>
 </div>
 <div class="container">
@@ -42,7 +42,7 @@
 <div class="container">
 <div class="row">
 <div class="col-12">
-<h3 style="text-align:center;"> Supprimer Etablessement ou Filiere ou <br> Module ou Element ou Diplôme </h3>
+<h3 style="text-align:center;"> Supprimer Etablissement ou Filiere ou <br> Module ou Element ou Diplôme </h3>
 </div></div>
 </div>
 <div class="container">

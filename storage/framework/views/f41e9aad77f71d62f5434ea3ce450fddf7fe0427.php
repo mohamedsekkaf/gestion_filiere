@@ -17,7 +17,7 @@ body{
                     <div class="col-md-12">
                         <div class="form-group tt">
                         <label for="">Module</label>
-                            <input type="text"   class="form-control" name="nom_module" type="text" alt="gdfxjfg"  value="<?php echo e(old('nom_module')); ?>" placeholder="Nom de Module" id="nom"  />
+                            <input type="text"   class="form-control" name="nom_module" type="text"  value="<?php echo e(old('nom_module')); ?>" placeholder="Nom de Module" id="nom"  />
                         </div>
                         <div class="form-group tt">
                         <label for="">Nombre de l'element</label>

@@ -59,7 +59,7 @@ body{
 </style>
 <div class="container contact-form">
             <div class="contact-image">
-                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+                <img style="transform: rotate(0deg);" src="{{asset('image/refresh.png')}}" alt=""/>
             </div>
             <form action="{{ url('/update/update-etablessement') }}"  method="POST" enctype="multipart/form-data" >
               @method('POST')

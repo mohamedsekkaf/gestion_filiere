@@ -45,7 +45,7 @@ body{
 </style>
 <div class="container contact-form">
             <div class="contact-image">
-                <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+                <img style="transform: rotate(0deg);" src="<?php echo e(asset('image/rubbish.png')); ?>" alt="rocket_contact"/>
             </div>
             <form action="<?php echo e(url('/delete/delete-semestre')); ?>"  method="POST" enctype="multipart/form-data" >
               <?php echo method_field('POST'); ?>

@@ -77,7 +77,7 @@ button:focus{
 
 @media (min-width: 768px) {
 .container{
-    width:600px;
+    width:500px;
     margin: 0 auto;
 }}
 
@@ -116,8 +116,8 @@ button:focus{
   }
 
 .header .navbar{
-    padding-top: 30px;
-    margin-bottom: 100px;
+    padding-top: 10px;
+    margin-bottom: 25px;
   }
 
 @media screen and (max-width: 450px) {

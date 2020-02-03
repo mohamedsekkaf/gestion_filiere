@@ -3,9 +3,10 @@
 
 @section("content")
 
-<div class="container">
+<!-- <div class="container">
 <div class="row">
     @foreach($fil as $feliere)
+    @csrf
 <div class="col-md-6">
 <div class="card mb-3 mt-4">
   <div class="card-body">
@@ -16,20 +17,21 @@
  <a href="http://gestion-fil-estsb.herokuapp.com/semestre/{{$feliere->nom_filiere}}"><p class="card-text">Afficher les Semestre</p></a>
   </div>
 </div>
-</div><!-- fin col-->
+</div><!-- fin col
 @endforeach
-</div><!-- fin row-->
-</div><!-- fin container-->
+</div><!-- fin row
+</div><!-- fin container
 <br><br><br><br>
 <br><br><br><br>
-
+ -->
 
 <div class="main-wrapper">
     <header class="header header--bg">
+    <img style="float:right" src="{{asset('image/est.png')}} " height="100" alt="">
+    <img style="float:left; " src="{{asset('image/logo.png')}} " height="100" alt="">
       <div class="container">
         <nav class="navbar">
           <div class="navbar-header"> 
-            <a class="navbar-brand" href="#">Université chouaib doukkali</a>
           </div>
         </nav>
         <div class="header__content text-center">
@@ -51,13 +53,10 @@
         
     <div class="container">
         <div class="row">
-    @foreach($etap as $etapliss)
-    @csrf
-    
-
     <div class="container">
 <div class="row">
     @foreach($fil as $feliere)
+    @csrf
 <div class="col-md-6">
 <div class="card mb-3 mt-4">
   <div class="card-body">
@@ -65,22 +64,25 @@
   <h5 class="card-title tt"> {{ $feliere->nom_filiere}}</h5>
     <p class="card-text tt"><small class="text-muted"></small> nombre de module  : {{ $feliere->nummodel}}</p>
 
- <a href="http://gestion-fil-estsb.herokuapp.com/semestre/{{$feliere->nom_filiere}}"><p class="card-text">Afficher les Semestre</p></a>
+ <a href="http://127.0.0.1:8000/semestre/{{$feliere->nom_filiere}}"><p class="card-text">Afficher les Semestre</p></a>
   </div>
 </div>
 </div><!-- fin col-->
 @endforeach
 </div><!-- fin row-->
 </div><!-- fin container-->
-{{ $fil->links()}}
+
     </section>
     
     <section class="contact contact--bg">
       <div class="container">
         <div class="page-section text-center">
-          <h2 class="page-section__title--white">Les Filieres de Université chouaib doukkali</h2>
+        @foreach($fil as $feliere)
+          <h2 class="page-section__title--white">Les Filieres de l'établissement {{$feliere->nom_etabless}} </h2>
+          @break
+          @endforeach
           <p class="page-section__paragraph--white">Gérer le site</p>
-          <a class="button button--hover" href="http://gestion-fil-estsb.herokuapp.com/ajouter">LETS GO</a>
+          <a class="button button--hover" href="127.0.0.1:8000/ajouter">LETS GO</a>
         </div>
       </div>
     </section>

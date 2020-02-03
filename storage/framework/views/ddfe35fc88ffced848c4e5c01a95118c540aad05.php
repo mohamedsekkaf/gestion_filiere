@@ -46,5 +46,6 @@ body{
             </form>
             </div>   
 </div>
+<br><br>
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make("layouts/mylayout", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/ajouter/ajouter-filiere.blade.php ENDPATH**/ ?>

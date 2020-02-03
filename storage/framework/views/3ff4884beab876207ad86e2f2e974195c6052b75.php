@@ -70,6 +70,7 @@ body{
 </style>
 <div class="container contact-form">
             <div class="contact-image">
+            
                 <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
             </div>
             <form action="<?php echo e(url('/update/update-deplome')); ?>"  method="POST" enctype="multipart/form-data" >

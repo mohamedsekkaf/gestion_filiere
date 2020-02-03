@@ -69,10 +69,11 @@
 
   <div class="main-wrapper">
     <header class="header header--bg">
+    <img style="float:right" src="{{asset('image/est.png')}} " height="100" alt="">
+    <img style="float:left; " src="{{asset('image/logo.png')}} " height="100" alt="">
       <div class="container">
         <nav class="navbar">
           <div class="navbar-header"> 
-            <a class="navbar-brand" href="#">Université chouaib doukkali</a>
           </div>
         </nav>
         <div class="header__content text-center">
@@ -105,8 +106,8 @@
   <h3 class="card-title tt"> {{ $etapliss->nom_etablessement}}</h3>
     <p class="card-text tt"><small class="text-muted"></small> Localisation  : {{ $etapliss->local_etablessement}}</p>
 
- <a style="display:inline-block;" href="http://gestion-fil-estsb.herokuapp.com/info/{{$etapliss->nom_etablessement}}"><p class="hover"> Afficher les Filieres </p></a>
- <a href="http://gestion-fil-estsb.herokuapp.com/showdeplome/{{$etapliss->nom_etablessement}}"><p class="card-text">Afficher les deplomes</p></a>
+ <a style="display:inline-block;" href="http://127.0.0.1:8000/info/{{$etapliss->nom_etablessement}}"><p class="hover"> Afficher les Filieres </p></a>
+ <a href="http://127.0.0.1:8000/showdeplome/{{$etapliss->nom_etablessement}}"><p class="card-text">Afficher les deplomes</p></a>
   </div>
 </div>
 </div><!-- fin col-->
@@ -121,7 +122,7 @@
         <div class="page-section text-center">
           <h2 class="page-section__title--white">Les établissements de Université chouaib doukkali</h2>
           <p class="page-section__paragraph--white">Gérer le site</p>
-          <a class="button button--hover" href="http://gestion-fil-estsb.herokuapp.com/ajouter">LETS GO</a>
+          <a class="button button--hover" href="http://127.0.0.1:8000/ajouter">LETS GO</a>
         </div>
       </div>
     </section>
