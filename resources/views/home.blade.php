@@ -69,13 +69,12 @@
 
   <div class="main-wrapper">
     <header class="header header--bg">
-    <img style="float:right" src="{{asset('image/est.png')}} " height="100" alt="">
-    <img style="float:left; " src="{{asset('image/logo.png')}} " height="100" alt="">
       <div class="container">
-        <nav class="navbar">
-          <div class="navbar-header"> 
-          </div>
-        </nav>
+        <div class="row">
+    <img style="float:left;margin-left:100% " src="{{asset('image/logo.png')}} " height="100" alt="">
+   </div>
+   </div>
+      <div class="container">
         <div class="header__content text-center">
           <h2 class="header__content__title">Application de gestion des filieres</h2>
           <p class="header__content__paragraph">Ecole superieur de technologie </p>
