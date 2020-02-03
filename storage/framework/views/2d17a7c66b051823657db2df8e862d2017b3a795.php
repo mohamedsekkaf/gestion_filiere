@@ -66,10 +66,10 @@
 
   <div class="main-wrapper">
     <header class="header header--bg">
-      <div class="container">
-        <div class="row">
-    <img style="float:left;margin-left:100% " src="<?php echo e(asset('image/logo.png')); ?> " height="100" alt="">
-   </div>
+      <div class="container header__content text-center">
+        
+    <img src="<?php echo e(asset('image/logo.png')); ?> " height="100" alt="">
+   
    </div>
       <div class="container">
         <div class="header__content text-center">

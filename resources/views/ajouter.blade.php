@@ -65,13 +65,10 @@
 
 <div class="main-wrapper">
     <header class="header header--bg">
-    <img style="float:right" src="{{asset('image/est.png')}} " height="100" alt="">
-    <img style="float:left; " src="{{asset('image/logo.png')}} " height="100" alt="">
+    <div class="container header__content text-center">    
+    <img src="{{asset('image/logo.png')}} " height="100" alt="">
+   </div>
       <div class="container">
-        <nav class="navbar">
-          <div class="navbar-header"> 
-          </div>
-        </nav>
         <div class="header__content text-center">
           <h2 class="header__content__title">Application de gestion des filieres</h2>
           <p class="header__content__paragraph">Ecole superieur de technologie </p>
@@ -88,7 +85,26 @@
     </header>
     
     <section class="service">
- 
+    <div class="container">
+<div class="row">
+<div class="col-12">
+<h3 style="text-align:center;"> Ajouter Etablissement ou Filiere ou <br> Module ou Element ou Diplôme </h3>
+</div></div>
+</div>
+<div class="container">
+       <div class="head d-flex justify-content-center">
+       <div class="row" style="display: block!important;">
+       <a href="{{asset('/ajouter/ajouter-etablessement')}}"><img class="circle" src="{{ asset('image/school.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Etablissement" data-toggle="modal"  /></a>
+       <a href="{{asset('/ajouter/ajouter-filiere')}}"> <img class="circle" src="{{ asset('image/filiere.png') }}" data-toggle="modal"  data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Filiere"/></a>
+       <a href="{{asset('/ajouter/ajouter-semestre')}}"> <img class="circle" src="{{ asset('image/semestre.png') }}" data-toggle="modal"   data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter semestre"/></a>
+       <a href="{{asset('/ajouter/ajouter-module')}}"><img class="circle" src="{{ asset('image/module.png') }}" data-toggle="modal"   data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Modele"/></a>
+       <a href="{{asset('/ajouter/ajouter-element')}}"><img class="circle" src="{{ asset('image/cour.png') }}" data-toggle="modal"    data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Element"/></a>
+       <a href="{{asset('/ajouter/ajouter-deplome')}}"><img class="circle" src="{{ asset('image/diploma1.png') }}" data-fleep="tooltip" data-placement="bottom" data-original-title="Ajouter Diplôme" data-toggle="modal"  /></a>
+       <!-- data-target="#deplome" -->
+       </div>
+       </div><!--fin class hread -->
+</div><!-- fi container -->
+ <br>
     <div class="container">
 <div class="row">
 <div class="col-12">
@@ -131,17 +147,7 @@
 
     </section>
     
-    <section class="contact contact--bg">
-      <div class="container">
-        <div class="page-section text-center">
-        @foreach($element as $elem)
-          <h2 class="page-section__title--white">Les Elements de Module  {{ $elem->nom_element }} </h2>
-          @endforeach
-          <p class="page-section__paragraph--white">Gérer le site</p>
-          <a class="button button--hover" href="127.0.0.1:8000/ajouter">LETS GO</a>
-        </div>
-      </div>
-    </section>
+ 
   
 
   </div>

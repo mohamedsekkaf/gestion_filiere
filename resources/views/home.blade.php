@@ -69,10 +69,10 @@
 
   <div class="main-wrapper">
     <header class="header header--bg">
-      <div class="container">
-        <div class="row">
-    <img style="float:left; " src="{{asset('image/logo.png')}} " height="100" alt="">
-   </div>
+      <div class="container header__content text-center">
+        
+    <img src="{{asset('image/logo.png')}} " height="100" alt="">
+   
    </div>
       <div class="container">
         <div class="header__content text-center">

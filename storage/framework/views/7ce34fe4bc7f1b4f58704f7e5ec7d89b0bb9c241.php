@@ -19,12 +19,13 @@
 
 <div class="main-wrapper">
     <header class="header header--bg">
+    <div class="container header__content text-center">
+        
+        <img src="<?php echo e(asset('image/logo.png')); ?> " height="100" alt="">
+       
+       </div>
       <div class="container">
-        <nav class="navbar">
-          <div class="navbar-header"> 
-            <a class="navbar-brand" href="#">Université chouaib doukkali</a>
-          </div>
-        </nav>
+        
         <div class="header__content text-center">
           <h2 class="header__content__title">Application de gestion des filieres</h2>
           <p class="header__content__paragraph">Ecole superieur de technologie </p>
