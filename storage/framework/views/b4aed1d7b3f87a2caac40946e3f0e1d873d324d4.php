@@ -61,7 +61,7 @@
   <h5 class="card-title tt"> <?php echo e($feliere->nom_filiere); ?></h5>
     <p class="card-text tt"><small class="text-muted"></small> nombre de module  : <?php echo e($feliere->nummodel); ?></p>
 
- <a href="http://127.0.0.1:8000/semestre/<?php echo e($feliere->nom_filiere); ?>"><p class="card-text">Afficher les Semestre</p></a>
+ <a href="<?php echo e(url('/semestre')); ?>/<?php echo e($feliere->nom_filiere); ?>"><p class="card-text">Afficher les Semestre</p></a>
   </div>
 </div>
 </div><!-- fin col-->

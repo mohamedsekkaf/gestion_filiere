@@ -60,7 +60,7 @@
 
             <p class="card-text tt"><small class="text-muted"></small> nombre d'element   : {{ $mod->num_element}}</p>
 
-        <a href="http://127.0.0.1:8000/element/{{$mod->nom_module}}"><p class="card-text"> Afficher les Element</p></a>
+        <a href="{{ url('/element')}}/{{$mod->nom_module}}"><p class="card-text"> Afficher les Element</p></a>
           </div>
         </div>
         </div><!-- fin col-->

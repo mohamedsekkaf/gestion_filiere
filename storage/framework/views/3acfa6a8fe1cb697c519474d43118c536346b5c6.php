@@ -21,18 +21,12 @@
 
 <div class="main-wrapper">
     <header class="header header--bg">
-    <img style="float:right" src="<?php echo e(asset('image/est.png')); ?> " height="100" alt="">
-    <img style="float:left; " src="<?php echo e(asset('image/logo.png')); ?> " height="100" alt="">
-      <div class="container">
-        <nav class="navbar">
-          <div class="navbar-header"> 
-
-          
-         
-  
+    <div class="container header__content text-center">
         
-          </div>
-        </nav>
+    <img src="<?php echo e(asset('image/logo.png')); ?> " height="100" alt="">
+   
+   </div>
+      <div class="container">
         <div class="header__content text-center">
           <h2 class="header__content__title">Application de gestion des filieres</h2>
           <p class="header__content__paragraph">Ecole superieur de technologie </p>

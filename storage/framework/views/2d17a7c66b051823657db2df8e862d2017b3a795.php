@@ -102,8 +102,8 @@
   <h3 class="card-title tt"> <?php echo e($etapliss->nom_etablessement); ?></h3>
     <p class="card-text tt"><small class="text-muted"></small> Localisation  : <?php echo e($etapliss->local_etablessement); ?></p>
 
- <a style="display:inline-block;" href="http://127.0.0.1:8000/info/<?php echo e($etapliss->nom_etablessement); ?>"><p class="hover"> Afficher les Filieres </p></a>
- <a href="http://127.0.0.1:8000/showdeplome/<?php echo e($etapliss->nom_etablessement); ?>"><p class="card-text">Afficher les deplomes</p></a>
+ <a style="display:inline-block;" href="<?php echo e(url('/info')); ?>/<?php echo e($etapliss->nom_etablessement); ?>"><p class="hover"> Afficher les Filieres </p></a>
+ <a href="<?php echo e(url('/showdeplome')); ?>/<?php echo e($etapliss->nom_etablessement); ?>"><p class="card-text">Afficher les deplomes</p></a>
   </div>
 </div>
 </div><!-- fin col-->

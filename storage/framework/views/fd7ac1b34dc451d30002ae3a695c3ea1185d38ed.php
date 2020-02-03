@@ -37,7 +37,7 @@
 <!--              <a href="http://gestion-fil-estsb.herokuapp.com/ajouter"><img src="<?php echo e(asset('image/user.png')); ?>" class=" img-user round" data-fleep="tooltip" data-placement="bottom" data-original-title="<?php echo e(Auth::user()->name); ?>"></a>
  -->            </li>
             <li class="nav-item active">
-            <a class="nav-link lore tt" href="http://gestion-fil-estsb.herokuapp.com/ajouter" ><?php echo e(Auth::user()->name); ?></a>
+            <a class="nav-link lore tt" href="<?php echo e(url('/ajouter')); ?>" ><?php echo e(Auth::user()->name); ?></a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link lore tt" href="<?php echo e(url('/logout')); ?>">logout</a>

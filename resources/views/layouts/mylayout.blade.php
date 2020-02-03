@@ -37,7 +37,7 @@
 <!--              <a href="http://gestion-fil-estsb.herokuapp.com/ajouter"><img src="{{asset('image/user.png')}}" class=" img-user round" data-fleep="tooltip" data-placement="bottom" data-original-title="{{Auth::user()->name}}"></a>
  -->            </li>
             <li class="nav-item active">
-            <a class="nav-link lore tt" href="http://gestion-fil-estsb.herokuapp.com/ajouter" >{{Auth::user()->name}}</a>
+            <a class="nav-link lore tt" href="{{url('/ajouter')}}" >{{Auth::user()->name}}</a>
             </li>
             <li class="nav-item active">
                 <a class="nav-link lore tt" href="{{ url('/logout')}}">logout</a>
