@@ -71,7 +71,7 @@
     <header class="header header--bg">
       <div class="container">
         <div class="row">
-    <img style="float:left;margin-left:100% " src="{{asset('image/logo.png')}} " height="100" alt="">
+    <img style="float:left; " src="{{asset('image/logo.png')}} " height="100" alt="">
    </div>
    </div>
       <div class="container">
