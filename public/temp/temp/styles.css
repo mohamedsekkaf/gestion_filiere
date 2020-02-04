@@ -664,13 +664,11 @@ button:focus{
     margin-bottom: 30px;
   }
 }
-
 .price__panel-wrapper{
     max-width: 1020px;
     margin-right: auto;
     margin-left: auto;
   }
-
 .price .panel{
     -webkit-box-shadow: 0px 0px 10px 0px rgba(136, 136, 136, 0.2);
             box-shadow: 0px 0px 10px 0px rgba(136, 136, 136, 0.2);
@@ -680,14 +678,12 @@ button:focus{
     -webkit-transition: .3s ease-out;
     transition: .3s ease-out;
   }
-
 .price__title{
     font-size: 22px;
     color: #313131;;
     letter-spacing: 3px;
     font-weight: bold;
   }
-
 .price__ammount{
     font-size: 18px;
     color: #4f4f4f;
@@ -702,7 +698,6 @@ button:focus{
     font-size: 16px;
     color: #7d7d7d;
   }
-
 .price .panel:hover{
     background-color: #13BDFF;
     border-top: 50px solid transparent;
@@ -711,7 +706,6 @@ button:focus{
     -webkit-box-shadow: none;
             box-shadow: none;
   }
-
 .price .panel:hover .panel__button{
       -webkit-box-shadow: 2.5px 4.33px 10px 0px rgba(0, 0, 0, 0.13);
               box-shadow: 2.5px 4.33px 10px 0px rgba(0, 0, 0, 0.13); 

@@ -74,7 +74,7 @@
           @break
           @endforeach
           <p class="page-section__paragraph--white">Gérer le site</p>
-          <a class="button button--hover" href="127.0.0.1:8000/ajouter">LETS GO</a>
+          <a class="button button--hover" href="{{ url('/ajouter')}}">LETS GO</a>
         </div>
       </div>
     </section>

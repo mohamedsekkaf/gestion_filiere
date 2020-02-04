@@ -121,7 +121,7 @@
         <div class="page-section text-center">
           <h2 class="page-section__title--white">Les établissements de Université chouaib doukkali</h2>
           <p class="page-section__paragraph--white">Gérer le site</p>
-          <a class="button button--hover" href="http://127.0.0.1:8000/ajouter">LETS GO</a>
+          <a class="button button--hover" href="{{ url('/ajouter')}}">LETS GO</a>
         </div>
       </div>
     </section>
