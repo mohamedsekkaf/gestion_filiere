@@ -374,7 +374,7 @@ public function updatesemestre(Request $request){
       $semestre = Semstr::all();
        return view('/delete/delete-semestre',compact('semestre'));
     }
- //========================================================== delete etablessement
+ //========================================================== delete etablessement hhhhhhh
  public function  deleteetab(Request $request){
    $nom = $request->input('nom');
    DB::table('etaplissemments')
