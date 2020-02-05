@@ -17,12 +17,15 @@ body{
                <div class="row">
                     <div class="col-md-12">
                         <div class="form-group tt">
+                        <label for="">Filière</label>
                             <input type="text"   class="form-control" name="nom_filiere" type="text"  value="{{ old('nom_filiere')}}" placeholder="Nom de filiere" id="nom"  />
                         </div>
                         <div class="form-group tt">
+                        <label for="">Nombre de module</label>
                             <input type="text"  class="form-control"  name="nummodel" type="number" value="{{ old('nummodel')}}" placeholder="Nombre de module" id="local"/>
                         </div>
                         <div class="form-group tt">
+                      <label for=""> Etablissement</label>
                         <select class="form-control" name="nom_etabless" value="{{ old('nom_etabless')}}"id="">
                                  <option value="">default </option>
                                  @foreach($etab as $fil)
@@ -34,8 +37,6 @@ body{
                             <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Ajouter" />
                         </div>
                     </div>
-                    
-               
                 <div class="col-12">
                @foreach($errors->all() as $err)
                      <div class="alert alert-danger mt-5">

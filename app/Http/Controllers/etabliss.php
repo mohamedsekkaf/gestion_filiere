@@ -104,10 +104,17 @@ public function Sformajouterdep(){
 //========================================================== ajouter etablessement
 public function insertetab(Request $request){
 $request->validate([
-   "nom_etablessement"   => "required|unique:etaplissemments",
-   "local_etablessement" => "required",
-   "image"              => "required",
-]);
+   "nom_etablessement"   => "required|unique:etaplissemments|max:255",
+   "local_etablessement" => "required|max:255",
+   "image"              => "required|max:255",
+],
+[
+   "nom_etablessement.required" => "Le champ de l'établissement est obligatoire",
+   "nom_etablessement.unique"   => "le nom de l'établissement est déja utilisé", 
+    "local_etablessement.required" => "Le champ de local est obligatoire", 
+    "image.required" => "Le champ d'image est obligatoire"
+]
+);
  $nom_etablessement = $request->input('nom_etablessement');
 $local_etablessement = $request->input('local_etablessement');
 if ($request->has('image')) {
@@ -127,11 +134,18 @@ return redirect('ajouter/ajouter-etablessement');
 }
 //========================================================== ajouter filiere
 public function insertetabfil(Request $request){
-   $request->validate([
+$request->validate([
       "nom_filiere" => "required|unique:felieres",
       "nummodel"    => "required",
       "nom_etabless"=> "required",
-   ]);
+],
+[
+   "nom_filiere.required"  => "Le champ de Filière est obligatoire",
+   "nom_filiere.unique"  => "Le nom de filière est déja utilisé",
+   "nummodel.required"  => "Le champ de nombre de module est obligatoire",
+   "nom_etabless.required"  => "Le champ  de l'établissement est obligatoire",
+]
+);
  $nom_filiere = $request->input('nom_filiere');
 $nummodel = $request->input('nummodel');
 $nom_etabless = $request->input('nom_etabless');
@@ -144,11 +158,18 @@ return redirect('ajouter/ajouter-filiere');
 }
 //========================================================== ajouter semester
 public function insertetabsemestre(Request $request){
-   $request->validate([
+$request->validate([
       "nom_s"        =>"required|unique:semstrs",
-      "nom_file"      =>"required|unique:semstrs",
-      "nom_etabless" =>"required|unique:semstrs",
-   ]);
+      "nom_file"      =>"required",
+      "nom_etabless" =>"required",
+],
+[
+   "nom_s.required"  =>"Le champ de Semestre est obligatoire.",
+   "nom_s.unique"   => "Le nom Semestre est déja utilisé",
+   "nom_file.required"   =>"Le champ de filière est obligatoire.",
+   "nom_etabless.required" =>"Le champ de l'établissement est obligatoire.",
+]
+);
    $nom_s = $request->input('nom_s');
   $nom_file = $request->input('nom_file');
   $nom_etabless = $request->input('nom_etabless');
@@ -165,7 +186,16 @@ public function insertetabmod(Request $request){
       "nom_fil"         =>"required",
       "nom_etabless"     =>"required",
       "nom_se"          =>"required",
-   ]);
+   ],
+[
+   "nom_module.required"      =>"Le champ de module est obligatoire.",
+   "nom_module.unique"      =>"Le nom de  module est déja utilisé. ",
+      "num_element.required"      =>"Le champ de nombre element est obligatoire.",
+      "nom_fil.required"         =>"Le champ de Filiere est obligatoire.",
+      "nom_etabless.required"     =>"Le champ de l'établissement est obligatoire.",
+      "nom_se.required"          =>"Le champ de Semestre est obligatoire.",
+]
+);
     $nom_module = $request->input('nom_module');
    $num_element = $request->input('num_element');
    $nom_fil = $request->input('nom_fil');
@@ -183,7 +213,15 @@ public function insertetabelem(Request $request){
       "nom_mod" =>"required",
       "nom_etabless" =>"required",
       "horaire_element" =>"required",
-   ]);
+   ],
+[
+   "nom_element.required" =>"Le champ d'Element est obligatoire.",
+   "nom_element.unique" =>"Le nom d'Element est féja utilisé.",
+      "nom_mod.required" =>"Le champ de module est obligtoire. ",
+      "nom_etabless.required" =>"Le champ de l'ètablissement est obligatoire. ",
+      "horaire_element.required" =>"Le champ de horaire est obligatoire",
+]
+);
     $nom_element = $request->input('nom_element');
    $nom_mod = $request->input('nom_mod');
    $nom_etabless = $request->input('nom_etabless');

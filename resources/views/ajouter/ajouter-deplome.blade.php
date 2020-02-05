@@ -17,14 +17,16 @@ body{
                <div class="row">
                     <div class="col-md-12">
                         <div class="form-group tt">
-                            <input type="text"  type="text"  class="form-control"  name="nom_deplome" value="{{ old('nom_etablessement')}}" placeholder="Nom de deplome" id="nom"  />
+                        <label for="">Nom de deplome</label>
+                            <input type="text"   class="form-control text_center"  name="nom_deplome" value="{{ old('nom_etablessement')}}" placeholder="Nom de deplome" id="nom"  />
                         </div>
-                        <div class="form-group">
-                            <input type="text"  type="text"  class="form-control"  name="type_deplome" value="{{ old('local_etablessement')}}" placeholder="type" id="local"/>
+                        <div class="form-group tt">
+                        <label for="">Type de deplome</label>
+                            <input type="text"   class="form-control text_center"  name="type_deplome" value="{{ old('local_etablessement')}}" placeholder="type" id="local"/>
                         </div>
                         <div class="form-group tt">
                             <label for="">Durée</label>
-                        <select class="form-control" name="duree_deplome" id="" required>
+                        <select class="form-control text_center" name="duree_deplome" id="" required>
                            <option value="2 ans">2 ans </option>
                            <option value="3 ans">3 ans</option>
                            <option value="4 ans">4 ans </option>
@@ -38,7 +40,7 @@ body{
                         </div>
                         <div class="form-group tt">
                            <label for=""> Etalessement</label>
-                        <select class="form-control" name="nom_etap" id="" required>
+                        <select class="form-control text_center" name="nom_etap" id="" required>
                            <option value="">default</option>
                            @foreach($etab as $dep)
                           <option  value="{{$dep->nom_etablessement}}">{{ $dep->nom_etablessement }}</option>
@@ -46,18 +48,19 @@ body{
                         </select>
                         </div>
                         <div class="form-group tt">
-                            <input type="submit" name="btnSubmit" class="btnContact"    value="Ajouter" />
+                            <input type="submit"  name="btnSubmit" class="btnContact"    value="Ajouter" />
                         </div>
                     </div>
                     
                
-                <div class="col-12">
+               <!--  <div class="col-12">
                @foreach($errors->all() as $err)
                      <div class="alert alert-danger mt-5">
                      {{$err}}
                      </div>
                @endforeach
-               </div>
+               </div> -->
+     
             </form>
 </div>
 </div>

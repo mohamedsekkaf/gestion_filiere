@@ -17,14 +17,15 @@ body{
                <div class="row">
                     <div class="col-md-12">
                         <div class="form-group tt">
-                            <input type="text"  type="text"  class="form-control"  name="nom_etablessement" value="{{ old('nom_etablessement')}}" placeholder="Nom de l'etablissement" id="nom"  />
+                        <label for="">Etablissement</label>
+                            <input type="text"  type="text"  class="form-control"  name="nom_etablessement" value="{{ old('nom_etablessement')}}" placeholder="Nom de l'etablissement" id="nom" required  />
                         </div>
                         <div class="form-group tt">
-                            <input type="text"  type="text"  class="form-control"  name="local_etablessement" value="{{ old('local_etablessement')}}" placeholder="Localisation" id="local"/>
+                        <label for="">Localisation</label>
+                            <input type="text"  type="text"  class="form-control"   name="local_etablessement" value="{{ old('local_etablessement')}}" placeholder="Localisation" id="local"/>
                         </div>
                         <div class="form-group tt">
-                        
-                        
+                        <label for="">Image</label>
                             <input type="file"  class="form-control upload" id="file" aria-hidden="true"  value="{{ old('image')}}" placeholder="image"  name="image"/>
                            <!--  <label for="file">Choose a file</label> -->
                         </div>

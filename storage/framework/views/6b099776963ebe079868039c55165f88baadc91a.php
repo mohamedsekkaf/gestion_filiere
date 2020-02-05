@@ -40,7 +40,7 @@ if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('password'); ?> is-invalid <?php unset($message);
 if (isset($messageCache)) { $message = $messageCache; }
 endif; ?>" name="password" required autocomplete="current-password">
-
+                              
                                 <?php if ($errors->has('password')) :
 if (isset($message)) { $messageCache = $message; }
 $message = $errors->first('password'); ?>

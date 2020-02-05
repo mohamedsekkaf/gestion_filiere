@@ -16,12 +16,15 @@ body{
                <div class="row">
                     <div class="col-md-12">
                         <div class="form-group tt">
+                        <label for="">Filière</label>
                             <input type="text"   class="form-control" name="nom_filiere" type="text"  value="<?php echo e(old('nom_filiere')); ?>" placeholder="Nom de filiere" id="nom"  />
                         </div>
                         <div class="form-group tt">
+                        <label for="">Nombre de module</label>
                             <input type="text"  class="form-control"  name="nummodel" type="number" value="<?php echo e(old('nummodel')); ?>" placeholder="Nombre de module" id="local"/>
                         </div>
                         <div class="form-group tt">
+                      <label for=""> Etablissement</label>
                         <select class="form-control" name="nom_etabless" value="<?php echo e(old('nom_etabless')); ?>"id="">
                                  <option value="">default </option>
                                  <?php $__currentLoopData = $etab; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fil): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -33,8 +36,6 @@ body{
                             <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Ajouter" />
                         </div>
                     </div>
-                    
-               
                 <div class="col-12">
                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $err): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                      <div class="alert alert-danger mt-5">

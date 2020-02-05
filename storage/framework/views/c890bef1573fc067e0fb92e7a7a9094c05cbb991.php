@@ -23,12 +23,13 @@
 
 <div class="main-wrapper">
     <header class="header header--bg">
+    <div class="container header__content text-center">
+        
+    <img src="<?php echo e(asset('image/logo.png')); ?> " height="100" alt="">
+   
+   </div>
       <div class="container">
-        <nav class="navbar">
-          <div class="navbar-header"> 
-            <a class="navbar-brand" href="#">Université chouaib doukkali</a>
-          </div>
-        </nav>
+       
         <div class="header__content text-center">
           <h2 class="header__content__title">Application de gestion des filieres</h2>
           <p class="header__content__paragraph">Ecole superieur de technologie </p>
@@ -57,7 +58,7 @@
 
             <p class="card-text tt"><small class="text-muted"></small> nombre d'element   : <?php echo e($mod->num_element); ?></p>
 
-        <a href="http://127.0.0.1:8000/element/<?php echo e($mod->nom_module); ?>"><p class="card-text"> Afficher les Element</p></a>
+        <a href="<?php echo e(url('/element')); ?>/<?php echo e($mod->nom_module); ?>"><p class="card-text"> Afficher les Element</p></a>
           </div>
         </div>
         </div><!-- fin col-->
@@ -75,7 +76,7 @@
           <?php break; ?>
           <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
           <p class="page-section__paragraph--white">Gérer le site</p>
-          <a class="button button--hover" href="127.0.0.1:8000/ajouter">LETS GO</a>
+          <a class="button button--hover" href="<?php echo e(url('/ajouter')); ?>">LETS GO</a>
         </div>
       </div>
     </section>

@@ -71,7 +71,7 @@
                 <div class="footer__second">
                   <h2 class="footer__title">links</h2>
                   <ul>
-                    <li><a href="">Home</a></li>
+                    <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
                   </ul>
                 </div>
               </div>
