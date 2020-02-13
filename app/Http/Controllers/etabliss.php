@@ -165,6 +165,7 @@ $request->validate([
 ],
 [
    "nom_s.required"  =>"Le champ de Semestre est obligatoire.",
+   "nom_s.unique"  => "le nom de semestre est déja utilisé",
    "nom_s.unique"   => "Le nom Semestre est déja utilisé",
    "nom_file.required"   =>"Le champ de filière est obligatoire.",
    "nom_etabless.required" =>"Le champ de l'établissement est obligatoire.",
