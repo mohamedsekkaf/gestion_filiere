@@ -17,10 +17,12 @@ body{
                <div class="row">
                     <div class="col-md-12">
                         <div class="form-group tt">
+                        <label for="">Semestre</label>
                             <input type="text"   class="form-control" name="nom_s" value="{{ old('nom_s')}}" placeholder="Nom de Semestre" id=""  />
                         </div>
                         
                         <div class="form-group tt">
+                        <label for="">filiere</label>
                         <select class="form-control" name="nom_file" value="{{ old('nom_file')}}" id="" >
                            <option value="">default </option>
                            @foreach($file as $model)
@@ -29,6 +31,7 @@ body{
                         </select>
                         </div>
                         <div class="form-group tt">
+                        <label for="">L'établissement</label>
                         <td style="text-align:center;">
                               <select class="form-control" name="nom_etabless" value="{{ old('nom_etabless')}}" id="" >
                                  <option value="">default </option>
