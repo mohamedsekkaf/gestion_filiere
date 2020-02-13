@@ -56,8 +56,8 @@
 .card{
     box-shadow: #adadad7c 1px 3px ;
     border-radius:6px;
-    background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
-    border-top:10px solid hsl(189, 68%, 55%);/* hsl(36, 95%, 47%) */
+    
+    border-top:10px solid  hsl(36, 95%, 47%) ;/* hsl(189, 68%, 55%); */
 }
 .card-body{
     
@@ -195,7 +195,6 @@ text-decoration:none;
     padding: 9px 40px;
     border-radius: 30px;
     font-size: 16px;
-    
     border: 1px solid #fff;
     display: inline-block;
     background-color: transparent;
@@ -212,4 +211,9 @@ text-decoration:none;
 }
 .text_center{
     text-align: center;
+}
+.roundd{
+    border-radius: 50%;
+    width: 50vh;
+    height: 30vh;
 }

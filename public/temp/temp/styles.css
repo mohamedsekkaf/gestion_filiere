@@ -816,12 +816,6 @@ button:focus{
     padding-bottom: 25px;
   }
 
-.slider .carousel-control.left, .slider .carousel-control.right{
-    background: none !important;
-    -webkit-filter: progid:none !important;
-            filter: progid:none !important;
-    opacity: 1;
-  }
 
 .slider .material-icons{
     width: 60px;

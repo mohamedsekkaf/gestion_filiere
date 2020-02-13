@@ -117,6 +117,13 @@ $request->validate([
 );
  $nom_etablessement = $request->input('nom_etablessement');
 $local_etablessement = $request->input('local_etablessement');
+      $request->hasFile('v');
+      $filenameWithExt = $request->file('v')->getClientOriginalName();
+      $filename = pathinfo($filenameWithExt,PATHINFO_FILENAME);
+      $extension = $request->file('v')->getClientOriginalExtension();
+      $fileNameToStore = $filename.'_'.time().'.'.$extension;
+      $path = $request->file('v')->storeAs('public/images',$fileNameToStore);
+
 if ($request->has('image')) {
    $files = $request->file('image');
  // Define upload path

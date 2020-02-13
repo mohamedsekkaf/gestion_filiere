@@ -97,7 +97,7 @@
 <div class="col-md-6">
 <div class="card mb-3 mt-4">
 
-<div class="crd-head  text-center"><img  src="<?php echo e(asset('images/')); ?>/<?php echo e($etapliss->image); ?> " class="card-img-top  round" /></div>
+<div class="crd-head  text-center"><img  src="<?php echo e(asset('images/')); ?>/<?php echo e($etapliss->image); ?> "  class="card-img-top  roundd" /></div>
   <div class="card-body">
   <h3 class="card-title tt"> <?php echo e($etapliss->nom_etablessement); ?></h3>
     <p class="card-text tt"><small class="text-muted"></small> Localisation  : <?php echo e($etapliss->local_etablessement); ?></p>
