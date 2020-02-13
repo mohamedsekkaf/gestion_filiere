@@ -71,7 +71,7 @@
         <div class="container">
             <div class="page-section text-center">
                 @foreach($element as $elem)
-                <h2 class="page-section__title--white">Les Elements de Module {{ $elem->nom_element }} </h2>
+                <h2 class="page-section__title--white">Les Elements de Module {{ $elem->nom_mod }} </h2>
                 @break
                 @endforeach
                 <p class="page-section__paragraph--white">Gérer le site</p>
