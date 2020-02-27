@@ -57,9 +57,8 @@
        <a href="<?php echo e(asset('/delete/delete-deplome')); ?>"><img class="circle" src="<?php echo e(asset('image/diploma1.png')); ?>" data-fleep="tooltip" data-placement="bottom" data-original-title="Supprimer  Diplôme" data-toggle="modal" data-target=""/></a> 
 
        </div>
-       </div><!--fin class hread --
-</div><!-- fi container -->
-
+       </div>
+</div> -->
 
 <div class="main-wrapper">
     <header class="header header--bg">
@@ -189,9 +188,6 @@
         </div><!-- fi container -->
 
     </section>
-
-
-
 
 </div>
 

@@ -36,7 +36,8 @@ public function showinfo(){
     $file = Feliere::all();
     $mod = Module::all();
     $semestre = semstr::all();
-    return  view('ajouter',compact('etab','file','mod','semestre'));
+    $elem = Element::all();
+    return  view('ajouter',compact('etab','file','mod','semestre','elem'));
 }
 //========================================================== selection filiere
 public function info($id)
@@ -64,7 +65,9 @@ public function semestre($nom)
 {
    $s = DB::select("select * from felieres where nom_filiere = ? ",[$nom]);
    $sem =  DB::select("select * from semstrs where nom_file = ?",[$s[0]->nom_filiere]);
-   return  view('semestre', compact('sem'));
+   $mod =  DB::select("select * from modules where nom_fil = ?",[$s[0]->nom_filiere]);
+   $elem =  DB::select("select * from elements where nom_fil = ?",[$s[0]->nom_filiere]);
+   return  view('semestre', compact('sem','mod','elem'));
 }
 //===========================================
 public function Sformajouteretab(){
@@ -79,7 +82,8 @@ public function Sformajouterfil(){
 public function Sformajoutersem(){
    $etab = Etaplissemment::all();
    $file = Feliere::all();
-   return view('ajouter/ajouter-semestre',compact('etab','file'));
+   $semestre = semstr::all();
+   return view('ajouter/ajouter-semestre',compact('etab','file','semestre'));
 }
 //===========================================
 public function Sformajoutermod(){
@@ -94,7 +98,9 @@ public function Sformajoutermod(){
 public function Sformajouterelem(){
    $etab = Etaplissemment::all();
    $mod = Module::all();
-   return view('ajouter/ajouter-element',compact('etab','mod'));
+   $semestre = semstr::all();
+   $file = Feliere::all();
+   return view('ajouter/ajouter-element',compact('etab','mod','semestre','file'));
 }
 //===========================================
 public function Sformajouterdep(){
@@ -214,6 +220,8 @@ public function insertetabelem(Request $request){
       "nom_mod" =>"required",
       "nom_etabless" =>"required",
       "horaire_element" =>"required",
+      "nom_sem"          =>"required",
+      "nom_fil"  =>  "required",
    ],
 [
    "nom_element.required" =>"Le champ d'Element est obligatoire.",
@@ -221,13 +229,18 @@ public function insertetabelem(Request $request){
       "nom_mod.required" =>"Le champ de module est obligtoire. ",
       "nom_etabless.required" =>"Le champ de l'ètablissement est obligatoire. ",
       "horaire_element.required" =>"Le champ de horaire est obligatoire",
+      "nom_sem.required" =>"Le champ de semestre est obligatoire",
+      "nom_fil.required" =>"Le champ de Element est obligatoire",
+
 ]
 );
     $nom_element = $request->input('nom_element');
    $nom_mod = $request->input('nom_mod');
    $nom_etabless = $request->input('nom_etabless');
    $horaire_element = $request->input('horaire_element');
-   $data=array('nom_element'=>$nom_element,'nom_mod'=>$nom_mod,'nom_etabless'=>$nom_etabless,'horaire_element'=>$horaire_element );
+   $nom_sem = $request->input('nom_sem');
+   $nom_fil = $request->input('nom_fil');
+   $data=array('nom_element'=>$nom_element,'nom_mod'=>$nom_mod,'nom_etabless'=>$nom_etabless,'horaire_element'=>$horaire_element,'nom_sem'=>$nom_sem,'nom_fil'=>$nom_fil );
    DB::table('elements')->insert($data);
    /* $message="les données a ete inserer"; */
   // echo "<script type='text/javascript'>alert('$message');</script>";
@@ -259,15 +272,23 @@ public function showNometab(){
 } 
 public function showNomfil(){
    $file = Feliere::all();
-   return view('update/update-filiere',compact('file'));
+   $etap = Etaplissemment::all();
+   return view('update/update-filiere',compact('file','etap'));
 } 
 public function showNommod(){
    $mod = Module::all();
-   return view('update/update-module',compact('mod'));
+   $file = Feliere::all();
+   $etap = Etaplissemment::all();
+   $semestre = semstr::all();
+   return view('update/update-module',compact('mod','etap','file','semestre'));
 } 
 public function showNomelem(){
    $elem = Element::all();
-   return view('update/update-element',compact('elem'));
+   $mod = Module::all();
+   $file = Feliere::all();
+   $etap = Etaplissemment::all();
+   $semestre = semstr::all();
+   return view('update/update-element',compact('elem','mod','etap','file','semestre'));
 } 
 public function showNomdep(){
    $dep = Deplome::all();

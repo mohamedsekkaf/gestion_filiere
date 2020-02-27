@@ -32,8 +32,6 @@ body{
                             <input type="submit" name="btnSubmit" class="btnContact"    value="Ajouter" />
                         </div>
                     </div>
-                    
-               
                 <div class="col-12">
                <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $err): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                      <div class="alert alert-danger mt-5">

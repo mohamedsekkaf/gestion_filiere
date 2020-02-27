@@ -19,6 +19,8 @@ class CreateElementsTable extends Migration
             $table->string('nom_mod');
             $table->string('nom_etabless');
             $table->string('horaire_element');
+            $table->string('nom_sem');
+            $table->string('nom_fil');
             $table->timestamps();
         });
     }

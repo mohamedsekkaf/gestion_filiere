@@ -102,7 +102,7 @@
               </div>
             </div>
             <hr class="footer__horizontal-bar">
-            <p class="footer__bottom-paragraph">&copy; Copyright 2020 <a href="#" style="color: #00aafe;font-weight:bold;">MS</a>. All Rights Reserved</p>
+            <p class="footer__bottom-paragraph">&copy; Copyright 2020 <a href="#" style="color: #00aafe;font-weight:bold;">SEKKAF</a>. All Rights Reserved</p>
           </div>
         </div>
       </footer>

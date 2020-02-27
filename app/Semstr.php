@@ -10,3 +10,5 @@ class Semstr extends Model
     protected $fillable = ['id','nom_s','nom_file','nom_etabless','created_at','updated_at'];
     
 }
+
+

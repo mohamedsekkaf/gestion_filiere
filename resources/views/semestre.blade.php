@@ -13,10 +13,10 @@
  <a href="http://127.0.0.1:8000/modul/{{$s->nom_s}}"><p class="card-text"> Afficher les Module</p></a>
   </div>
 </div>
-</div><!-- fin col--
+</div>
 @endforeach
-</div><!-- fin row--
-</div><!-- fin container-->
+</div>
+</div>-->
 
 
 <div class="main-wrapper">
@@ -65,18 +65,48 @@
 
     </section>
 
-    <section class="contact contact--bg">
-        <div class="container">
-            <div class="page-section text-center">
-                @foreach($sem as $s)
-                <h2 class="page-section__title--white">Les Semestres de Feliere {{ $s->nom_file}} </h2>
-                @break
-                @endforeach
-                <p class="page-section__paragraph--white">Gérer le site</p>
-                <a class="button button--hover" href="{{ url('/ajouter')}}">LETS GO</a>
+    <?php
+    foreach($sem as $s){
+        echo '<h1>'.$s->nom_s.'</h1>';
+        foreach($mod as $m ){
+            if($s->nom_s==$m->nom_se && $s->nom_file==$m->nom_fil){
+                echo '<h3 class="te">'.$m->nom_module.'</h3>';
+            }
+            foreach($elem as $e){
+                if($m->nom_module==$e->nom_mod && $s->nom_s==$e->nom_sem){
+                    echo '<h5 class="tee">'.$e->nom_element.'</h5>';
+                }
+            }
+        }
+    }
+
+    /* foreach($sem as $s){
+        echo '<h1>'.$s->nom_s.'</h1>';
+        foreach($mod as $m ){
+            if($s->nom_s==$m->nom_se && $s->nom_file==$m->nom_fil){
+                echo '<h3 class="te">'.$m->nom_module.'</h3>';
+            }
+            foreach($elem as $e){
+                if($m->nom_module==$e->nom_mod && $m->nom_se==$e->nom_sem){
+                    echo '<h5 class="tee">'.$e->nom_element.'</h5>';
+                }
+            }
+        }
+    } */
+    ?>
+
+        <section class="contact contact--bg">
+            <div class="container">
+                <div class="page-section text-center">
+                    @foreach($sem as $s)
+                    <h2 class="page-section__title--white">Les Semestres de Feliere {{ $s->nom_file}} </h2>
+                    @break
+                    @endforeach
+                    <p class="page-section__paragraph--white">Gérer le site</p>
+                    <a class="button button--hover" href="{{ url('/ajouter')}}">LETS GO</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
 
 </div>
