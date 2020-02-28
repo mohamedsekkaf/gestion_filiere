@@ -54,15 +54,45 @@ body{
                 <h3>Supprimer Filiere</h3>
                   <div class="row">
                     <div class="col-md-12">
+                    <div class="form-group tt ">
+                    <label for="">selectionner l'etablissement</label>
+                    <select name="" class="form-control" id="test" required>
+                        <option value="">default </option>
+                        @foreach($etap as $e)
+                        <option value="{{ $e->nom_etablessement }}">{{ $e->nom_etablessement }} </option>
+                        @endforeach
+                    </select>
+                </div>
                   <div class="form-group tt">
                     <label for="">selectionner Filiere</label> 
           
-                    <select  name="id_filiere" class=" form-control">
+                    <select  name="id_filiere" class=" form-control" required id="test1">
                     <option value="0">default </option>
-                        @foreach($file as $e)
+                    <script>
+                        var fil = <?php echo $file; ?> ;
+                        var length2 = fil.length;
+                        $(document).ready(function() {
+                            $("#test").change(function() {
+                                var m = $("#test option:selected").val();
+                                for (i = 0; i < length2; i++) {
+                                    $("#t").remove();
+                                }
+                                for (j = 0; j < length2; j++) {
+                                    if (fil[j]["nom_etabless"] == m) {
+                                        $("#test1").append('<option id="t" value="' + fil[j][
+                                                "nom_filiere"
+                                            ] + '">' + fil[j]["nom_filiere"] +
+                                            '</option>');
+                                    }
+                                }
+                            });
+                        });
+                        document.write('</select>');
+                        </script>
+                      <!--   @foreach($file as $e)
                         <option value=" {{ $e->id_filiere }}">{{ $e->nom_filiere }}->&nbsp;{{$e->nom_etabless}}</option>
                         @endforeach
-                        </select>
+                        </select> -->
              <br><br>
              <div class="form-group tt">
                             <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Supprimer" />        

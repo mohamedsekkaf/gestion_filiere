@@ -62,12 +62,12 @@
         </div><!-- fin container-->
 
     </section>
-
-    <?php
+    <a href="<?php echo e(url('/pdf')); ?>/<?php echo e($s->nom_file); ?>">Télécharger Emploi du Temps</a>
+    <?
     foreach($sem as $s){
-        echo '<h1>'.$s->nom_s.'</h1>';
+        echo '<h1> Semestre '.substr($s->nom_s,0,1) .'</h1>';
         foreach($mod as $m ){
-            if($s->nom_s==$m->nom_se && $s->nom_file==$m->nom_fil){
+            if($s->nom_s==$m->nom_se){
                 echo '<h3 class="te">'.$m->nom_module.'</h3>';
             }
             foreach($elem as $e){

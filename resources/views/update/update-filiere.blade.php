@@ -63,13 +63,15 @@ body {
         <div class="row">
             <div class="col-md-12">
                 <div class="form-group tt ">
-                <label for="">selectionner l'etablissement</label>
+                    <label for="">selectionner l'etablissement</label>
                     <select name="" class="form-control" id="test" required>
                         <option value="">default </option>
                         @foreach($etap as $e)
                         <option value="{{ $e->nom_etablessement }}">{{ $e->nom_etablessement }} </option>
                         @endforeach
                     </select>
+                </div>
+                <div class="form-group tt ">
                     <label for="">selectionner le Filiere</label>
                     <select name="nom" class=" form-control" id="test1" required>
                         <option value="">default </option>
@@ -79,12 +81,14 @@ body {
                         $(document).ready(function() {
                             $("#test").change(function() {
                                 var m = $("#test option:selected").val();
-                                for(i=0 ; i<length2 ; i++){
+                                for (i = 0; i < length2; i++) {
                                     $("#t").remove();
                                 }
                                 for (j = 0; j < length2; j++) {
                                     if (fil[j]["nom_etabless"] == m) {
-                                        $("#test1").append('<option id="t" value="'+fil[j]["nom_filiere"] +'">' + fil[j]["nom_filiere"] +
+                                        $("#test1").append('<option id="t" value="' + fil[j][
+                                                "nom_filiere"
+                                            ] + '">' + fil[j]["nom_filiere"] +
                                             '</option>');
                                     }
                                 }
@@ -92,7 +96,7 @@ body {
                         });
                         document.write('</select>');
                         </script>
-
+                    </div>
 
                         <br>
                         <div class="form-group tt">

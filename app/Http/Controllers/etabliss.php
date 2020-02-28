@@ -6,6 +6,7 @@ use Illuminate\Http\validator ;
 use Illuminate\Http\Request;
 /* use Illuminate\Pagination\Paginator; */
 use App\Http\Requests;
+use PDF;
 use DB;
 use Redirect;
 use View;
@@ -17,8 +18,30 @@ use App\Module;
 use App\Deplome;
 use App\Element;
 use App\Semstr;
+use Response;
 class etabliss extends Controller
 {
+
+public function pdfcontent($fil){
+   $s = DB::select("select * from felieres where nom_filiere = ? ",[$fil]);
+   $sem =  DB::select("select * from semstrs where nom_file = ?",[$s[0]->nom_filiere]);
+   $mod =  DB::select("select * from modules where nom_fil = ?",[$s[0]->nom_filiere]);
+   $elem =  DB::select("select * from elements where nom_fil = ?",[$s[0]->nom_filiere]);
+   PDF::loadView("pdf",compact('sem','mod','elem'))->setPaper('a4', 'landscape')->save(public_path()."/pdfs/Telecharger.pdf")->stream("aslan".".pdf");
+   $file= public_path(). "/pdfs/Telecharger.pdf";
+      $headers = array(
+                'Content-Type: application/pdf',
+              );
+      return Response::download($file, 'Telecharger.pdf', $headers);
+     
+}
+
+  public function export_pdf(){
+      
+  }
+
+
+
 //==========
 public function showetabliss(){
     $etap = Etaplissemment::paginate(2);
@@ -180,7 +203,7 @@ $request->validate([
    $nom_s = $request->input('nom_s');
   $nom_file = $request->input('nom_file');
   $nom_etabless = $request->input('nom_etabless');
-  $data=array('nom_s'=>$nom_s." ".$nom_file,'nom_file'=>$nom_file,'nom_etabless'=>$nom_etabless);
+  $data=array('nom_s'=>$nom_s."".$nom_file,'nom_file'=>$nom_file,'nom_etabless'=>$nom_etabless);
   DB::table('semstrs')->insert($data);
   return redirect('ajouter/ajouter-semestre');
   
@@ -411,18 +434,30 @@ public function updatesemestre(Request $request){
  }
   //==========================================================
  public function  deleteshowNomfil(){
+   $etap = Etaplissemment::all();
    $file = Feliere::all();
-    return view('/delete/delete-filiere',compact('file'));
+   $semestre = Semstr::all();
+   $mod = Module::all();
+   $elem = Element::all();
+    return view('/delete/delete-filiere',compact('elem','mod','etap','file','semestre'));
  }
   //==========================================================
  public function  deleteshowNommod(){
+   $etap = Etaplissemment::all();
+   $file = Feliere::all();
+   $semestre = Semstr::all();
    $mod = Module::all();
-    return view('/delete/delete-module',compact('mod'));
+   $elem = Element::all();
+    return view('/delete/delete-module',compact('elem','mod','etap','file','semestre'));
  }
   //==========================================================
  public function   deleteshowNomelem(){
+   $etap = Etaplissemment::all();
+   $file = Feliere::all();
+   $semestre = Semstr::all();
+   $mod = Module::all();
    $elem = Element::all();
-    return view('/delete/delete-element',compact('elem'));
+    return view('/delete/delete-element',compact('elem','mod','etap','file','semestre'));
  }
   //==========================================================
  public function   deleteshowNomdep(){
@@ -431,8 +466,12 @@ public function updatesemestre(Request $request){
  }
 //==========================================================
    public function   deleteshowNomsem(){
+      $etap = Etaplissemment::all();
+      $file = Feliere::all();
       $semestre = Semstr::all();
-       return view('/delete/delete-semestre',compact('semestre'));
+      $mod = Module::all();
+      $elem = Element::all();
+       return view('/delete/delete-semestre',compact('elem','mod','etap','file','semestre'));
     }
  //========================================================== delete etablessement hhhhhhh
  public function  deleteetab(Request $request){
@@ -461,7 +500,16 @@ return redirect('delete/delete-etablessement');
 public function  deletefiliere(Request $request){
    $id = $request->input('id_filiere');
    DB::table('felieres')
-       ->where('id_filiere', $id)
+       ->where('nom_filiere', $id)
+       ->delete();
+       DB::table('modules')
+       ->where('nom_fil', $id)
+       ->delete();
+       DB::table('elements')
+       ->where('nom_fil', $id)
+       ->delete();
+       DB::table('semstrs')
+       ->where('nom_file', $id)
        ->delete();
 return redirect('delete/delete-filiere');
 } 

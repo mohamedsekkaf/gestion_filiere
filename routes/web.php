@@ -66,6 +66,8 @@ Route::get('/modul/{nom}', 'etabliss@modul')->middleware('web');
 Route::get('/element/{nom}', 'etabliss@element')->middleware('web');
 Route::get('/showdeplome/{id}', 'etabliss@showdeplome')->middleware('web');
 Route::get('/semestre/{nom}', 'etabliss@semestre')->middleware('web');
+Route::get('/pdf/{fil}','etabliss@pdfcontent');
+Route::get('/pdf','etabliss@export_pdf');
 Route::get('/logout', function(){
     Auth::logout();
     return redirect('/');

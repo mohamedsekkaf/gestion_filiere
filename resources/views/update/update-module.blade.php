@@ -179,7 +179,7 @@ body {
                 @foreach($errors->all() as $err)
                 <div class="alert alert-danger mt-5">
                     {{$err}}
-                </div>
+                </div>  
                 @endforeach
             </div>
     </form>

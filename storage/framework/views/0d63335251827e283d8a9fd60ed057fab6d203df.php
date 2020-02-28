@@ -61,7 +61,7 @@ body {
                 </div>
                 <div class="form-group tt">
                     <label for="">Semestre</label>
-                    <input type="text" class="form-control" name="nom_s" value="<?php echo e(old('nom_s')); ?>"
+                    <input type="text" class="form-control"  name="nom_s" value="<?php echo e(old('nom_s')); ?>"
                         placeholder="Nom de Semestre" id="" />
                 </div>
 
