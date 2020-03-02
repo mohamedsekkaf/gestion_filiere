@@ -64,7 +64,7 @@
         </div><!-- fin container-->
 
     </section>
-    <a href="{{ url('/pdf')}}/{{$s->nom_file}}">Télécharger Emploi du Temps</a>
+    <a href="{{ url('/pdf')}}/{{$s->nom_file}}">Télécharger PDF</a>
     <?
     foreach($sem as $s){
         echo '<h1> Semestre '.substr($s->nom_s,0,1) .'</h1>';

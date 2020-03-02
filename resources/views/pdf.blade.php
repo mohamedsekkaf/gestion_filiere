@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-    #title{
-        text-align:center;
+    #title {
+        text-align: center;
     }
-    #tt{
-        background:red;
+
+    #tt {
+        background: red;
     }
     </style>
 </head>
+
 <body>
+
+    <h1 id="title">Filiere <?php  foreach($sem as $s){ echo $s->nom_file;break; }?></h1>
     
-<h1 id="title">Filiere <?php  foreach($sem as $s){ echo $s->nom_file;break; }?></h1>
-<?php 
+        <?php 
  foreach($sem as $s){
     echo '<h1 style="color:red;"> Semestre '.substr($s->nom_s,0,1) .'</h1>';
     foreach($mod as $m ){
@@ -31,5 +35,7 @@
     }
 }
 ?>
+
 </body>
+
 </html>
