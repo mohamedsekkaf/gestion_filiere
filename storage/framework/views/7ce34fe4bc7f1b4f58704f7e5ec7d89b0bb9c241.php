@@ -41,43 +41,45 @@
         </div>
     </header>
 
-    <section class="service">
+      <section class="service">
 
         <div class="container">
             <div class="row">
                 <?php $__currentLoopData = $sem; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <?php break; ?>
                 <div class="col-md-6">
                     <div class="card mb-3 mt-4">
                         <div class="card-body">
-                            <h3 class="card-title tt">S <?php echo e($s->nom_s); ?></h3>
-                            <h5 class="card-title tt"> <?php echo e($s->nom_etabless); ?></h5>
+                            <h3 class="card-title tt"></h3>
+                            <h5 class="card-title tt"> </h5>
                             <a href="<?php echo e(url('/modul')); ?>/<?php echo e($s->nom_s); ?>">
-                                <p class="card-text"> Afficher les Module</p>
+                                <p class="card-text">/p>
                             </a>
                         </div>
                     </div>
-                </div><!-- fin col-->
+                </div>
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-            </div><!-- fin row-->
-        </div><!-- fin container-->
-
+            </div>
+        </div>
     </section>
-    <a href="<?php echo e(url('/pdf')); ?>/<?php echo e($s->nom_file); ?>">Télécharger PDF</a>
-    <?
+    <?php
     foreach($sem as $s){
-        echo '<h1> Semestre '.substr($s->nom_s,0,1) .'</h1>';
+        echo '<div class="card col-12">';
+        echo '<h1> Semestre '.substr($s->nom_s,0,1) .' '.$s->nom_etabless .'</h1>';
         foreach($mod as $m ){
             if($s->nom_s==$m->nom_se){
                 echo '<h3 class="te">'.$m->nom_module.'</h3>';
             }
+
             foreach($elem as $e){
                 if($m->nom_module==$e->nom_mod && $s->nom_s==$e->nom_sem){
                     echo '<h5 class="tee">'.$e->nom_element.'</h5>';
                 }
             }
         }
+        echo '</div>';
     }
-
+    
     /* foreach($sem as $s){
         echo '<h1>'.$s->nom_s.'</h1>';
         foreach($mod as $m ){
@@ -92,19 +94,20 @@
         }
     } */
     ?>
+    <a href="<?php echo e(url('/pdf')); ?>/<?php echo e($s->nom_file); ?>">Télécharger PDF</a>
 
-        <section class="contact contact--bg">
-            <div class="container">
-                <div class="page-section text-center">
-                    <?php $__currentLoopData = $sem; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                    <h2 class="page-section__title--white">Les Semestres de Feliere <?php echo e($s->nom_file); ?> </h2>
-                    <?php break; ?>
-                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    <p class="page-section__paragraph--white">Gérer le site</p>
-                    <a class="button button--hover" href="<?php echo e(url('/ajouter')); ?>">LETS GO</a>
-                </div>
+    <section class="contact contact--bg">
+        <div class="container">
+            <div class="page-section text-center">
+                <?php $__currentLoopData = $sem; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                <h2 class="page-section__title--white">Les Semestres de Feliere <?php echo e($s->nom_file); ?> </h2>
+                <?php break; ?>
+                <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                <p class="page-section__paragraph--white">Gérer le site</p>
+                <a class="button button--hover" href="<?php echo e(url('/ajouter')); ?>">LETS GO</a>
             </div>
-        </section>
+        </div>
+    </section>
 
 
 </div>

@@ -33,7 +33,6 @@ public function pdfcontent($fil){
                 'Content-Type: application/pdf',
               );
       return Response::download($file, 'Telecharger.pdf', $headers);
-     
 }
 
   public function export_pdf(){
@@ -86,10 +85,10 @@ public function element($nom)
 //==========================================================  selection semestre
 public function semestre($nom)
 {
-   $s = DB::select("select * from felieres where nom_filiere = ? ",[$nom]);
-   $sem =  DB::select("select * from semstrs where nom_file = ?",[$s[0]->nom_filiere]);
-   $mod =  DB::select("select * from modules where nom_fil = ?",[$s[0]->nom_filiere]);
-   $elem =  DB::select("select * from elements where nom_fil = ?",[$s[0]->nom_filiere]);
+  /*  $s = DB::select("select * from felieres where nom_filiere = ? ",[$nom]); */
+   $sem =  DB::select("select * from semstrs where nom_file = ?",/* [$s[0]->nom_filiere] */[$nom]);
+   $mod =  DB::select("select * from modules where nom_fil = ?",/* [$s[0]->nom_filiere] */[$nom]);
+   $elem =  DB::select("select * from elements where nom_fil = ?",/* [$s[0]->nom_filiere] */[$nom]);
    return  view('semestre', compact('sem','mod','elem'));
 }
 //===========================================
