@@ -70,15 +70,15 @@ echo '<div class="container">';
 echo '<div class="row">';
     foreach($sem as $s){
         echo '<div class="card col-12">';
-        echo '<h1> Semestre '.substr($s->nom_s,0,1).'</h1>';
+        echo '<h3> Semestre : '.substr($s->nom_s,0,1).'</h3>';
         foreach($mod as $m ){
             if($s->nom_s==$m->nom_se){
-                echo '<h3 class="te">'.$m->nom_module.'</h3>';
+                echo '<h4 class="te">Module : '.$m->nom_module.'</h4>';
             }
 
             foreach($elem as $e){
                 if($m->nom_module==$e->nom_mod && $s->nom_s==$e->nom_sem){
-                    echo '<h5 class="tee">'.$e->nom_element.'</h5>';
+                    echo '<h6 class="tee">Element : '.$e->nom_element.'</h6>';
                 }
             }
         }
