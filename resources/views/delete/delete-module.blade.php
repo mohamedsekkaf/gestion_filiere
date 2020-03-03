@@ -121,7 +121,7 @@ body {
                 </div>
                 <div class="form-group tt">
                     <label for="">selectionner Module</label>
-                    <select class=" form-control" name="id_module" id="test3" required>
+                    <select class=" form-control" name="nom_module" id="test3" required>
                         <option value="9">default </option>
                         <script>
                         var mod = <?php echo $mod; ?> ;

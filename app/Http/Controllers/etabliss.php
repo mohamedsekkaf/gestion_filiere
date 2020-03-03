@@ -514,9 +514,12 @@ return redirect('delete/delete-filiere');
 } 
  //==========================================================
 public function  deletemodule(Request $request){
-   $id = $request->input('id_module');
+   $id = $request->input('nom_module');
    DB::table('modules')
-       ->where('id_module', $id)
+       ->where('nom_module', $id)
+       ->delete();
+       DB::table('elements')
+       ->where('nom_mod', $id)
        ->delete();
 return redirect('delete/delete-module');
 } 
