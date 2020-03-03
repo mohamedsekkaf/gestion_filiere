@@ -180,7 +180,7 @@ body {
                 <div class="alert alert-danger mt-5">
                     <?php echo e($err); ?>
 
-                </div>
+                </div>  
                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
             </div>
     </form>

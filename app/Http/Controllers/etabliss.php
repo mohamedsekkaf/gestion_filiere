@@ -202,7 +202,7 @@ $request->validate([
    $nom_s = $request->input('nom_s');
   $nom_file = $request->input('nom_file');
   $nom_etabless = $request->input('nom_etabless');
-  $data=array('nom_s'=>$nom_s."".$nom_file,'nom_file'=>$nom_file,'nom_etabless'=>$nom_etabless);
+  $data=array('nom_s'=>$nom_s." ".$nom_file,'nom_file'=>$nom_file,'nom_etabless'=>$nom_etabless);
   DB::table('semstrs')->insert($data);
   return redirect('ajouter/ajouter-semestre');
   
