@@ -64,10 +64,13 @@
             </div>
         </div>
     </section>
+
     <?php
+echo '<div class="container">';
+echo '<div class="row">';
     foreach($sem as $s){
         echo '<div class="card col-12">';
-        echo '<h1> Semestre '.substr($s->nom_s,0,1) .' '.$s->nom_etabless .'</h1>';
+        echo '<h1> Semestre '.substr($s->nom_s,0,1).'</h1>';
         foreach($mod as $m ){
             if($s->nom_s==$m->nom_se){
                 echo '<h3 class="te">'.$m->nom_module.'</h3>';
@@ -81,6 +84,8 @@
         }
         echo '</div>';
     }
+    echo '</div>';
+    echo '</div>';
     
     /* foreach($sem as $s){
         echo '<h1>'.$s->nom_s.'</h1>';
