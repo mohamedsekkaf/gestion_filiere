@@ -419,10 +419,13 @@ public function updatesemestre(Request $request){
    $nom_etabless = $request->input('nom_etabless');
    DB::table('semstrs')
        ->where('nom_s', $nom)
-       ->update(array('nom_s' => $nom_snew .''.$nom_fil,'nom_file'=>$nom_fil,'nom_etabless'=>$nom_etabless )); 
+       ->update(array('nom_s' => $nom_snew .' '.$nom_fil,'nom_file'=>$nom_fil,'nom_etabless'=>$nom_etabless )); 
        DB::table('modules')
        ->where('nom_se', $nom)
        ->update(array('nom_se' => $nom_snew.' '.$nom_fil)); 
+       DB::table('elements')
+       ->where('id_element', $nom)
+       ->update(array('nom_sem' => $nom_snew.' '.$nom_fil)); 
        return redirect('update/update-semestre');
 } 
 
