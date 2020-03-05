@@ -74,7 +74,7 @@ body{
                         $(document).ready(function() {
                             $("#test").change(function() {
                                 var m = $("#test option:selected").val();
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i < <?php echo $file; ?>.length; i++) {
                                     $("#t").remove();
                                 }
                                 for (j = 0; j < length2; j++) {

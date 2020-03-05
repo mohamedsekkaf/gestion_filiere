@@ -81,13 +81,13 @@ body {
                         $(document).ready(function() {
                             $("#test").change(function() {
                                 var m = $("#test option:selected").val();
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i <<?php echo $file; ?>.length; i++) {
                                     $("#t").remove();
                                     $("#tt").remove();
                                     $("#ttt").remove();
                                     $("#tttt").remove();
                                 }
-                                for (j = 0; j < length2; j++) {
+                                for (j = 0; j < <?php echo $file; ?>.length; j++) {
                                     if (fil[j]["nom_etabless"] == m) {
                                         $("#test1").append('<option id="t" value="'+fil[j]["nom_filiere"] +'">' + fil[j]["nom_filiere"] +
                                             '</option>');
@@ -113,12 +113,12 @@ body {
                         $(document).ready(function() {
                             $("#test1").change(function() {
                                 var m = $("#test1 option:selected").val();
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i < <?php echo $semestre; ?>.length; i++) {
                                     $("#tt").remove();
                                     $("#ttt").remove();
                                     $("#tttt").remove();
                                 }
-                                for (j = 0; j < lengt; j++) {
+                                for (j = 0; j < <?php echo $semestre; ?>.length; j++) {
                                     if (s[j]["nom_file"] == m) {
                                         $("#test2").append('<option id="tt" value="'+s[j]["nom_s"] +'">Semestre ' + s[j]["nom_s"].split(" ")[0] +
                                             '</option>');
@@ -144,11 +144,11 @@ body {
                         $(document).ready(function() {
                             $("#test2").change(function() {
                                 var m = $("#test2 option:selected").val();
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i < <?php echo $mod; ?>.length; i++) {
                                     $("#ttt").remove();
                                     $("#tttt").remove();
                                 }
-                                for (j = 0; j < lengt; j++) {
+                                for (j = 0; j < <?php echo $mod; ?>.length; j++) {
                                     if (mod[j]["nom_se"] == m) {
                                         $("#test3").append('<option id="ttt" value="'+mod[j]["nom_module"]+'">' + mod[j]["nom_module"] +
                                             '</option>');
@@ -175,10 +175,10 @@ body {
                         $(document).ready(function() {
                             $("#test3").change(function() {
                                 var m = $("#test3 option:selected").val();
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i < <?php echo $elem; ?>.length; i++) {
                                     $("#tttt").remove();
                                 }
-                                for (j = 0; j < lengt; j++) {
+                                for (j = 0; j < <?php echo $elem; ?>.length; j++) {
                                     if (e[j]["nom_mod"] == m) {
                                         $("#test4").append('<option id="tttt" value="'+e[j]["nom_element"]+'">' + e[j]["nom_element"] +
                                             '</option>');

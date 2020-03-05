@@ -81,10 +81,10 @@ body {
                         $(document).ready(function() {
                             $("#test").change(function() {
                                 var m = $("#test option:selected").val();
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i < <?php echo $file; ?>.length; i++) {
                                     $("#t").remove();
                                 }
-                                for (j = 0; j < length2; j++) {
+                                for (j = 0; j < l<?php echo $file; ?>.length; j++) {
                                     if (fil[j]["nom_etabless"] == m) {
                                         $("#test1").append('<option id="t" value="' + fil[j][
                                                 "nom_filiere"

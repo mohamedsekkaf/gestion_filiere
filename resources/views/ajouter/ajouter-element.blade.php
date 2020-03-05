@@ -37,12 +37,12 @@ body {
                         $(document).ready(function() {
                             $("#etab").change(function() {
                                 var m = $("#etab option:selected").val();
-                                for(i=0 ; i<length2 ; i++){
+                                for(i=0 ; i< <?php echo $file; ?>.length ; i++){
                                     $("#tt").remove();
                                     $("#ttt").remove();
                                     $("#t").remove();
                                 }
-                                for (j = 0; j < length2; j++) {
+                                for (j = 0; j < <?php echo $file; ?>.length; j++) {
                                     if (fil[j]["nom_etabless"] == m) {
                                         $("#fil").append('<option id="tt" value="'+fil[j]["nom_filiere"]+'">' + fil[j]["nom_filiere"]+
                                             '</option>');
@@ -68,11 +68,11 @@ body {
                         $(document).ready(function() {
                             $("#fil").change(function() {
                                 var m = $("#fil option:selected").val();
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i < <?php echo $semestre; ?>.length; i++) {
                                     $("#ttt").remove();
                                     $("#t").remove();
                                 }
-                                for (j = 0; j < length2; j++) {
+                                for (j = 0; j < <?php echo $semestre; ?>.length; j++) {
                                     if (s[j]["nom_file"] == m) {
                                         $("#sem").append('<option id="ttt" value="'+s[j]["nom_s"]+'">Semestre ' + s[j]["nom_s"].split(" ")[0] +
                                             '</option>');
@@ -98,10 +98,10 @@ body {
                         $(document).ready(function() {
                             $("#sem").change(function() {
                                 var m = $("#sem option:selected").val(); 
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i < <?php echo $mod; ?>.length; i++) {
                                     $("#t").remove();
                                 }   
-                                for (j = 0; j < length2; j++) {
+                                for (j = 0; j < <?php echo $mod; ?>.length; j++) {
                                     if (mod[j]["nom_se"] == m) {
                                         $("#mod").append('<option id="t" value="'+mod[j]["nom_module"]+'">' + mod[j]["nom_module"] +
                                             '</option>');

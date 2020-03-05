@@ -40,10 +40,10 @@ body {
                         $(document).ready(function() {
                             $("#etab").change(function() {
                                 var m = $("#etab option:selected").val();
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i < <?php echo $file; ?>.length; i++) {
                                     $("#tt").remove();
                                 }
-                                for (j = 0; j < length2; j++) {
+                                for (j = 0; j < <?php echo $file; ?>.length; j++) {
                                     if (fil[j]["nom_etabless"] == m) {
                                         $("#fil").append('<option id="tt" value="' + fil[j][
                                                 "nom_filiere"

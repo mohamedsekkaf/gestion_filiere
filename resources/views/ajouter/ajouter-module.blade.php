@@ -35,11 +35,11 @@ body {
                         $(document).ready(function() {
                             $("#etab").change(function() {
                                 var m = $("#etab option:selected").val();
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i < <?php echo $file; ?>.length; i++) {
                                     $("#ttt").remove();
                                     $("#tt").remove();
                                 }
-                                for (j = 0; j < length2; j++) {
+                                for (j = 0; j < <?php echo $file; ?>.length; j++) {
                                     if (fil[j]["nom_etabless"] == m) {
                                         $("#fil").append('<option id="ttt" value="'+fil[j]["nom_filiere"]+'">' + fil[j]["nom_filiere"] +
                                             '</option>');
@@ -65,10 +65,10 @@ body {
                         $(document).ready(function() {
                             $("#fil").change(function() {
                                 var m = $("#fil option:selected").val();
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i < <?php echo $semestre; ?>.length; i++) {
                                     $("#tt").remove();
                                 }
-                                for (j = 0; j < length2; j++) {
+                                for (j = 0; j < <?php echo $semestre; ?>.length; j++) {
                                     if (s[j]["nom_file"] == m) {
                                         $("#sem").append('<option id="tt" value="'+s[j]["nom_s"]+'">Semestre ' + s[j]["nom_s"].split(" ")[0] +
                                             '</option>');
