@@ -151,10 +151,6 @@ body {
                         <label for=""> Nom de Semestre </label>
                         <input class="form-control" name="nom_snew" type="text" required>
                     </div>
-
-
-
-
                     <div class="form-group tt">
                         <input type="submit" name="btnSubmit" class="btnContact" placeholder="image" value="Modefier" />
                     </div>

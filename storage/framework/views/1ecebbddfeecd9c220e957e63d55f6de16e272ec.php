@@ -87,8 +87,7 @@ body {
                                 }
                                 for (j = 0; j < length2; j++) {
                                     if (fil[j]["nom_etabless"] == m) {
-                                        $("#test1").append('<option id="t" value="'+fil[j]["nom_filiere"]+'">' + fil[j]["nom_filiere"] +
-                                            '</option>');
+                                        $("#test1").append('<option id="t" value="'+fil[j]["nom_filiere"]+'">'+fil[j]["nom_filiere"]+'</option>');
                                     }
                                 }
                             });
@@ -106,7 +105,7 @@ body {
                         <option value="">default </option>
                         <script>
                         var s = <?php echo $semestre; ?> ;
-                        var lengt = s.length;
+                        var length2 = s.length;
                         $(document).ready(function() {
                             $("#test1").change(function() {
                                 var m = $("#test1 option:selected").val();
@@ -114,7 +113,7 @@ body {
                                     $("#tt").remove();
                                     $("#ttt").remove();
                                 }
-                                for (j = 0; j < lengt; j++) {
+                                for (j = 0; j < length2; j++) {
                                     if (s[j]["nom_file"] == m) {
                                         $("#test2").append('<option id="tt" value="'+s[j]["nom_s"]+'">Semestre ' + s[j]["nom_s"].split(" ")[0] +
                                             '</option>');
