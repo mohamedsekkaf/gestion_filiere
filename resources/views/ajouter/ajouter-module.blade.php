@@ -49,11 +49,6 @@ body {
                         });
                         document.write('</select>');
                         </script>
-                        <!-- @foreach($file as $model)
-                        <option value="{{ $model->nom_filiere }}">{{ $model->nom_filiere }}->&nbsp;
-                            {{$model->nom_etabless}}</option>
-                        @endforeach
-                    </select> -->
                 </div>
                 <div class="form-group tt">
                     <label for="">Semester</label>
@@ -78,11 +73,6 @@ body {
                         });
                         document.write('</select>');
                         </script>
-                        <!-- @foreach($semestre as $model)
-                        <option value="{{ $model->nom_s }}">S{{ $model->nom_s }}->&nbsp; {{$model->nom_etabless}}
-                        </option>
-                        @endforeach
-                    </select> -->
                 </div>
                 <div class="form-group tt">
                     <label for="">Module</label>
@@ -94,15 +84,10 @@ body {
                     <input class="form-control" name="num_element" type="number" value="{{ old('num_element')}}"
                         placeholder="Nombre de module" id="local" />
                 </div>
-
-
-
                 <div class="form-group tt">
                     <input type="submit" name="btnSubmit" class="btnContact" placeholder="image" value="Ajouter" />
                 </div>
             </div>
-
-
             <div class="col-12">
                 @foreach($errors->all() as $err)
                 <div class="alert alert-danger mt-5">

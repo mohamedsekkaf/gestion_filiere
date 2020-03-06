@@ -52,11 +52,6 @@ body {
                         });
                         document.write('</select>');
                         </script>
-                        <!-- @foreach($file as $f)
-                        <option value="{{ $f->nom_filiere }}">{{ $f->nom_filiere }}->&nbsp;
-                            {{$f->nom_etabless}}</option>
-                        @endforeach
-                    </select> -->
                 </div>
                 <div class="form-group tt">
                     <label for="">Semestre</label>
@@ -82,11 +77,6 @@ body {
                         });
                         document.write('</select>');
                         </script>
-                        <!-- @foreach($semestre as $s)
-                        <option value="{{ $s->nom_s }}">{{ $s->nom_s }}->&nbsp;
-                            {{$s->nom_etabless}}</option>
-                        @endforeach
-                    </select> -->
                 </div>
                 <div class="form-group tt">
                     <label for="">Module</label>
@@ -111,11 +101,6 @@ body {
                         });
                         document.write('</select>');
                         </script>
-                        <!-- @foreach($mod as $modele)
-                        <option value="{{ $modele->nom_module }}">{{ $modele->nom_module }}->&nbsp;
-                            {{$modele->nom_etabless}}</option>
-                        @endforeach
-                    </select> -->
                 </div>
                 <div class="form-group tt">
                     <label for="">Element</label>
@@ -147,7 +132,6 @@ body {
                   $('#etab').addEventListener('click',function(){
                                 $("#fil").innerHTML="";
                                 console.log('polat alemdar');
-                                
                             })          
                         </script>
 <br><br>

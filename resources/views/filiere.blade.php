@@ -56,7 +56,7 @@
                     <div class="row">
                         @foreach($fil as $feliere)
                         @csrf
-                        <div class="col-md-6">
+                        <div class="col-lg-6">
                             <div class="card mb-3 mt-4">
                                 <div class="card-body">
                                     <h3 class="card-title tt"> Filiere </h3>
@@ -72,7 +72,9 @@
                         </div><!-- fin col-->
                         @endforeach
                     </div><!-- fin row-->
-                </div><!-- fin container-->
+                </div>
+            </div>
+        </div>
 
     </section>
 

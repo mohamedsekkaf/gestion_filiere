@@ -30,7 +30,6 @@ body {
                     <label for="">Image</label>
                     <input type="file" class="form-control upload" id="file" aria-hidden="true"
                         value="{{ old('image')}}" placeholder="image" name="image" />
-                    <!--  <label for="file">Choose a file</label> -->
                 </div>
                 <div class="form-group tt">
                     <input type="submit" name="btnSubmit" class="btnContact" value="Ajouter" />

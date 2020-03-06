@@ -28,7 +28,6 @@ body {
 
                             </script>
                         </select>
-
                 </div>
                 <div class="form-group tt">
                     <label for="">filiere</label>
@@ -55,25 +54,16 @@ body {
                         });
                         document.write('</select>');
                         </script>
-                        <!-- @foreach($file as $model)
-                           <option value="{{ $model->nom_filiere }}"> {{ $model->nom_filiere }}->&nbsp;{{$model->nom_etabless}}</option>
-                           @endforeach
-                        </select> -->
                 </div>
                 <div class="form-group tt">
                     <label for="">Semestre</label>
                     <input type="text" class="form-control"  name="nom_s" value="{{ old('nom_s')}}"
                         placeholder="Nom de Semestre" id="" />
                 </div>
-
-
-
                 <div class="form-group tt">
                     <input type="submit" name="btnSubmit" class="btnContact" placeholder="image" value="Ajouter" />
                 </div>
             </div>
-
-
             <div class="col-12">
                 @foreach($errors->all() as $err)
                 <div class="alert alert-danger mt-5">

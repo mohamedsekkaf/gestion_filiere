@@ -89,7 +89,7 @@
             <div class="row">
                 <?php $__currentLoopData = $etap; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $etapliss): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <?php echo csrf_field(); ?>
-                <div class="col-md-6">
+                <div class="col-lg-6">
                     <div class="card mb-3 mt-4">
                         <div class="crd-head  text-center"><img src="<?php echo e(asset('images/')); ?>/<?php echo e($etapliss->image); ?> "
                                 class="card-img-top  roundd" /></div>
