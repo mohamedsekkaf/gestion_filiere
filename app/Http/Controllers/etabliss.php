@@ -360,7 +360,6 @@ return redirect('update/update-etablessement');
 //========================================================== update filiere
  public function updatefiliere(Request $request){
     $nom = $request->input('nom');
-  /*   echo "<script type='text/javascript'>alert('$nom');</script>"; */
     $nom_filiere = $request->input('nom_filiere');
    $nummodel = $request->input('nummodel');
    DB::table('felieres')
@@ -371,7 +370,10 @@ return redirect('update/update-etablessement');
        ->update(array('nom_fil'=> $nom_filiere));
        DB::table('semstrs')
        ->where('nom_file', $nom)
-       ->update(array('nom_file'=>$nom_filiere ));
+       ->update(array('nom_fil'=>$nom_filiere ));
+       DB::table('elements')
+       ->where('nom_file', $nom)
+       ->update(array('nom_fil'=> $nom_filiere));
        return redirect('update/update-filiere');
 }  
 //========================================================== update module
