@@ -1,51 +1,5 @@
 <?php $__env->startSection("content"); ?>
-<!--<div class="container">
-<div class="row">
-<div class="col-12">
-<div class="card mb-3 mt-4">
-  <div class="card-body">
-  <h3 class="card-title tt">Modefier Filiere </h3>
-  <br>
-  <form action="<?php echo e(url('/update/update-filiere')); ?>" method="POST" enctype="multipart/form-data">
-        <?php echo method_field('POST'); ?>
-         <?php echo csrf_field(); ?>
-             <table>
-             <tr>
-             <td style="width:14%;">selectionner Filiere</td>
-             <td style="width:70%">
-             <select  name="nom" class=" form-control" required>
-             <option value="">default </option>
-               <?php $__currentLoopData = $file; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $e): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <option value=" <?php echo e($e->nom_filiere); ?>"><?php echo e($e->nom_filiere); ?>->&nbsp;<?php echo e($e->nom_etabless); ?></option>
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-             </select>
-             </td>
-             </tr>
-             <tr><td><br></td></tr>
-                  <tr>
-                           <td>Nom de filiere </td>
-                           <td><input class="form-control" name="nom_filiere" type="text" required></td>
-                  </tr>
-                  <tr><td><br></td></tr>
-                  <tr>
-                           <td> Nombre de Module  </td>
-                           <td><input class=" form-control"  name="nummodel" type="text" required></td>
-                  </tr>
-                  <tr><td><br></td></tr>
-                  <tr>
-                     <td> </td>
-                     <td><input class="btn-primary btn" type="submit" value="Update" name="btn" class="form-control"></td>
-                  </tr>
-               </table>
-</form>  
-  </div>
-</div>
-</div><!-- fin col-
-</div><!-- fin row
-</div><!-- fin container-->
-
 <br><br>
-
 <style>
 body {
     background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
@@ -63,7 +17,7 @@ body {
             <div class="col-md-12">
                 <div class="form-group tt ">
                     <label for="">selectionner l'etablissement</label>
-                    <select name="" class="form-control" id="test" required>
+                    <select name="" class="form-control" id="etab" required>
                         <option value="">default </option>
                         <?php $__currentLoopData = $etap; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $e): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                         <option value="<?php echo e($e->nom_etablessement); ?>"><?php echo e($e->nom_etablessement); ?> </option>
@@ -72,20 +26,20 @@ body {
                 </div>
                 <div class="form-group tt ">
                     <label for="">selectionner le Filiere</label>
-                    <select name="nom" class=" form-control" id="test1" required>
+                    <select name="nom" class=" form-control" id="fil" required>
                         <option value="">default </option>
                         <script>
                         var fil = <?php echo $file; ?> ;
                         var length2 = fil.length;
                         $(document).ready(function() {
-                            $("#test").change(function() {
-                                var m = $("#test option:selected").val();
-                                for (i = 0; i < length2; i++) {
+                            $("#etab").change(function() {
+                                var m = $("#etab option:selected").val();
+                                for (i = 0; i < <?php echo $file; ?>.length; i++) {
                                     $("#t").remove();
                                 }
-                                for (j = 0; j < length2; j++) {
+                                for (j = 0; j < <?php echo $file; ?>.length; j++) {
                                     if (fil[j]["nom_etabless"] == m) {
-                                        $("#test1").append('<option id="t" value="' + fil[j][
+                                        $("#fil").append('<option id="t" value="' + fil[j][
                                                 "nom_filiere"
                                             ] + '">' + fil[j]["nom_filiere"] +
                                             '</option>');
