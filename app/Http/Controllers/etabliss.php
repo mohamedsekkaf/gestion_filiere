@@ -370,9 +370,9 @@ return redirect('update/update-etablessement');
        ->update(array('nom_fil'=> $nom_filiere));
        DB::table('semstrs')
        ->where('nom_file', $nom)
-       ->update(array('nom_fil'=>$nom_filiere ));
+       ->update(array('nom_file'=>$nom_filiere ));
        DB::table('elements')
-       ->where('nom_file', $nom)
+       ->where('nom_fil', $nom)
        ->update(array('nom_fil'=> $nom_filiere));
        return redirect('update/update-filiere');
 }  
