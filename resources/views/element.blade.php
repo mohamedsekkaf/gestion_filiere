@@ -3,12 +3,9 @@
 <div class="main-wrapper">
     <header class="header header--bg">
         <div class="container header__content text-center">
-
             <img src="{{asset('image/logo.png')}} " height="100" alt="">
-
         </div>
         <div class="container">
-
             <div class="header__content text-center">
                 <h2 class="header__content__title">Application de gestion des filieres</h2>
                 <p class="header__content__paragraph">Ecole superieur de technologie </p>
@@ -23,9 +20,7 @@
             </div>
         </div>
     </header>
-
     <section class="service">
-
         <div class="container">
             <div class="row">
                 @foreach($element as $elem)
@@ -34,18 +29,14 @@
                         <div class="card-body">
                             <h3 class="card-title tt">Element</h3>
                             <h5 class="card-title tt">{{ $elem->nom_element}}</h5>
-
                             <h5 class="card-title tt">L'horaire : {{ $elem->horaire_element}}</h5>
-
                         </div>
                     </div>
                 </div><!-- fin col-->
                 @endforeach
             </div><!-- fin row-->
         </div><!-- fin container-->
-
     </section>
-
     <section class="contact contact--bg">
         <div class="container">
             <div class="page-section text-center">
@@ -58,8 +49,5 @@
             </div>
         </div>
     </section>
-
-
 </div>
-
 @endsection

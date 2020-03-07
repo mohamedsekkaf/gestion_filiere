@@ -19,7 +19,6 @@
 <body>
 
     <h1 id="title">  <?php  foreach($sem as $s){ echo $s->nom_etabless ;break; }?> Filiere <?php  foreach($sem as $s){ echo $s->nom_file ;break; }?></h1>
-    
         <?php 
  foreach($sem as $s){
     echo '<h1> Semestre : '.substr($s->nom_s,0,1) .'</h1>';

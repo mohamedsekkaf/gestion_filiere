@@ -1,0 +1,40 @@
+
+public function sendContactForm($request)
+    {
+        $this->validate($request, [
+        'name' => 'required|string',
+        'topic' => 'required|string',
+        'email' => 'required|email',
+        'message' => 'required|string',
+        'captcha' => 'required|captcha',
+        'acceptReg' => 'required|integer',
+    ]);
+    $adminEmail = $this->frontendRepository->getSystemAdminEmail();
+
+    $title = $request->input('topic');
+    $txt = nl2br($request->input('message'));
+    $userName = $request->input('name');
+    $email = $request->input('email');
+    $ip = $request->getClientIp();
+    $dateTime = date('Y-m-d H:i:s');
+
+    $message = "Masz wiadomość ze strony". env('APP_NAME')."<br/>
+    <b>Dane wiadomości:</b> $dateTime [$ip]<br/>
+    <b>Tytuł wiadomości:</b> $title<br/>
+    <b>Imię:</b> $userName<br/>
+    <b>Adres email:</b> $email<br/>
+    <b>Wiadomość:</b> $txt<br/>";
+
+
+    Mail::send('emails.welcome', $message, function ($message) {
+        //$message->from('us@example.com', 'Laravel');
+        $message->to($adminEmail, $name = null);
+        $message->from($email, $name = null);
+        $message->sender($email, $name = null);
+        $message->replyTo($adminEmail, $name = null);
+        $message->subject($title);
+        //$message->attach($pathToFile, array $options = []);
+        //$message->attachData($data, $name, array $options = []);
+        $message->getSwiftMessage();
+    });
+    }
