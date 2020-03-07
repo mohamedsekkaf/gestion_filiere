@@ -35,7 +35,7 @@
                                     <p class="card-text tt"><small class="text-muted"></small> nombre de module :
                                         {{ $feliere->nummodel}}</p>
                                     <a href="{{ url('/semestre')}}/{{$feliere->nom_filiere}}">
-                                        <p class="card-text">Afficher les Semestre</p>
+                                        <p class="card-text">Afficher les Informations</p>
                                     </a>
                                 </div>
                             </div>
