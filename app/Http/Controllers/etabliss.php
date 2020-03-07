@@ -532,7 +532,7 @@ return redirect('delete/delete-module');
 public function deleteelement(Request $request){
    $id = $request->input('id_element');
    DB::table('elements')
-       ->where('id_element', $id)
+       ->where('nom_element', $id)
        ->delete();
 return redirect('delete/delete-element');
 } 
