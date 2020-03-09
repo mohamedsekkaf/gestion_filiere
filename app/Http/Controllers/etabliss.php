@@ -274,7 +274,7 @@ public function insertetabelem(Request $request){
          "nom_deplome" =>"required|unique:deplomes",
          "type_deplome" =>"required",
          "duree_deplome" =>"required",
-         /* "nom_etap" =>"required", */
+         "nom_etap" =>"required",
       ]);
       $nom_deplome = $request->input('nom_deplome');
      $type_deplome = $request->input('type_deplome');
