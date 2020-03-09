@@ -14,11 +14,42 @@
 </head>
 
 <body>
-
+<table>
+<tr>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+<td>test</td>ù<td>test</td>
+</tr>
+<tr>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+<td>test</td>ù<td>test</td>
+</tr>
+<tr>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+<td>test</td>ù<td>test</td>
+</tr>
+<tr>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+<td>test</td>
+<td>test</td>ù<td>test</td>
+</tr>
+</table>
     <h1 id="title">  <?php  foreach($sem as $s){ echo $s->nom_etabless ;break; }?> Filiere <?php  foreach($sem as $s){ echo $s->nom_file ;break; }?></h1>
         <?php 
  foreach($sem as $s){
-    echo '<h1> Semestre : '.substr($s->nom_s,0,1) .'</h1>';
+    
+    echo '<table><tr><td style="border;1px solid red;"><h1> Semestre : '.substr($s->nom_s,0,1) .'</h1></td>';
+    echo '</tr>';
     foreach($mod as $m ){
         if($s->nom_s==$m->nom_se){
             echo '<h3 id="tt" style="margin-left:50px;">Module : '.$m->nom_module.'</h3>';
@@ -29,6 +60,7 @@
             }
         }
     }
+    echo '</table>';
 }
 ?>
 

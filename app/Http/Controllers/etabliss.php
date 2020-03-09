@@ -282,8 +282,6 @@ public function insertetabelem(Request $request){
      $nom_etap = $request->input('nom_etap');
      $data=array('nom_deplome'=>$nom_deplome,'type_deplome'=>$type_deplome,'duree_deplome'=>$duree_deplome,'nom_etap'=>$nom_etap );
      DB::table('deplomes')->insert($data);
-     $message="les données a ete inserer";
-     echo "<script type='text/javascript'>alert('$message');</script>";
      return redirect('ajouter/ajouter-deplome');
      }
 //========================================================== show info

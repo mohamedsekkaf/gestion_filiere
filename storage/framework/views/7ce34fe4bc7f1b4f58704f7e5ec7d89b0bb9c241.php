@@ -49,7 +49,7 @@
 echo '<div class="container-fluid">';
 echo '<div class="row">';
     foreach($sem as $s){
-        echo '<div class="card col-6">';
+        echo '<div class="card col-lg-6">';
         echo '<h3> Semestre : '.substr($s->nom_s,0,1).'</h3>';
         foreach($mod as $m ){
             if($s->nom_s==$m->nom_se){
