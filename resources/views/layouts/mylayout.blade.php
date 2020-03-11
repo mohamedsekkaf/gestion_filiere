@@ -2,15 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Application de gestion des filiere</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
-    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="{{ asset('js/jquery.js')}}"></script>
-    <script src="{{ asset('js/popper.min.js') }}"></script>
-     <script src="{{ asset('js/bootstrap.js') }}"></script>
      <link rel="stylesheet" href="{{asset('assets/flat-icon/flaticon.css')}}">
     <link rel="stylesheet" href="{{asset('temp/temp/styles.css')}}"> 
     
@@ -105,7 +101,10 @@
             <p class="footer__bottom-paragraph">&copy; Copyright 2020 <a href="#" style="color: #00aafe;font-weight:bold;">SEKKAF</a>. All Rights Reserved</p>
       </footer>
 
-
+      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="{{ asset('js/jquery.js')}}"></script>
+    <script src="{{ asset('js/popper.min.js') }}"></script>
+     <script src="{{ asset('js/bootstrap.js') }}"></script>
 
 <script>
 $(function (){
