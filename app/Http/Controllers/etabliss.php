@@ -40,11 +40,6 @@ public function pdfcontent($fil){
       
   }
 //==========
-public public function showcomment()
-{
-   $comment = Comment::paginate(5);
-   return  view('layauts/mylayout',compact(,'comment'));
-}
 public function showetabliss(){
     $etap = Etaplissemment::paginate(2);
     $comment = Comment::paginate(5);
