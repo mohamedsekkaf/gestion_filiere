@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('home');
 })->middleware('web');
 Route::get('/', 'HomeController@index');
-Route::post('/', 'HomeController@comment');
+Route::post('/comment', 'etabliss@comment');
 Route::get('/', 'etabliss@showetabliss');
 
 
@@ -61,7 +61,7 @@ Route::post('/delete/delete-deplome', 'etabliss@deletedeplome');
 Route::get('/delete/delete-semestre', 'etabliss@deleteshowNomsem');
 Route::post('/delete/delete-semestre', 'etabliss@deletesemestre');
 });
-Route::get('/welcom', 'HomeController@index')->middleware('web');
+/* Route::get('/welcom', 'HomeController@index')->middleware('web'); */
 Route::get('/info/{id}', 'etabliss@info')->middleware('web');
 Route::get('/modul/{nom}', 'etabliss@modul')->middleware('web');
 Route::get('/element/{nom}', 'etabliss@element')->middleware('web');

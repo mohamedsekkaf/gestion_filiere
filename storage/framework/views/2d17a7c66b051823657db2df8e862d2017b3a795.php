@@ -58,21 +58,55 @@
         </div>
     </section>
 </div>
+<form action="<?php echo e(url('/comment')); ?>" method="POST" enctype="multipart/form-data">
+    <?php echo method_field('POST'); ?>
+    <?php echo csrf_field(); ?>
+    <div class="container">
+        <div class="row">
+            <form action=""></form>
+            <div class="col-lg-4">
+                <label for="">Votre Nom et Prenom <span style="color:red;">*</span></label>
+                <input name="nom" class="form-control" type="text">
+            </div>
+            <div class="col-lg-4">
+                <label for="">Votre Email <span style="color:red;">*</span></label>
+                <input name="email" class="form-control" type="text">
+            </div>
+            <div class="col-lg-4">
+                <label for="">Votre Commentaire <span style="color:red;">*</span></label>
+                <input name="comment" class="form-control" type="text">
+            </div>
+            <div class="col-lg-4">
+                <input class="form-control" value="Add Comment" type="submit">
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $err): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <div class="alert alert-danger mt-5">
+            <?php echo e($err); ?>
+
+        </div>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+</form>
 <div class="container">
-<div class="row">
-<div class="col-lg-4">
-<label for="">Votre Nom et Prenom <span style="color:red;">*</span></label>
-<input  class="form-control"  type="text">
-</div>
-<div class="col-lg-4">
-<label for="">Votre Email <span style="color:red;">*</span></label>
-<input class="form-control" type="text">
-</div>
-<div class="col-lg-4">
-<label for="">Votre Commantaire <span style="color:red;">*</span></label>
-<input  class="form-control"  type="text">
-</div>
-</div>
+    <div class="row">
+        <div class="col-12">
+        <?php $__currentLoopData = $comment; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="card">
+                <img class="card-img-top user"  src="<?php echo e(asset('image/user.png')); ?>" alt="">
+                <div class="card-body">
+                    <h4 class="card-title"><?php echo e($c->nom); ?></h4>
+                    <p class="card-text"><?php echo e($c->comment); ?></p>
+                </div>
+            </div><br><br>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
+        
+    </div>
+    <?php echo e($comment->links()); ?>
+
 </div>
 
 

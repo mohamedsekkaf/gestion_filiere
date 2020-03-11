@@ -59,7 +59,7 @@
         </div>
     </section>
 </div>
-<form action="{{ url('/') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ url('/comment') }}" method="POST" enctype="multipart/form-data">
     @method('POST')
     @csrf
     <div class="container">
@@ -83,20 +83,27 @@
         </div>
     </div>
     <div class="col-12">
-               @foreach($errors->all() as $err)
-                     <div class="alert alert-danger mt-5">
-                     {{$err}}
-                     </div>
-               @endforeach
-               </div>
+        @foreach($errors->all() as $err)
+        <div class="alert alert-danger mt-5">
+            {{$err}}
+        </div>
+        @endforeach
+    </div>
 </form>
 <div class="container">
     <div class="row">
         <div class="col-12">
-            @foreach($comment as $c)
-            <span>{{ $c->nom }}</span>
+        @foreach($comment as $c)
+            <div class="card">
+                <img class="card-img-top user"  src="{{asset('image/user.png')}}" alt="">
+                <div class="card-body">
+                    <h4 class="card-title">{{ $c->nom }}</h4>
+                    <p class="card-text">{{$c->comment}}</p>
+                </div>
+            </div><br><br>
             @endforeach
         </div>
+        
     </div>
     {{ $comment->links()}}
 </div>

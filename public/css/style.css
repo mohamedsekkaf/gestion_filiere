@@ -223,4 +223,10 @@ text-decoration:none;
 .tee{
     margin-left: 100px;
 }
-
+.user{
+    width: 10vh;
+    height: 10vh;
+    border: 1px solid black;
+    border-radius: 50%;
+    background-image: url('../image/user.png');
+}
