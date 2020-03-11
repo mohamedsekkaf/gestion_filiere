@@ -18,7 +18,7 @@ use App\Module;
 use App\Deplome;
 use App\Element;
 use App\Semstr;
-use App\comment;
+use App\Comment;
 use Response;
 class etabliss extends Controller
 {
