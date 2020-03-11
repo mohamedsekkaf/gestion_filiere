@@ -77,6 +77,9 @@
                 <label for="">Votre Commentaire <span style="color:red;">*</span></label>
                 <input name="comment" class="form-control" type="text">
             </div>
+            <div class="col-lg-4">
+                <input class="form-control" value="Add Comment" type="submit">
+            </div>
         </div>
     </div>
 </form>
