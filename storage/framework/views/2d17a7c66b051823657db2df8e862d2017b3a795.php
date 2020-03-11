@@ -58,6 +58,22 @@
         </div>
     </section>
 </div>
+<div class="container">
+<div class="row">
+<div class="col-lg-4">
+<label for="">Votre Nom et Prenom <span style="color:red;">*</span></label>
+<input  class="form-control"  type="text">
+</div>
+<div class="col-lg-4">
+<label for="">Votre Email <span style="color:red;">*</span></label>
+<input class="form-control" type="text">
+</div>
+<div class="col-lg-4">
+<label for="">Votre Commantaire <span style="color:red;">*</span></label>
+<input  class="form-control"  type="text">
+</div>
+</div>
+</div>
 
 
 <?php $__env->stopSection(); ?>

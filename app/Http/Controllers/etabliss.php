@@ -18,6 +18,7 @@ use App\Module;
 use App\Deplome;
 use App\Element;
 use App\Semstr;
+use App\comment;
 use Response;
 class etabliss extends Controller
 {
@@ -44,6 +45,7 @@ public function pdfcontent($fil){
 //==========
 public function showetabliss(){
     $etap = Etaplissemment::paginate(2);
+    $comment = comment::paginate(5);
     return  view('home',compact('etap'));
 }
 //========================================================== selection deplome
@@ -550,5 +552,20 @@ return redirect('delete/delete-deplome');
        ->delete();
 return redirect('delete/delete-semestre');
 } 
- //==========================================================git commit -
+ //========================================================== commentaire 
+
+
+ public function comment(Request $request){
+   $request->validate([
+      "nom"       => "required",
+      "email"     => "required",
+      "comment"   => "required"
+   ]);
+   $nom = $request->input('nom');
+   $email = $request->input('email');
+   $comment = $request->input('comment');
+   $data=array('nom'=>$nom,'email'=>$email,'comment'=>$comment,'date'=>Date());
+   DB::table('elements')->insert($data);
+   return redirect('home');
+ }
 }

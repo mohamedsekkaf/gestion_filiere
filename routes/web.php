@@ -16,6 +16,7 @@ Route::get('/', function () {
     return view('home');
 })->middleware('web');
 Route::get('/home', 'HomeController@index');
+Route::get('/home', 'HomeController@comment');
 Route::get('/', 'etabliss@showetabliss');
 
 

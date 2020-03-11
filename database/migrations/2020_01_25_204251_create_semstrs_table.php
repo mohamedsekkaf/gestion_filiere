@@ -19,6 +19,7 @@ class CreateSemstrsTable extends Migration
             $table->string('nom_file');
             $table->string('nom_etabless');
             $table->timestamps();
+
         });
     }
 
