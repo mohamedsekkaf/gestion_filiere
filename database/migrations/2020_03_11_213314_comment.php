@@ -19,7 +19,7 @@ class Comment extends Migration
         $table->string('email');
         $table->string('comment');
         $table->string('date');
-        $table->string('test2');
+        $table->string('test1');
         $table->string('test2');
         $table->string('test3');
         $table->timestamps();
