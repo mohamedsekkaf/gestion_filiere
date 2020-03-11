@@ -82,6 +82,13 @@
             </div>
         </div>
     </div>
+    <div class="col-12">
+               @foreach($errors->all() as $err)
+                     <div class="alert alert-danger mt-5">
+                     {{$err}}
+                     </div>
+               @endforeach
+               </div>
 </form>
 <div class="container">
     <div class="row">
