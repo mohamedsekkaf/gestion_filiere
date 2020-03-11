@@ -39,14 +39,11 @@ public function pdfcontent($fil){
   public function export_pdf(){
       
   }
-
-
-
 //==========
 public function showetabliss(){
     $etap = Etaplissemment::paginate(2);
     $comment = Comment::paginate(5);
-    return  view('home',compact('etap'));
+    return  view('home',compact('etap','comment'));
 }
 //========================================================== selection deplome
 public function showdeplome($id){
