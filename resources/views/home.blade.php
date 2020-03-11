@@ -59,7 +59,7 @@
         </div>
     </section>
 </div>
-<form action="{{ url('/ajouter') }}" method="POST" enctype="multipart/form-data">
+<form action="{{ url('/home') }}" method="POST" enctype="multipart/form-data">
     @method('POST')
     @csrf
     <div class="container">

@@ -15,8 +15,8 @@ Auth::routes( /*['register' => false]*/);
 Route::get('/', function () {
     return view('home');
 })->middleware('web');
-Route::get('/home', 'HomeController@index');
-Route::post('/home', 'HomeController@comment');
+Route::get('/', 'HomeController@index');
+Route::post('/', 'HomeController@comment');
 Route::get('/', 'etabliss@showetabliss');
 
 
