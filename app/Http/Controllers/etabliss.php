@@ -42,7 +42,7 @@ public function pdfcontent($fil){
 //==========
 public function showetabliss(){
     $etap = Etaplissemment::paginate(2);
-    $comment = Comment::paginate(5);
+    $comment = Comment::all();
     return  view('home',compact('etap','comment'));
 }
 //========================================================== selection deplome
