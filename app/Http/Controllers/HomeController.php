@@ -35,7 +35,7 @@ class HomeController extends Controller
         $nom = $request->input('nom');
         $email = $request->input('email');
         $comment = $request->input('comment');
-        $data=array('nom'=>$nom,'email'=>$email,'comment'=>$comment);
+        $data=array('nom'=>$nom,'email'=>$email,'comment'=>$comment,'date'=>"mabrouk" ,'test1'=>"mabrouk" ,'test2'=>"mabrouk" ,'test3'=>"mabrouk" );
         DB::table('comment')->insert($data);
         return redirect('home');
       }
