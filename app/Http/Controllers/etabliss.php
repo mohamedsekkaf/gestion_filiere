@@ -45,7 +45,7 @@ public function pdfcontent($fil){
 //==========
 public function showetabliss(){
     $etap = Etaplissemment::paginate(2);
-    $comment = comment::paginate(5);
+    $comment = Comment::paginate(5);
     return  view('home',compact('etap'));
 }
 //========================================================== selection deplome
@@ -565,7 +565,7 @@ return redirect('delete/delete-semestre');
    $email = $request->input('email');
    $comment = $request->input('comment');
    $data=array('nom'=>$nom,'email'=>$email,'comment'=>$comment,'date'=>Date());
-   DB::table('elements')->insert($data);
+   DB::table('comment')->insert($data);
    return redirect('home');
  }
 }
