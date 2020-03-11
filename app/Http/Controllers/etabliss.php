@@ -552,17 +552,4 @@ return redirect('delete/delete-semestre');
  //========================================================== commentaire 
 
 
- public function comment(Request $request){
-   $request->validate([
-      "nom"       => "required",
-      "email"     => "required",
-      "comment"   => "required"
-   ]);
-   $nom = $request->input('nom');
-   $email = $request->input('email');
-   $comment = $request->input('comment');
-   $data=array('nom'=>$nom,'email'=>$email,'comment'=>$comment,'date'=>Date());
-   DB::table('comment')->insert($data);
-   return redirect('home');
- }
 }
