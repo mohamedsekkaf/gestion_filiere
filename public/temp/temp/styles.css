@@ -976,14 +976,6 @@ button:focus{
         height: auto;
       }
     }
-
-@media screen and (max-width: 991px) {
-      .footer--bg{
-        -webkit-clip-path: polygon(0 9%, 100% 0%, 100% 100%, 0 100%);
-                clip-path: polygon(0 9%, 100% 0%, 100% 100%, 0 100%);
-      }
-    }
-
 .footer--bg:after{
       content: '';
       position: absolute;
@@ -1030,16 +1022,6 @@ button:focus{
     margin-bottom: 20px;
   }
 
-.footer-first__social-icons li{
-      display: inline-block;
-      padding-right: 15px;
-    }
-
-@media screen and (max-width: 991px) {
-      .footer__second{
-        padding-left: 20px;
-      }
-    }
 
 .footer__second ul li{
       padding-bottom: 10px;
@@ -1071,23 +1053,10 @@ button:focus{
     margin-bottom: 20px;
   }
 
-.footer .subscribe-section{
-    position: relative;
-  }
 
-.footer .subscribe-section__button{
-      background-color: transparent;
-      border: 0;
-      position: absolute;
-      top: 8px;
-      right: 15px;
-    }
 
-@media screen and (max-width: 991px) {
-      .footer__fourth{
-        padding-left: 20px;
-      }
-    }
+
+
 
 .footer__fourth ul{
     padding-left: 15px;
@@ -1122,7 +1091,7 @@ button:focus{
   padding-left: 50px;
 }
 
-.footer [class^="flaticon-"]:before, [class*=" flaticon-"]:before{
+.footer {
   margin-left: 0;
 }
 

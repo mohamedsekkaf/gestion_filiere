@@ -50,61 +50,62 @@
 
 <?php echo $__env->yieldContent("content"); ?>
 
-  
-<footer class="footer footer--bg">
-        <div class="container">
-          <div class="page-section">
-            <div class="row gutters-100">
-              <div class="col-md-4 col-lg-3">
-                <div class="footer__first">
-                  <h2 class="footer__title"></h2>
-                  <p class="footer-first__paragraph"> </p>
-                  <ul class="footer-first__social-icons">
-                    <li><a href="#"><i class="flaticon-facebook-letter-logo"></i></a></li>
-                    <li><a href="#"><i class="flaticon-twitter-logo"></i></a></li>
-                    <li><a href="#"><i class="flaticon-dribbble-logo"></i></a></li>
-                    <li><a href="#"><i class="flaticon-behance-logo"></i></a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-2">
-                <div class="footer__second">
-                  <h2 class="footer__title">links</h2>
-                  <ul>
-                    <li><a href="<?php echo e(url('/')); ?>">Home</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-3">
-                <div class="footer__third">
-                  <h2 class="footer__title">CONTACT US</h2>
-                  <ul>
-                    <li><span class="glyphicon glyphicon-envelope"></span> <a href="#">mohamedsekkaf343@gmail.com</a></li>
-                    <li><span class="glyphicon glyphicon-earphone"></span> <a href="#">+"2126-36-67-92-09</a></li>
-                  </ul>
-                  <h4 class="footer__subscribe__title">Subscribe</h4>
-                  <div class="subscribe-section">
-                    <input type="email" class="form-control" size="50" placeholder="Enter Your Email" required>
-                    <button class="subscribe-section__button" type="button"><img src="assets/images/send-icon.png" alt=""></button>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 col-lg-4">
-                <div class="footer__fourth">
-                  <h4 class="footer__title">HELP</h4>
-                  <div class="row">
-                   
-                  </div>
-                  <div class="row">
-                   
-                  </div>
-                </div>
-              </div>
+<br><br><br>
+<form action="<?php echo e(url('/comment')); ?>" method="POST" enctype="multipart/form-data">
+    <?php echo method_field('POST'); ?>
+    <?php echo csrf_field(); ?>
+    <div class="container">
+        <div class="row">
+            <form action=""></form>
+            <div class="col-lg-4">
+                <label for="">Votre Nom et Prenom <span style="color:red;">*</span></label>
+                <input name="nom" class="form-control" type="text" placeholder="Votre Nom et Prenom">
             </div>
+            <div class="col-lg-4">
+                <label for="">Votre Email <span style="color:red;">*</span></label>
+                <input name="email" class="form-control" type="email" placeholder="Votre Email">
+            </div>
+            <div class="col-lg-4">
+                <label for="">Votre Commentaire <span style="color:red;">*</span></label>
+                <input name="comment" class="form-control" type="text" placeholder="Votre Commentaire">
+            </div>
+            <br><br><br>
+            <div class="col-12">
+                <input class="form-control" value="Add Comment" type="submit">
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $err): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <div class="alert alert-danger mt-5">
+            <?php echo e($err); ?>
+
+        </div>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </div>
+</form>
+<br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+        <?php $__currentLoopData = $comment; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="card">
+                <img class="card-img-top user"  src="<?php echo e(asset('image/user.png')); ?>" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">@ <?php echo e($c->nom); ?></h5>
+                    <p class="card-text"><?php echo e($c->comment); ?></p>
+                </div>
+            </div><br><br>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
+        
+    </div>
+    <?php echo e($comment->links()); ?>
+
+</div>
+<footer class="footer ">
             <hr class="footer__horizontal-bar">
             <p class="footer__bottom-paragraph">&copy; Copyright 2020 <a href="#" style="color: #00aafe;font-weight:bold;">SEKKAF</a>. All Rights Reserved</p>
-          </div>
-        </div>
       </footer>
 
 
