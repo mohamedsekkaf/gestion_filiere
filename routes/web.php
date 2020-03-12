@@ -11,7 +11,7 @@
 */
 
 Auth::routes( ['register' => false]);
-Auth::routes( ['login' => false]);
+
 
 Route::get('/', function () {
     return view('home');
