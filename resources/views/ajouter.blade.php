@@ -126,11 +126,12 @@
         </div><!-- fi container -->
     </section>
 </div>
-<label class="tt" for="">Supprimer Commentaire</label>
-<form action="{{ url('/deletecomment') }}" class="form-control" method="POST" enctype="multipart/form-data">
+
+<form action="{{ url('/deletecomment') }}"  method="POST" enctype="multipart/form-data">
     @method('POST')
     @csrf
-    <select name="nom" id="">
+    <div class="tt"><label  for="">Supprimer Commentaire</label></div>
+    <select name="nom" class="form-control" id="">
         @foreach($comment as $com)
         <option value="{{$com->comment}}">{{$com->nom}}</option>
         @endforeach
