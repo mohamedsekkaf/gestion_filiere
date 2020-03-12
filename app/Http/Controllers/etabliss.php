@@ -41,7 +41,7 @@ public function pdfcontent($fil){
   }
 //==========
 public function showetabliss(){
-    $etap = Etaplissemment::paginate(2);
+    $etap = Etaplissemment::paginate(4);
     $comment = Comment::paginate(5);
     return  view('home',compact('etap','comment'));
 }
@@ -156,7 +156,6 @@ if ($request->has('image')) {
 $data=array('nom_etablessement'=>$nom_etablessement,'local_etablessement'=>$local_etablessement,'image' => $profileImage);
 DB::table('etaplissemments')->insert($data);
 return redirect('ajouter/ajouter-etablessement');
-/* echo '<h1 align="center">'. 'saved'.'</h1>'; */
 
    }
 }

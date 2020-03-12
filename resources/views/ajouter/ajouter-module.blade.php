@@ -41,14 +41,13 @@ body {
                                 }
                                 for (j = 0; j < <?php echo $file; ?>.length; j++) {
                                     if (fil[j]["nom_etabless"] == m) {
-                                        $("#fil").append('<option id="ttt" value="'+fil[j]["nom_filiere"]+'">' + fil[j]["nom_filiere"] +
-                                            '</option>');
+                                        $("#fil").append('<option id="ttt" value="'+fil[j]["nom_filiere"]+'">'+fil[j]["nom_filiere"]+'</option>');
                                     }
                                 }
                             });
                         });
-                        document.write('</select>');
                         </script>
+                        </select>
                 </div>
                 <div class="form-group tt">
                     <label for="">Semester</label>
@@ -65,14 +64,13 @@ body {
                                 }
                                 for (j = 0; j < <?php echo $semestre; ?>.length; j++) {
                                     if (s[j]["nom_file"] == m) {
-                                        $("#sem").append('<option id="tt" value="'+s[j]["nom_s"]+'">Semestre ' + s[j]["nom_s"].split(" ")[0] +
-                                            '</option>');
+                                        $("#sem").append('<option id="tt" value="'+s[j]["nom_s"]+'">Semestre '+s[j]["nom_s"].split(" ")[0]+'</option>');
                                     }
                                 }
                             });
                         });
-                        document.write('</select>');
                         </script>
+                        </select>
                 </div>
                 <div class="form-group tt">
                     <label for="">Module</label>

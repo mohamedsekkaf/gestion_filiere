@@ -40,7 +40,7 @@ body {
                                 }
                                 for (j = 0; j < <?php echo $file; ?>.length; j++) {
                                     if (fil[j]["nom_etabless"] == m) {
-                                        $("#test1").append('<option id="t" value='+fil[j]["nom_filiere"]+'>' + fil[j]["nom_filiere"] +
+                                        $("#test1").append('<option id="t" value="'+fil[j]["nom_filiere"]+'">' + fil[j]["nom_filiere"] +
                                             '</option>');
                                     }
                                 }

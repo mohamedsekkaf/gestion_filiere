@@ -60,6 +60,32 @@
     </section>
 </div>
 <br><br><br>
+
+<div class="tt"><label for=""><h3>Les Commentaires</h3></label></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            @foreach($comment as $c)
+            <div class="card">
+                <table>
+                    <tr>
+                        <td style="width:10vh"><img class="card-img-top user" src="{{asset('image/user.png')}}" alt=""></td>
+                        <td><h5 class="card-title">@ {{ $c->nom }}</h5></td>
+                    </tr>
+                </table>
+                
+                <div class="card-body">
+                    
+                    <p class="card-text">{{ $c->comment }}</p>
+                </div>
+            </div><br><br>
+            @endforeach
+        </div>
+
+    </div>
+    {{ $comment->links()}}
+</div>
+<br><br>
 <form action="{{ url('/comment') }}" method="POST" enctype="multipart/form-data">
     @method('POST')
     @csrf
@@ -95,24 +121,4 @@
         @endforeach
     </div>
 </form>
-<br><br>
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            @foreach($comment as $c)
-            <div class="card">
-                <img class="card-img-top user" src="{{asset('image/user.png')}}" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">@ {{ $c->nom }}</h5>
-                    <p class="card-text">{{ $c->comment }}</p>
-                </div>
-            </div><br><br>
-            @endforeach
-        </div>
-
-    </div>
-    {{ $comment->links()}}
-</div>
-
-
 @endsection

@@ -36,12 +36,12 @@ body {
                         $(document).ready(function() {
                             $("#etab").change(function() {
                                 var m = $("#etab option:selected").val();
-                                for(i=0 ; i<length2 ; i++){
+                                for(i=0 ; i< <?php echo $file; ?>.length ; i++){
                                     $("#tt").remove();
                                     $("#ttt").remove();
                                     $("#t").remove();
                                 }
-                                for (j = 0; j < length2; j++) {
+                                for (j = 0; j < <?php echo $file; ?>.length; j++) {
                                     if (fil[j]["nom_etabless"] == m) {
                                         $("#fil").append('<option id="tt" value="'+fil[j]["nom_filiere"]+'">' + fil[j]["nom_filiere"]+
                                             '</option>');
@@ -51,11 +51,6 @@ body {
                         });
                         document.write('</select>');
                         </script>
-                        <!-- <?php $__currentLoopData = $file; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $f): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($f->nom_filiere); ?>"><?php echo e($f->nom_filiere); ?>->&nbsp;
-                            <?php echo e($f->nom_etabless); ?></option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </select> -->
                 </div>
                 <div class="form-group tt">
                     <label for="">Semestre</label>
@@ -67,11 +62,11 @@ body {
                         $(document).ready(function() {
                             $("#fil").change(function() {
                                 var m = $("#fil option:selected").val();
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i < <?php echo $semestre; ?>.length; i++) {
                                     $("#ttt").remove();
                                     $("#t").remove();
                                 }
-                                for (j = 0; j < length2; j++) {
+                                for (j = 0; j < <?php echo $semestre; ?>.length; j++) {
                                     if (s[j]["nom_file"] == m) {
                                         $("#sem").append('<option id="ttt" value="'+s[j]["nom_s"]+'">Semestre ' + s[j]["nom_s"].split(" ")[0] +
                                             '</option>');
@@ -79,13 +74,8 @@ body {
                                 }
                             });
                         });
-                        document.write('</select>');
                         </script>
-                        <!-- <?php $__currentLoopData = $semestre; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $s): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($s->nom_s); ?>"><?php echo e($s->nom_s); ?>->&nbsp;
-                            <?php echo e($s->nom_etabless); ?></option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </select> -->
+                        </select>
                 </div>
                 <div class="form-group tt">
                     <label for="">Module</label>
@@ -97,10 +87,10 @@ body {
                         $(document).ready(function() {
                             $("#sem").change(function() {
                                 var m = $("#sem option:selected").val(); 
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i < <?php echo $mod; ?>.length; i++) {
                                     $("#t").remove();
                                 }   
-                                for (j = 0; j < length2; j++) {
+                                for (j = 0; j < <?php echo $mod; ?>.length; j++) {
                                     if (mod[j]["nom_se"] == m) {
                                         $("#mod").append('<option id="t" value="'+mod[j]["nom_module"]+'">' + mod[j]["nom_module"] +
                                             '</option>');
@@ -110,11 +100,6 @@ body {
                         });
                         document.write('</select>');
                         </script>
-                        <!-- <?php $__currentLoopData = $mod; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $modele): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($modele->nom_module); ?>"><?php echo e($modele->nom_module); ?>->&nbsp;
-                            <?php echo e($modele->nom_etabless); ?></option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </select> -->
                 </div>
                 <div class="form-group tt">
                     <label for="">Element</label>
@@ -147,7 +132,6 @@ body {
                   $('#etab').addEventListener('click',function(){
                                 $("#fil").innerHTML="";
                                 console.log('polat alemdar');
-                                
                             })          
                         </script>
 <br><br>

@@ -19,7 +19,6 @@ Route::get('/', 'HomeController@index');
 Route::post('/comment', 'etabliss@comment');
 Route::get('/', 'etabliss@showetabliss');
 
-
 Route::group(['middleware' => ['auth']], function () {
 Route::post('/deletecomment', 'etabliss@deletecomment');
 Route::get('/ajouter', 'etabliss@showinfo');

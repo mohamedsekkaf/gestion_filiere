@@ -59,6 +59,33 @@
     </section>
 </div>
 <br><br><br>
+
+<div class="tt"><label for=""><h3>Les Commentaires</h3></label></div>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <?php $__currentLoopData = $comment; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+            <div class="card">
+                <table>
+                    <tr>
+                        <td style="width:10vh"><img class="card-img-top user" src="<?php echo e(asset('image/user.png')); ?>" alt=""></td>
+                        <td><h5 class="card-title">@ <?php echo e($c->nom); ?></h5></td>
+                    </tr>
+                </table>
+                
+                <div class="card-body">
+                    
+                    <p class="card-text"><?php echo e($c->comment); ?></p>
+                </div>
+            </div><br><br>
+            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        </div>
+
+    </div>
+    <?php echo e($comment->links()); ?>
+
+</div>
+<br><br>
 <form action="<?php echo e(url('/comment')); ?>" method="POST" enctype="multipart/form-data">
     <?php echo method_field('POST'); ?>
     <?php echo csrf_field(); ?>
@@ -95,26 +122,5 @@
         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
     </div>
 </form>
-<br><br>
-<div class="container">
-    <div class="row">
-        <div class="col-12">
-            <?php $__currentLoopData = $comment; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $c): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-            <div class="card">
-                <img class="card-img-top user" src="<?php echo e(asset('image/user.png')); ?>" alt="">
-                <div class="card-body">
-                    <h5 class="card-title">@ <?php echo e($c->nom); ?></h5>
-                    <p class="card-text"><?php echo e($c->comment); ?></p>
-                </div>
-            </div><br><br>
-            <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-        </div>
-
-    </div>
-    <?php echo e($comment->links()); ?>
-
-</div>
-
-
 <?php $__env->stopSection(); ?>
 <?php echo $__env->make("layouts/mylayout", \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /Volumes/Meccanicon/my /gestion/test/resources/views/home.blade.php ENDPATH**/ ?>

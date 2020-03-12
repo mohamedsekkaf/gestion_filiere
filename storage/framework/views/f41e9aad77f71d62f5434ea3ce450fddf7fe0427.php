@@ -34,25 +34,19 @@ body {
                         $(document).ready(function() {
                             $("#etab").change(function() {
                                 var m = $("#etab option:selected").val();
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i < <?php echo $file; ?>.length; i++) {
                                     $("#ttt").remove();
                                     $("#tt").remove();
                                 }
-                                for (j = 0; j < length2; j++) {
+                                for (j = 0; j < <?php echo $file; ?>.length; j++) {
                                     if (fil[j]["nom_etabless"] == m) {
-                                        $("#fil").append('<option id="ttt" value="'+fil[j]["nom_filiere"]+'">' + fil[j]["nom_filiere"] +
-                                            '</option>');
+                                        $("#fil").append('<option id="ttt" value="'+fil[j]["nom_filiere"]+'">'+fil[j]["nom_filiere"]+'</option>');
                                     }
                                 }
                             });
                         });
-                        document.write('</select>');
                         </script>
-                        <!-- <?php $__currentLoopData = $file; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $model): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($model->nom_filiere); ?>"><?php echo e($model->nom_filiere); ?>->&nbsp;
-                            <?php echo e($model->nom_etabless); ?></option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </select> -->
+                        </select>
                 </div>
                 <div class="form-group tt">
                     <label for="">Semester</label>
@@ -64,25 +58,18 @@ body {
                         $(document).ready(function() {
                             $("#fil").change(function() {
                                 var m = $("#fil option:selected").val();
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i < <?php echo $semestre; ?>.length; i++) {
                                     $("#tt").remove();
                                 }
-                                for (j = 0; j < length2; j++) {
+                                for (j = 0; j < <?php echo $semestre; ?>.length; j++) {
                                     if (s[j]["nom_file"] == m) {
-                                        $("#sem").append('<option id="tt" value="'+s[j]["nom_s"]+'">Semestre ' + s[j]["nom_s"].split(" ")[0] +
-                                            '</option>');
+                                        $("#sem").append('<option id="tt" value="'+s[j]["nom_s"]+'">Semestre '+s[j]["nom_s"].split(" ")[0]+'</option>');
                                     }
                                 }
                             });
                         });
-                        document.write('</select>');
                         </script>
-                        <!-- <?php $__currentLoopData = $semestre; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $model): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($model->nom_s); ?>">S<?php echo e($model->nom_s); ?>->&nbsp; <?php echo e($model->nom_etabless); ?>
-
-                        </option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </select> -->
+                        </select>
                 </div>
                 <div class="form-group tt">
                     <label for="">Module</label>
@@ -94,15 +81,10 @@ body {
                     <input class="form-control" name="num_element" type="number" value="<?php echo e(old('num_element')); ?>"
                         placeholder="Nombre de module" id="local" />
                 </div>
-
-
-
                 <div class="form-group tt">
                     <input type="submit" name="btnSubmit" class="btnContact" placeholder="image" value="Ajouter" />
                 </div>
             </div>
-
-
             <div class="col-12">
                 <?php $__currentLoopData = $errors->all(); $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $err): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                 <div class="alert alert-danger mt-5">
