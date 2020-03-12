@@ -150,24 +150,29 @@
                 <input type="submit" class="form-control">
             </form>
         </div>
-        <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        
         <?php if(Auth::user()->name == "admin"): ?>
         <div class="col-12">
             <form action="<?php echo e(url('/deleteuser')); ?>" method="POST" enctype="multipart/form-data">
                 <?php echo method_field('POST'); ?>
                 <?php echo csrf_field(); ?>
-                <div class="tt"><label for="">Supprimer Commentaire</label></div>
+                <div class="tt"><label for="">Supprimer User</label></div>
                 <select name="name" class="form-control" id="">
                 <option value="">Default</option>
                     <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <?php if($user->name == "admin"): ?>
+                    <?php for($i= 0 ; $i<10 ; $i++){$i++;} ?>
+                    <?php else: ?>
                     <option value="<?php echo e($user->name); ?>"><?php echo e($user->name); ?></option>
+                    <?php endif; ?>
+                    
                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                 </select>
                 <input type="submit" class="form-control">
             </form>
         </div>
         <?php endif; ?>
-        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+        
     </div>
 </div>
 <?php $__env->stopSection(); ?>

@@ -157,11 +157,16 @@
             <form action="{{ url('/deleteuser') }}" method="POST" enctype="multipart/form-data">
                 @method('POST')
                 @csrf
-                <div class="tt"><label for="">Supprimer Commentaire</label></div>
+                <div class="tt"><label for="">Supprimer User</label></div>
                 <select name="name" class="form-control" id="">
                 <option value="">Default</option>
                     @foreach($users as $user)
+                    @if ($user->name == "admin")
+                    <?php for($i= 0 ; $i<10 ; $i++){$i++;} ?>
+                    @else
                     <option value="{{$user->name}}">{{$user->name}}</option>
+                    @endif
+                    
                     @endforeach
                 </select>
                 <input type="submit" class="form-control">
