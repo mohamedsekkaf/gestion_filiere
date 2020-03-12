@@ -552,7 +552,7 @@ return redirect('delete/delete-deplome');
 return redirect('delete/delete-semestre');
 } 
  //========================================================== commentaire 
- public function comment(Request $request){
+ /* public function comment(Request $request){
    $request->validate([
       "nom"       => "required",
       "email"     => "required|email",
@@ -564,7 +564,15 @@ return redirect('delete/delete-semestre');
    $data=array('nom'=>$nom,'email'=>$email,'comment'=>$comment,'date'=>"mabrouk" ,'test1'=>"mabrouk" ,'test2'=>"mabrouk" ,'test3'=>"mabrouk" );
    DB::table('comment')->insert($data);
    return redirect('/');
- }
+ } */
+ protected function comment(array $data)
+    {
+        return Comment::create([
+            'nom' => $data['nom'],
+            'email' => $data['email'],
+            'comment' => Hash::make($data['comment']),
+        ]);
+    }
 //000000000===================================0000000000 delete comment
 public function deletecomment(Request $request){
    $nom = $request->input('nom');

@@ -127,38 +127,50 @@
     </section>
 </div>
 <section class="contact contact--bg">
-        <div class="container">
-            <div class="page-section text-center">
-                <h2 class="page-section__title--white">Les établissements de Université chouaib doukkali</h2>
-                <p class="page-section__paragraph--white">Gérer Le Site </p>
-                <a class="button button--hover" href="{{ url('/ajouter')}}">LETS GO</a>
-            </div>
+    <div class="container">
+        <div class="page-section text-center">
+            <h2 class="page-section__title--white">Les établissements de Université chouaib doukkali</h2>
+            <p class="page-section__paragraph--white">Gérer Le Site </p>
+            <a class="button button--hover" href="{{ url('/ajouter')}}">LETS GO</a>
         </div>
-    </section>
-<form action="{{ url('/deletecomment') }}"  method="POST" enctype="multipart/form-data">
-    @method('POST')
-    @csrf
-    <div class="tt"><label  for="">Supprimer Commentaire</label></div>
-    <select name="nom" class="form-control" id="">
-        @foreach($comment as $com)
-        <option value="{{$com->comment}}">{{$com->nom}}</option>
-        @endforeach
-    </select>
-    <input type="submit" class="form-control">
-</form>
-<br><b>
-<form action="{{ url('/deleteuser') }}"  method="POST" enctype="multipart/form-data">
-    @method('POST')
-    @csrf
-    <div class="tt"><label  for="">Supprimer Commentaire</label></div>
-    <select name="name" class="form-control" id="">
+    </div>
+</section>
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <form action="{{ url('/deletecomment') }}" method="POST" enctype="multipart/form-data">
+                @method('POST')
+                @csrf
+                <div class="tt"><label for="">Supprimer Commentaire</label></div>
+                <select name="nom" class="form-control" id="">
+                <option value="">Default</option>
+                    @foreach($comment as $com)
+                    <option value="{{$com->comment}}">{{$com->nom}}</option>
+                    @endforeach
+                </select>
+                <input type="submit" class="form-control">
+            </form>
+        </div>
         @foreach($users as $user)
-        <option value="{{$user->name}}">{{$user->name}}</option>
+        @if (Auth::user()->name == "admin")
+        <div class="col-12">
+            <form action="{{ url('/deleteuser') }}" method="POST" enctype="multipart/form-data">
+                @method('POST')
+                @csrf
+                <div class="tt"><label for="">Supprimer Commentaire</label></div>
+                <select name="name" class="form-control" id="">
+                <option value="">Default</option>
+                    @foreach($users as $user)
+                    <option value="{{$user->name}}">{{$user->name}}</option>
+                    @endforeach
+                </select>
+                <input type="submit" class="form-control">
+            </form>
+        </div>
+        @endif
         @endforeach
-    </select>
-    <input type="submit" class="form-control">
-</form>
-
+    </div>
+</div>
 @endsection
 <script>
 $(function() {
