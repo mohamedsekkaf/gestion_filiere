@@ -10,7 +10,8 @@
 |
 */
 
-Auth::routes( /*['register' => false]*/);
+Auth::routes( ['register' => false]);
+Auth::routes( ['login' => false]);
 
 Route::get('/', function () {
     return view('home');
@@ -21,6 +22,7 @@ Route::get('/', 'etabliss@showetabliss');
 
 Route::group(['middleware' => ['auth']], function () {
 Route::post('/deletecomment', 'etabliss@deletecomment');
+Route::post('/deleteuser', 'etabliss@deleteuser');
 Route::get('/ajouter', 'etabliss@showinfo');
 Route::get('/ajouter/ajouter-etablessement', 'etabliss@Sformajouteretab');
 Route::post('/ajouter/ajouter-etablessement', 'etabliss@insertetab');

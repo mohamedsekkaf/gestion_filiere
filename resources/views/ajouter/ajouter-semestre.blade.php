@@ -43,7 +43,6 @@ body {
                                     $("#tt").remove();
                                 }
                                 for (j = 0; j < 10; j++) {
-                                    console.log('mohamed')
                                     if (fil[j]["nom_etabless"] == m) {
                                         $("#fil").append('<option id="tt" value="'+fil[j]["nom_filiere"]+'">'+fil[j]["nom_filiere"]+'</option>');
                                     }

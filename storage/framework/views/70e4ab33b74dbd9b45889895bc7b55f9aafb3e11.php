@@ -125,7 +125,15 @@
         </div><!-- fi container -->
     </section>
 </div>
-
+<section class="contact contact--bg">
+        <div class="container">
+            <div class="page-section text-center">
+                <h2 class="page-section__title--white">Les établissements de Université chouaib doukkali</h2>
+                <p class="page-section__paragraph--white">Gérer Le Site </p>
+                <a class="button button--hover" href="<?php echo e(url('/ajouter')); ?>">LETS GO</a>
+            </div>
+        </div>
+    </section>
 <form action="<?php echo e(url('/deletecomment')); ?>"  method="POST" enctype="multipart/form-data">
     <?php echo method_field('POST'); ?>
     <?php echo csrf_field(); ?>
@@ -137,6 +145,19 @@
     </select>
     <input type="submit" class="form-control">
 </form>
+<br><b>
+<form action="<?php echo e(url('/deleteuser')); ?>"  method="POST" enctype="multipart/form-data">
+    <?php echo method_field('POST'); ?>
+    <?php echo csrf_field(); ?>
+    <div class="tt"><label  for="">Supprimer Commentaire</label></div>
+    <select name="name" class="form-control" id="">
+        <?php $__currentLoopData = $users; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $user): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <option value="<?php echo e($user->name); ?>"><?php echo e($user->name); ?></option>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </select>
+    <input type="submit" class="form-control">
+</form>
+
 <?php $__env->stopSection(); ?>
 <script>
 $(function() {

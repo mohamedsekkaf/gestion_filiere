@@ -19,6 +19,7 @@ use App\Deplome;
 use App\Element;
 use App\Semstr;
 use App\Comment;
+use App\User;
 use Response;
 class etabliss extends Controller
 {
@@ -59,7 +60,8 @@ public function showinfo(){
     $semestre = semstr::all();
     $elem = Element::all();
     $comment = Comment::all();
-    return  view('ajouter',compact('etab','file','mod','semestre','elem','comment'));
+    $users   = User::all();
+    return  view('ajouter',compact('etab','file','mod','semestre','elem','comment','users'));
 }
 //========================================================== selection filiere
 public function info($id)
@@ -568,6 +570,14 @@ public function deletecomment(Request $request){
    $nom = $request->input('nom');
    DB::table('comment')
        ->where('comment', $nom)
+       ->delete();
+return redirect('ajouter');
+}
+//000000000===================================0000000000 delete user
+public function deleteuser(Request $request){
+   $name = $request->input('name');
+   DB::table('users')
+       ->where('name', $name)
        ->delete();
 return redirect('ajouter');
 }

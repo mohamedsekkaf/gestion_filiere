@@ -126,7 +126,15 @@
         </div><!-- fi container -->
     </section>
 </div>
-
+<section class="contact contact--bg">
+        <div class="container">
+            <div class="page-section text-center">
+                <h2 class="page-section__title--white">Les établissements de Université chouaib doukkali</h2>
+                <p class="page-section__paragraph--white">Gérer Le Site </p>
+                <a class="button button--hover" href="{{ url('/ajouter')}}">LETS GO</a>
+            </div>
+        </div>
+    </section>
 <form action="{{ url('/deletecomment') }}"  method="POST" enctype="multipart/form-data">
     @method('POST')
     @csrf
@@ -138,6 +146,19 @@
     </select>
     <input type="submit" class="form-control">
 </form>
+<br><b>
+<form action="{{ url('/deleteuser') }}"  method="POST" enctype="multipart/form-data">
+    @method('POST')
+    @csrf
+    <div class="tt"><label  for="">Supprimer Commentaire</label></div>
+    <select name="name" class="form-control" id="">
+        @foreach($users as $user)
+        <option value="{{$user->name}}">{{$user->name}}</option>
+        @endforeach
+    </select>
+    <input type="submit" class="form-control">
+</form>
+
 @endsection
 <script>
 $(function() {
