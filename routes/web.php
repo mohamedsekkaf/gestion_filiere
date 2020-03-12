@@ -21,6 +21,7 @@ Route::get('/', 'etabliss@showetabliss');
 
 
 Route::group(['middleware' => ['auth']], function () {
+    Route::get('/deletecomment', 'etabliss@deletecomment');
 Route::get('/ajouter', 'etabliss@showinfo');
 Route::get('/ajouter/ajouter-etablessement', 'etabliss@Sformajouteretab');
 Route::post('/ajouter/ajouter-etablessement', 'etabliss@insertetab');

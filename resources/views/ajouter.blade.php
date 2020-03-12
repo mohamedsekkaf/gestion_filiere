@@ -126,6 +126,16 @@
         </div><!-- fi container -->
     </section>
 </div>
+<form action="{{ url('/deletecomment') }}" method="POST" enctype="multipart/form-data">
+    @method('POST')
+    @csrf
+    <select name="nom" id="">
+        @foreach($comment as $com)
+        <option value="{{$com->nom}}">{{$com->nom}}</option>
+        @endforeach
+    </select>
+    <input type="submit" class="form-control">
+</form>
 @endsection
 <script>
 $(function() {

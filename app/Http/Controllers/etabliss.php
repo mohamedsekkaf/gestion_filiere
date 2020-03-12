@@ -563,6 +563,13 @@ return redirect('delete/delete-semestre');
    DB::table('comment')->insert($data);
    return redirect('/');
  }
-
+//000000000===================================0000000000 delete comment
+public function deletecomment(Request $request){
+   $nom = $request->input('nom');
+   DB::table('comment')
+       ->where('nom', $nom)
+       ->delete();
+return redirect('ajouter');
+}
 
 }

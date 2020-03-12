@@ -68,15 +68,18 @@
             <form action=""></form>
             <div class="col-lg-4">
                 <label for="">Votre Nom et Prenom <span style="color:red;">*</span></label>
-                <input name="nom" class="form-control" type="text" placeholder="Votre Nom et Prenom">
+                <input name="nom" class="form-control" type="text" value="{{old('nom')}}"
+                    placeholder="Votre Nom et Prenom">
             </div>
             <div class="col-lg-4">
                 <label for="">Votre Email <span style="color:red;">*</span></label>
-                <input name="email" class="form-control" type="email" placeholder="Votre Email">
+                <input name="email" class="form-control" type="email" value="{{old('email')}}"
+                    placeholder="Votre Email">
             </div>
             <div class="col-lg-4">
                 <label for="">Votre Commentaire <span style="color:red;">*</span></label>
-                <input name="comment" class="form-control" type="text" placeholder="Votre Commentaire">
+                <input name="comment" class="form-control" type="text" value="{{old('comment')}}"
+                    placeholder="Votre Commentaire">
             </div>
             <br><br><br>
             <div class="col-12">
@@ -96,9 +99,9 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
-        @foreach($comment as $c)
+            @foreach($comment as $c)
             <div class="card">
-                <img class="card-img-top user"  src="{{asset('image/user.png')}}" alt="">
+                <img class="card-img-top user" src="{{asset('image/user.png')}}" alt="">
                 <div class="card-body">
                     <h5 class="card-title">@ {{ $c->nom }}</h5>
                     <p class="card-text">{{ $c->comment }}</p>
@@ -106,7 +109,7 @@
             </div><br><br>
             @endforeach
         </div>
-        
+
     </div>
     {{ $comment->links()}}
 </div>

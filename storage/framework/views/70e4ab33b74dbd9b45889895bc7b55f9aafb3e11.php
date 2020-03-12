@@ -125,6 +125,16 @@
         </div><!-- fi container -->
     </section>
 </div>
+<form action="<?php echo e(url('/deletecomment')); ?>" method="POST" enctype="multipart/form-data">
+    <?php echo method_field('POST'); ?>
+    <?php echo csrf_field(); ?>
+    <select name="slect_nom" id="">
+        <?php $__currentLoopData = $comment; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $com): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+        <option value="<?php echo e($com->nom); ?>"><?php echo e($com->nom); ?></option>
+        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+    </select>
+    <input type="submit" class="form-control">
+</form>
 <?php $__env->stopSection(); ?>
 <script>
 $(function() {
