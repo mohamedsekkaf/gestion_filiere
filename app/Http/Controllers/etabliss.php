@@ -568,7 +568,7 @@ return redirect('delete/delete-semestre');
 public function deletecomment(Request $request){
    $nom = $request->input('nom');
    DB::table('comment')
-       ->where('nom', $nom)
+       ->where('comment', $nom)
        ->delete();
 return redirect('ajouter');
 }
