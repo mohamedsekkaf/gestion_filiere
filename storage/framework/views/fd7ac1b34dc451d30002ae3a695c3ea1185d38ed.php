@@ -9,6 +9,12 @@
     <link rel="stylesheet" href="<?php echo e(asset('css/style.css')); ?>">
      <link rel="stylesheet" href="<?php echo e(asset('assets/flat-icon/flaticon.css')); ?>">
     <link rel="stylesheet" href="<?php echo e(asset('temp/temp/styles.css')); ?>"> 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+    <script src="<?php echo e(asset('js/jquery.js')); ?>"></script>
+    <script src="<?php echo e(asset('js/popper.min.js')); ?>"></script>
+     <script src="<?php echo e(asset('js/bootstrap.js')); ?>"></script>
+
     
 </head>
 <body>
@@ -50,10 +56,7 @@
             <p class="footer__bottom-paragraph">&copy; Copyright 2020 <a href="#" style="color: #00aafe;font-weight:bold;">SEKKAF</a>. All Rights Reserved</p>
       </footer>
 
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-    <script src="<?php echo e(asset('js/jquery.js')); ?>"></script>
-    <script src="<?php echo e(asset('js/popper.min.js')); ?>"></script>
-     <script src="<?php echo e(asset('js/bootstrap.js')); ?>"></script>
+
 
 <script>
 $(function (){

@@ -1,41 +1,4 @@
 <?php $__env->startSection("content"); ?>
-<!--<div class="container">
-<div class="row">
-<div class="col-md-12">
-<div class="card mb-3 mt-4">
-  <div class="card-body">
-  <h3 class="card-title tt">Supprimer Semestre</h3>
-  <form action="<?php echo e(url('/delete/delete-semestre')); ?>" method="POST" enctype="multipart/form-data">
-        <?php echo method_field('POST'); ?>
-         <?php echo csrf_field(); ?>
-         <table>
-          <tr>
-          <td  style="width:20%" >selectionner Filiere</td>
-          <td>
-          <select style="width:60%" name="nom_s" class="form-control" required>
-           <option value="">default </option>
-               <?php $__currentLoopData = $semestre; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $e): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <option value=" <?php echo e($e->nom_s); ?>"><?php echo e($e->nom_s); ?>->&nbsp;<?php echo e($e->nom_etabless); ?></option>
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-             </select>
-             </td>
-            <tr><td><br></td></tr>
-            <tr>
-            <td></td>
-             <td>
-                    <input class="btn-primary btn" type="submit" value="Supprimer" name="btn" class="form-control">
-             </td>
-             </tr>
-           </tr>
-
-           </table>
-                 
-</form>
-  </div>
-</div>
-</div><!-- fin col
-</div><!-- fin row
-</div><!-- fin container-->
 <br><br>
    
 <style>
@@ -84,13 +47,9 @@ body{
                                 }
                             });
                         });
-                        document.write('</select>');
+                        
                         </script>
-                       <!--  <?php $__currentLoopData = $file; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $model): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($model->nom_filiere); ?>">
-                            <?php echo e($model->nom_filiere); ?>->&nbsp;<?php echo e($model->nom_etabless); ?></option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </select> -->
+                         </select>
                 </div>
                   <div class="form-group tt">
                     <label for="">selectionner Semestre</label> 
@@ -102,10 +61,10 @@ body{
                         $(document).ready(function() {
                             $("#test1").change(function() {
                                 var m = $("#test1 option:selected").val();
-                                for (i = 0; i < length2; i++) {
+                                for (i = 0; i < <?php echo $semestre; ?>.length; i++) {
                                     $("#tt").remove();
                                 }
-                                for (j = 0; j < lengt; j++) {
+                                for (j = 0; j < <?php echo $semestre; ?>.length; j++) {
                                     if (s[j]["nom_file"] == m) {
                                         $("#test2").append('<option id="tt" value="'+s[j]["nom_s"]+'">Semestre ' + s[j]["nom_s"].split(" ")[0] +
                                             '</option>');
@@ -113,12 +72,9 @@ body{
                                 }
                             });
                         });
-                        document.write('</select>');
+                       
                         </script>
-              <!--  <?php $__currentLoopData = $semestre; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $e): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <option value=" <?php echo e($e->nom_s); ?>"><?php echo e($e->nom_s); ?>->&nbsp;<?php echo e($e->nom_etabless); ?></option>
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-             </select> -->
+                         </select>
              <br><br>
              <div class="form-group tt">
                             <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Supprimer" />        

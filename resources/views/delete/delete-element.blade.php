@@ -50,8 +50,9 @@ body{
                                 }
                             });
                         });
-                        document.write('</select>');
+                        
                         </script>
+                         </select>
                 </div>
                 <div class="form-group tt">
                     <label for="">selectionner Semestre</label>
@@ -76,8 +77,9 @@ body{
                                 }
                             });
                         });
-                        document.write('</select>');
+                        
                         </script>
+                         </select>
                 </div> 
                 <div class="form-group tt">
                     <label for="">selectionner Module</label>
@@ -101,8 +103,8 @@ body{
                                 }
                             });
                         });
-                        document.write('</select>');
                         </script>
+                         </select>
                 </div>
 
                   <div class="form-group tt">
@@ -127,8 +129,8 @@ body{
                                 }
                             });
                         });
-                        document.write('</select>');
                         </script>
+                         </select>
              <br><br>
              <div class="form-group tt">
                             <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Supprimer" />        

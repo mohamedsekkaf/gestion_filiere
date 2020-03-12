@@ -49,8 +49,9 @@ body{
                                 }
                             });
                         });
-                        document.write('</select>');
+                        
                         </script>
+                         </select>
              <br><br>
              <div class="form-group tt">
                             <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Supprimer" />        

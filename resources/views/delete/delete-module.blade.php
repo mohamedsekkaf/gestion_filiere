@@ -47,8 +47,8 @@ body {
                                 }
                             });
                         });
-                        document.write('</select>');
                         </script>
+                         </select>
                 </div>
                 <div class="form-group tt">
                     <label for="">selectionner Semestre</label>
@@ -71,8 +71,9 @@ body {
                                 }
                             });
                         });
-                        document.write('</select>');
+                       
                         </script>
+                         </select>
                 </div>
                 <div class="form-group tt">
                     <label for="">selectionner Module</label>
@@ -95,8 +96,9 @@ body {
                                 }
                             });
                         });
-                        document.write('</select>');
+                       
                         </script>
+                         </select>
                        <!--  @foreach($mod as $m)
                         <option value="{{$m->id_module}}">{{ $m->nom_module}}->&nbsp;{{$m->nom_etabless}}</option>
                         @endforeach

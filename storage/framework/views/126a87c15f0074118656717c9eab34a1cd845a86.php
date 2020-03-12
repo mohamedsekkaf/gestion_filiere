@@ -17,58 +17,47 @@ body {
             <div class="col-md-12">
             <div class="form-group tt">
                     <label for="">selectionner l'etablissement</label>
-                    <select name="" class="form-control" id="test" required>
+                    <select name="" class="form-control" id="etab" required>
                         <option value="">default </option>
                         <?php $__currentLoopData = $etap; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $e): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($e->nom_etablessement); ?>"> <?php echo e($e->nom_etablessement); ?>
-
-                        </option>
+                        <option value="<?php echo e($e->nom_etablessement); ?>"> <?php echo e($e->nom_etablessement); ?></option>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                     </select>
                 </div>
                  <div class="form-group tt">
                     <label for="">selectionner la filiere</label>
-                    <select name="" class="form-control" id="test1" required>
+                    <select name="" class="form-control" id="fil" required>
                         <option value="">default </option>
                         <script>
                         var fil = <?php echo $file; ?> ;
                         var length2 = fil.length;
                         $(document).ready(function() {
-                            $("#test").change(function() {
-                                var m = $("#test option:selected").val();
-                                for (i = 0; i <<?php echo $file; ?>.length; i++) {
+                            $("#etab").change(function() {
+                                var m = $("#etab option:selected").val();
+                                for (i = 0; i < <?php echo $file; ?>.length; i++) {
                                     $("#t").remove();
                                     $("#tt").remove();
                                     $("#ttt").remove();
-                                    $("#tttt").remove();
                                 }
                                 for (j = 0; j < <?php echo $file; ?>.length; j++) {
                                     if (fil[j]["nom_etabless"] == m) {
-                                        $("#test1").append('<option id="t" value="'+fil[j]["nom_filiere"] +'">' + fil[j]["nom_filiere"] +
-                                            '</option>');
+                                        $("#fil").append('<option id="t" value="'+fil[j]["nom_filiere"]+'">'+fil[j]["nom_filiere"]+'</option>');
                                     }
                                 }
                             });
                         });
-                        document.write('</select>');
                         </script>
-                        <!-- <?php $__currentLoopData = $file; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $e): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($e->nom_filiere); ?>"> <?php echo e($e->nom_filiere); ?>
-
-                        </option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </select> -->
+                    </select> 
                 </div>
                 <div class="form-group tt">
                     <label for="">selectionner Semestre</label>
-                    <select name="" class="form-control" id="test2" required>
+                    <select name="" class="form-control" id="sem" required>
                         <option value="">default </option>
                         <script>
                         var s = <?php echo $semestre; ?> ;
-                        var lengt = s.length;
                         $(document).ready(function() {
-                            $("#test1").change(function() {
-                                var m = $("#test1 option:selected").val();
+                            $("#fil").change(function() {
+                                var m = $("#fil option:selected").val();
                                 for (i = 0; i < <?php echo $semestre; ?>.length; i++) {
                                     $("#tt").remove();
                                     $("#ttt").remove();
@@ -76,82 +65,65 @@ body {
                                 }
                                 for (j = 0; j < <?php echo $semestre; ?>.length; j++) {
                                     if (s[j]["nom_file"] == m) {
-                                        $("#test2").append('<option id="tt" value="'+s[j]["nom_s"] +'">Semestre ' + s[j]["nom_s"].split(" ")[0] +
+                                        $("#sem").append('<option id="tt" value="'+s[j]["nom_s"] +'">Semestre ' + s[j]["nom_s"].split(" ")[0] +
                                             '</option>');
                                     }
                                 }
                             });
                         });
-                        document.write('</select>');
                         </script>
-                        <!-- <?php $__currentLoopData = $semestre; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $e): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($e->nom_s); ?>"> <?php echo e($e->nom_s); ?>
-
-                        </option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </select> -->
+                    </select> 
                 </div> 
                 <div class="form-group tt">
                     <label for="">selectionner Module</label>
-                    <select name="" class="form-control" id="test3" required>
+                    <select name="" class="form-control" id="mmod" required>
                         <option value="">default </option>
                         <script>
                         var mod = <?php echo $mod; ?> ;
                         var lengt = mod.length;
                         $(document).ready(function() {
-                            $("#test2").change(function() {
-                                var m = $("#test2 option:selected").val();
+                            $("#sem").change(function() {
+                                var m = $("#sem option:selected").val();
                                 for (i = 0; i < <?php echo $mod; ?>.length; i++) {
                                     $("#ttt").remove();
                                     $("#tttt").remove();
                                 }
                                 for (j = 0; j < <?php echo $mod; ?>.length; j++) {
                                     if (mod[j]["nom_se"] == m) {
-                                        $("#test3").append('<option id="ttt" value="'+mod[j]["nom_module"]+'">' + mod[j]["nom_module"] +
+                                        $("#mod").append('<option id="ttt" value="'+mod[j]["nom_module"]+'">' + mod[j]["nom_module"] +
                                             '</option>');
                                     }
                                 }
                             });
                         });
-                        document.write('</select>');
+                        
                         </script>
-                        <!-- <?php $__currentLoopData = $mod; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $e): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($e->nom_module); ?>"> <?php echo e($e->nom_module); ?>
-
-                        </option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </select> -->
+                        </select>
                 </div>
                 
                 <div class="form-group tt">
                     <label for="">selectionner le Element</label>
-                    <select name="id_element" class="form-control" id="test4" required>
+                    <select name="id_element" class="form-control" id="elem" required>
                         <option value="">default </option>
                         <script>
                         var e = <?php echo $elem; ?> ;
                         var lengt = e.length;
                         $(document).ready(function() {
-                            $("#test3").change(function() {
-                                var m = $("#test3 option:selected").val();
+                            $("#mod").change(function() {
+                                var m = $("#mod option:selected").val();
                                 for (i = 0; i < <?php echo $elem; ?>.length; i++) {
                                     $("#tttt").remove();
                                 }
                                 for (j = 0; j < <?php echo $elem; ?>.length; j++) {
                                     if (e[j]["nom_mod"] == m) {
-                                        $("#test4").append('<option id="tttt" value="'+e[j]["nom_element"]+'">' + e[j]["nom_element"] +
+                                        $("#elem").append('<option id="tttt" value="'+e[j]["nom_element"]+'">' + e[j]["nom_element"] +
                                             '</option>');
                                     }
                                 }
                             });
                         });
-                        document.write('</select>');
                         </script>
-                       <!--  <?php $__currentLoopData = $elem; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $e): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($e->id_element); ?>"><?php echo e($e->nom_element); ?>
-
-                        </option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </select> -->
+                    </select> 
                 </div>
                 <br>
                 <div class="form-group tt">

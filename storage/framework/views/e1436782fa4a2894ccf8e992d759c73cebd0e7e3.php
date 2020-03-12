@@ -1,45 +1,5 @@
 <?php $__env->startSection("content"); ?>
-<!--<div class="container">
-<div class="row">
-<div class="col-md-12">
-<div class="card mb-3 mt-4">
-  <div class="card-body">
-  <h3 class="card-title tt">Supprimer Element</h3>
-  <form action="<?php echo e(url('/delete/delete-element')); ?>" method="POST" enctype="multipart/form-data">
-        <?php echo method_field('POST'); ?>
-         <?php echo csrf_field(); ?>
-         <table>
-          <tr>
-          <td  style="width:20%" >selectionner Filiere</td>
-          <td>
-          <select style="width:60%" name="id_element" class="form-control" required>
-           <option value="">default </option>
-               <?php $__currentLoopData = $elem; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $e): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <option value=" <?php echo e($e->id_element); ?>"><?php echo e($e->nom_element); ?>->&nbsp;<?php echo e($e->nom_etabless); ?></option>
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-             </select>
-             </td>
-            <tr><td><br></td></tr>
-            <tr>
-            <td></td>
-             <td>
-                    <input class="btn-primary btn" type="submit" value="Supprimer" name="btn" class="form-control">
-             </td>
-             </tr>
-           </tr>
-
-           </table>
-                 
-</form>
-  </div>
-</div>
-</div><!-- fin col
-</div><!-- fin row
-</div><!-- fin container-->
-
-
 <br><br>
-
 <style>
 body{
     background: -webkit-linear-gradient(left, #0072ff, #00c6ff);
@@ -90,14 +50,9 @@ body{
                                 }
                             });
                         });
-                        document.write('</select>');
+                        
                         </script>
-                        <!-- <?php $__currentLoopData = $file; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $e): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($e->nom_filiere); ?>"> <?php echo e($e->nom_filiere); ?>
-
-                        </option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </select> -->
+                         </select>
                 </div>
                 <div class="form-group tt">
                     <label for="">selectionner Semestre</label>
@@ -122,14 +77,9 @@ body{
                                 }
                             });
                         });
-                        document.write('</select>');
+                        
                         </script>
-                        <!-- <?php $__currentLoopData = $semestre; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $e): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($e->nom_s); ?>"> <?php echo e($e->nom_s); ?>
-
-                        </option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </select> -->
+                         </select>
                 </div> 
                 <div class="form-group tt">
                     <label for="">selectionner Module</label>
@@ -153,14 +103,8 @@ body{
                                 }
                             });
                         });
-                        document.write('</select>');
                         </script>
-                        <!-- <?php $__currentLoopData = $mod; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $e): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-                        <option value="<?php echo e($e->nom_module); ?>"> <?php echo e($e->nom_module); ?>
-
-                        </option>
-                        <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                    </select> -->
+                         </select>
                 </div>
 
                   <div class="form-group tt">
@@ -185,12 +129,8 @@ body{
                                 }
                             });
                         });
-                        document.write('</select>');
                         </script>
-               <!-- <?php $__currentLoopData = $elem; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $e): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
-              <option value=" <?php echo e($e->id_element); ?>"><?php echo e($e->nom_element); ?>->&nbsp;<?php echo e($e->nom_etabless); ?></option>
-              <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-             </select> -->
+                         </select>
              <br><br>
              <div class="form-group tt">
                             <input type="submit" name="btnSubmit" class="btnContact"  placeholder="image"  value="Supprimer" />        

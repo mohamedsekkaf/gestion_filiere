@@ -18,31 +18,32 @@ body {
             <div class="col-md-12">
                 <div class="form-group tt">
                     <label for="">L'établissement</label>
-                    <td style="text-align:center;">
                         <select class="form-control" name="nom_etabless" value="{{ old('nom_etabless')}}" id="etab">
                             <option value="">default </option>
                             @foreach($etab as $fil)
-                            <option value="{{ $fil->nom_etablessement }}"> {{ $fil->nom_etablessement }}</option>
+                            <option value="{{$fil->nom_etablessement}}"> {{ $fil->nom_etablessement }}</option>
                             @endforeach
-                            <script>
-
-                            </script>
                         </select>
                 </div>
+                <select name="" id="">
+                    @foreach($file as $f)
+                    <option value="">{{ $f->nom_filiere }}</option>
+                    @endforeach
+                </select>
                 <div class="form-group tt">
                     <label for="">filiere</label>
                     <select class="form-control" name="nom_file" value="{{ old('nom_file')}}" id="fil">
                         <option value="">default </option>
                         <script>
                         var fil = <?php echo $file; ?> ;
-                        var length2 = fil.length;
                         $(document).ready(function() {
                             $("#etab").change(function() {
                                 var m = $("#etab option:selected").val();
                                 for (i = 0; i < <?php echo $file; ?>.length; i++) {
                                     $("#tt").remove();
                                 }
-                                for (j = 0; j < <?php echo $file; ?>.length; j++) {
+                                for (j = 0; j < 10; j++) {
+                                    console.log('mohamed')
                                     if (fil[j]["nom_etabless"] == m) {
                                         $("#fil").append('<option id="tt" value="'+fil[j]["nom_filiere"]+'">'+fil[j]["nom_filiere"]+'</option>');
                                     }
@@ -71,9 +72,7 @@ body {
     </form>
 </div>
 </div>
-<script>
-
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
 
 <br><br>
 @endsection

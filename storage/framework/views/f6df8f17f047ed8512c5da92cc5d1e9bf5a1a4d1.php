@@ -49,8 +49,8 @@ body {
                                 }
                             });
                         });
-                        document.write('</select>');
                         </script>
+                        </select>
                 </div>
                 <div class="form-group tt">
                     <label for="">Semestre</label>
@@ -98,8 +98,8 @@ body {
                                 }
                             });
                         });
-                        document.write('</select>');
                         </script>
+                        </select>
                 </div>
                 <div class="form-group tt">
                     <label for="">Element</label>

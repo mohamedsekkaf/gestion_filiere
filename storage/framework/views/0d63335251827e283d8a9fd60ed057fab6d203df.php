@@ -17,31 +17,32 @@ body {
             <div class="col-md-12">
                 <div class="form-group tt">
                     <label for="">L'établissement</label>
-                    <td style="text-align:center;">
                         <select class="form-control" name="nom_etabless" value="<?php echo e(old('nom_etabless')); ?>" id="etab">
                             <option value="">default </option>
                             <?php $__currentLoopData = $etab; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $fil): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <option value="<?php echo e($fil->nom_etablessement); ?>"> <?php echo e($fil->nom_etablessement); ?></option>
                             <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                            <script>
-
-                            </script>
                         </select>
                 </div>
+                <select name="" id="">
+                    <?php $__currentLoopData = $file; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $f): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+                    <option value=""><?php echo e($f->nom_filiere); ?></option>
+                    <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
+                </select>
                 <div class="form-group tt">
                     <label for="">filiere</label>
                     <select class="form-control" name="nom_file" value="<?php echo e(old('nom_file')); ?>" id="fil">
                         <option value="">default </option>
                         <script>
                         var fil = <?php echo $file; ?> ;
-                        var length2 = fil.length;
                         $(document).ready(function() {
                             $("#etab").change(function() {
                                 var m = $("#etab option:selected").val();
                                 for (i = 0; i < <?php echo $file; ?>.length; i++) {
                                     $("#tt").remove();
                                 }
-                                for (j = 0; j < <?php echo $file; ?>.length; j++) {
+                                for (j = 0; j < 10; j++) {
+                                    console.log('mohamed')
                                     if (fil[j]["nom_etabless"] == m) {
                                         $("#fil").append('<option id="tt" value="'+fil[j]["nom_filiere"]+'">'+fil[j]["nom_filiere"]+'</option>');
                                     }
@@ -71,9 +72,7 @@ body {
     </form>
 </div>
 </div>
-<script>
-
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js">
 
 <br><br>
 <?php $__env->stopSection(); ?>
