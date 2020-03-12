@@ -58,6 +58,7 @@ public function showinfo(){
     $mod = Module::all();
     $semestre = semstr::all();
     $elem = Element::all();
+    $comment = Comment::paginate(5);
     return  view('ajouter',compact('etab','file','mod','semestre','elem'));
 }
 //========================================================== selection filiere
