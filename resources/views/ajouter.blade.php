@@ -151,7 +151,7 @@
                 <input type="submit" class="form-control">
             </form>
         </div>
-        @foreach($users as $user)
+        
         @if (Auth::user()->name == "admin")
         <div class="col-12">
             <form action="{{ url('/deleteuser') }}" method="POST" enctype="multipart/form-data">
@@ -168,7 +168,7 @@
             </form>
         </div>
         @endif
-        @endforeach
+        
     </div>
 </div>
 @endsection
