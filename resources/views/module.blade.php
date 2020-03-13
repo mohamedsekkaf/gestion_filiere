@@ -34,10 +34,7 @@
                         <div class="card-body">
                             <h3 class="card-title tt">Module </h3>
                             <h5 class="card-title tt">{{ $mod->nom_module}}</h5>
-
-                            <p class="card-text tt"><small class="text-muted"></small> nombre d'element :
-                                {{ $mod->num_element}}</p>
-
+                            <p class="card-text tt"><small class="text-muted"></small> nombre d'element : {{ $mod->num_element}}</p>
                             <a href="{{ url('/element')}}/{{$mod->nom_module}}">
                                 <p class="card-text"> Afficher les Element</p>
                             </a>
